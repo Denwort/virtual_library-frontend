@@ -18,6 +18,27 @@ const Index = () => <Layout content={
             <h1>Ultimas reservas</h1>
             <Link href="">Clean Code</Link>
             <Link href="">Introduction to the theory...</Link>
+            <p>hola</p><br/>  
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+            <p>hola</p><br/>        
+
         </div>
     </>
 }
