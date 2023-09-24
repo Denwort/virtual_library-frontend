@@ -23,7 +23,6 @@ export default props => (
                     </div>  
                 </div>
             </div>
-            
         </header>
 
         <nav>
@@ -41,9 +40,7 @@ export default props => (
         </main>
         
         <footer>
-            <div>
-                <p>Biblio v1.01-alpha</p>
-            </div>
+            <p>Biblio v1.01-alpha</p>
         </footer>
     </div>
     </>
