@@ -1,5 +1,5 @@
 import Head from 'next/head'
-
+import Link from 'next/link'
 const login = () => {
     return(
     <>
@@ -8,8 +8,10 @@ const login = () => {
         </Head>
         <div id="cuerpo_login">
             <div id="titulo_login">
-                <p>Sistema de reserva de libros</p>
+                <p><b>Sistema de reserva de libros</b></p>
             </div>
+
+            <form action="enviarDatos" method='get'>
             <div id="text_field_usuario">
                 <div class="text_field">
                     <div class="state_layer">
@@ -18,9 +20,8 @@ const login = () => {
                                 <p>Usuario o Correo</p>
                             </div>
                             <div id="input_text_usuario">
-                                <input type='text' placeholder='Ingrese usuario o correo'/>
+                                <input type='text' placeholder='Ingrese usuario o correo' id="inputUsu"/>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -28,7 +29,6 @@ const login = () => {
                     <p></p>
                 </div> 
             </div>
-
             <div id="text_field_password">
                 <div class="text_field">
                     <div class="state_layer">
@@ -37,20 +37,34 @@ const login = () => {
                                 <p>Contraseña</p>
                             </div>
                             <div id="input_text_contraseña">
-                            <input type='password' placeholder='Ingrese contraseña'/>
+                                <input type='password' placeholder='Ingrese contraseña' id="inputContr"/>
                             </div>
 
                         </div>
                     </div>
                 </div>
-                <div class="supporting-text">
-                    <p></p>
-                </div> 
+                
             </div>
 
+            <div id="contenedorContra">
+                <div id="OlvideContra">
+                    <p><Link href="/olvideCon" class="olvC">Olvidé mi contraseña</Link></p>
+                </div>
+            </div>
+
+
+            <div id="alinearBotones">
+            <div id="buttonRegis">
+                <div id="slayer-regis">
+                    <Link href="/registrarse" class="regis">Registro usuario</Link>
+                </div>
+            </div>
+            <input type="button" value ="Ingresar" class="bIngre"/>
+            </div>
+            </form>
             
+
         </div>
-        
     </>
 )}
 
