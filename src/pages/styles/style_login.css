@@ -15,8 +15,15 @@
     width: auto;
     background: #FFF;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    height: 100vh; /* Tamaño de la ventana del navegador */
+
 
 }
+
 
 #text_field_usuario{
     display: flex;
@@ -71,6 +78,7 @@
 .content{
     display: flex;
     height: 40px;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -103,7 +111,8 @@
     line-height: 16px; /* 133.333% */
     width: auto;
     height: 20px;
-    top:80px ;
+    left: -4%; /* Ajustar la posición horizontal según tus necesidades */
+    top: -48%; /* Ajustar la posición vertical según tus necesidades */
 }
 
 #text_contraseña{
@@ -120,7 +129,8 @@
     font-weight: 400;
     line-height: 16px; /* 133.333% */
     height: 20px;
-    top:175px ;
+    left: -10px; /* Ajustar la posición horizontal según tus necesidades */
+    top: -20px; /* Ajustar la posición vertical según tus necesidades */
 }
 
 #inputUsu{
@@ -151,11 +161,6 @@
 
 }
 
-body {
-    width: 1280px;
-    height: 720px;
-    margin: 0 auto; /* Para centrar la página horizontalmente en la ventana del navegador */
-}
 
 
 .bIngre{
@@ -197,15 +202,18 @@ body {
 
 #slayer-regis{
     display: flex;
-    padding: 10px 12px;
+    padding: 10px 24px;
     justify-content: center;
     align-items: center;
     gap: 8px;
+
+
+    
 }
 .regis{
     color: var(--m-3-sys-light-primary, #6750A4);
     text-align: center;
-
+    
     /* M3/label/large */
     font-family: Roboto;
     font-size: 14px;
