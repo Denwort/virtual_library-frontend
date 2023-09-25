@@ -151,6 +151,9 @@
     font-weight: 700;
     line-height: 20px; /* 166.667% */
     text-decoration: none;
+    position: absolute;
+    top:27%;
+    left: 58%;
 }
 #OlvideContra{
     display: flex;
@@ -161,7 +164,9 @@
 
 }
 
-
+#contenedorContra{
+    position: relative;
+}
 
 .bIngre{
     color: var(--m-3-sys-light-on-secondary-container, #1D192B);
