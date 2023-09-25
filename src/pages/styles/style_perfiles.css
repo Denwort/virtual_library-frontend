@@ -1,7 +1,62 @@
-#form_perfil {
-    width: 1088px;
-    height: 510px; 
-    flex-shrink: 0;
-    background: #F3EDF7;
+#tituloP {
+    width: 100%; 
+    color: black; 
+    font-size: 22px; 
+    font-family: 'Times New Roman', Times, serif; 
+    font-weight: 400; 
+    line-height: 28px; 
+    word-wrap: break-word;
+    
 }
 
+#form_perfil {
+    display: flex;
+    width: 1088px;
+    height: 410px;
+    flex-shrink: 0;
+    background: #F3EDF7;
+    margin: 20px;
+}
+  
+  #barra_perfil {
+    width: 753px;
+    height: 45px;
+    background: #FEF7FF;
+    border-radius: 10px;
+    border: 1px #6750A4 solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px; /* Espacio de 30px arriba */
+    margin-left: 315px;
+    margin-right: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  #barra_texto_selected {
+    color: #6750A4;
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    line-height: 16px;
+    word-wrap: break-word;
+    flex: 1; /* Distribuir el espacio horizontalmente */
+    text-align: center; /* Centrar el texto horizontalmente */
+  }
+  
+  #barra_texto_notselected {
+    color: #79747E;
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    line-height: 16px;
+    word-wrap: break-word;
+    flex: 1;
+    text-align: center;
+  }
+  
+  .selected {
+    border-bottom: 5px #6750A4 solid;
+  }
+  
