@@ -105,6 +105,7 @@
 }
 
 #input_text_usuario{
+    
     display: flex;
     align-items: center;
 }
@@ -150,14 +151,12 @@
     border: none;
     background: transparent;
     outline: none;
-    border: none;
     
 }
 #inputContr{
     border: none;
     background: transparent;
     outline: none;
-    border: none;
 }
 
 
