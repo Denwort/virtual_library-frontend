@@ -27,8 +27,8 @@ export default props => (
 
         <nav>
             <ul>
-                <li><Link href="/pagina1">Inicio</Link></li>
-                <li><Link href="/listar">Perfil</Link></li>
+                <li><Link href="/page">Inicio</Link></li>
+                <li><Link href="/perfil">Perfil</Link></li>
                 <li><Link href="/bibliotecas">Bibliotecas</Link></li>
             </ul>
         </nav>
