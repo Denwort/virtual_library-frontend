@@ -11,25 +11,25 @@
 
 #form_perfil {
     display: flex;
-    width: 1088px;
-    height: 410px;
+    width: 95%;
+    height: 65vh;
     flex-shrink: 0;
     background: #F3EDF7;
     margin: 20px;
 }
   
   #barra_perfil {
-    width: 753px;
-    height: 45px;
+    width: 80%;
+    height: 11%;
     background: #FEF7FF;
     border-radius: 10px;
     border: 1px #6750A4 solid;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 20px; /* Espacio de 30px arriba */
-    margin-left: 315px;
-    margin-right: 20px;
+    margin-top: 2%; /* Espacio de 30px arriba */
+    margin-right: 1%;
+    margin-left: 35%;
     padding-left: 8px;
     padding-right: 8px;
   }
