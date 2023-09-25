@@ -54,6 +54,8 @@ const login = () => {
 
 
             <div id="alinearBotones">
+            
+            
             <div id="buttonRegis">
                 <div id="slayer-regis">
                     <Link href="/registrarse" class="regis">Registro usuario</Link>
