@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+
 const login = () => {
     return(
     <>
@@ -7,8 +8,10 @@ const login = () => {
             <title>Login</title>
         </Head>
         <div id="cuerpo_login">
-            <div id="titulo_login">
-                <p><b>Sistema de reserva de libros</b></p>
+            <div id="titulo_login1">
+                <div id="titulo_login">
+                    <p><b>Sistema de reserva de libros</b></p>
+                </div>
             </div>
 
             <form action="enviarDatos" method='get'>

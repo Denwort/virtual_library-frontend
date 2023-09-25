@@ -1,3 +1,8 @@
+
+#titulo_login1{
+    position: relative;
+}
+
 #titulo_login{
     color: rgba(0, 0, 0, 1);
     text-align: center;
@@ -8,8 +13,13 @@
     line-height: 20px;
     width: 500px;
     margin: 0 auto;
+    position: absolute;
+    top:-150px;
+    left: -240px;
+    
 
 }
+
 
 #cuerpo_login{
     width: auto;
@@ -20,7 +30,6 @@
     justify-content: center; /* Centrar verticalmente */
     align-items: center; /* Centrar horizontalmente */
     height: 100vh; /* Tamaño de la ventana del navegador */
-
 
 }
 
@@ -88,6 +97,10 @@
 #input_text_contraseña{
     display: flex;
     align-items: center;
+    width: 100%;
+    outline: none;
+    
+  
 
 }
 
@@ -135,8 +148,15 @@
 
 #inputUsu{
     border: none;
+    background: transparent;
+    outline: none;
+    border: none;
+    
 }
 #inputContr{
+    border: none;
+    background: transparent;
+    outline: none;
     border: none;
 }
 
@@ -242,3 +262,4 @@
     margin-left: auto;
     margin-right: auto;
 }
+
