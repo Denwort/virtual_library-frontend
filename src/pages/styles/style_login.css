@@ -54,7 +54,26 @@
     margin-right: auto;
     
 }
-
+#text_field_b1{
+    display: flex;
+    width: 291px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 4px 4px 0px 0px;
+    margin-left: 0;
+    margin-right: auto;
+    
+}
+#text_field_b2{
+    display: flex;
+    width: 291px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 4px 4px 0px 0px;
+    margin-left: 0;
+    margin-right: auto;
+    
+}
 .supporting-text{
     display: flex;
     padding: 4px 16px 0px 16px;
