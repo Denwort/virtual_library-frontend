@@ -5,21 +5,23 @@ import Image from 'next/image'
 export default props => (
 <>
     <div id='todo'>
-        <header>
-            <div class="leading_icon">
-                <div class="container">
-                    <div class="boton">
+        <header class="bg-purple-header">
+            <div class="flex p-8">
+                <div class="">
+                    <div class="w-48px h-48px items-center justify-center gap-10">
                         <Image src="/boton_nav.png" width={24} height={24} alt='imagen de nav'></Image>
+                        <image class="w-full h-max" src="/."></image>
                     </div>
                 </div>
             </div>
             
             <p id="titulo">Administracion de bibliotecas</p>
 
-            <div class="leading_icon">
-                <div class="container">
-                    <div class="boton">
+            <div class="flex p-8">
+                <div class="">
+                    <div class="w-48px h-48px items-center justify-center gap-10">
                         <Image src="/boton_perfil.png" width={24} height={24} alt='imagen de perfil'></Image>
+                        <image class="" src="/."></image>
                     </div>  
                 </div>
             </div>
@@ -30,6 +32,7 @@ export default props => (
                 <li><Link href="/page">Inicio</Link></li>
                 <li><Link href="/perfil">Perfil</Link></li>
                 <li><Link href="/bibliotecas">Bibliotecas</Link></li>
+                <li><Link href="/busqueda">busqueda</Link></li>
             </ul>
         </nav>
 

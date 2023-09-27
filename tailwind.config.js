@@ -13,6 +13,7 @@ module.exports = {
     colors: {
       'purple-bg': '#FEF7FF',
       'purple-primary': '#6750A4',
+      'purple-header': '#F3EDF7',
     },
   },
   plugins: [],
