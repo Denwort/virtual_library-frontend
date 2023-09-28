@@ -35,7 +35,7 @@ const Perfil = () => <Layout content={
             <div id="cuadro_texto_perfil">
                 <div class="text_field">
                     <div class="state_layer">
-                        <div class="content">
+                        <div class="content_perfil">
                             <div id="text_perfil">
                                 <p>Nombres</p>
                             </div>
@@ -53,7 +53,7 @@ const Perfil = () => <Layout content={
             <div id="cuadro_texto_perfil">
                 <div class="text_field">
                     <div class="state_layer">
-                        <div class="content">
+                        <div class="content_perfil">
                             <div id="text_perfil">
                                 <p>Tipo de Documento</p>
                             </div>
@@ -71,7 +71,7 @@ const Perfil = () => <Layout content={
             <div id="cuadro_texto_perfil">
                 <div class="text_field">
                     <div class="state_layer">
-                        <div class="content">
+                        <div class="content_perfil">
                             <div id="text_perfil">
                                 <p>Apellidos</p>
                             </div>
@@ -89,7 +89,7 @@ const Perfil = () => <Layout content={
             <div id="cuadro_texto_perfil">
                 <div class="text_field">
                     <div class="state_layer">
-                        <div class="content">
+                        <div class="content_perfil">
                             <div id="text_perfil">
                                 <p>Nro de documento</p>
                             </div>
@@ -108,7 +108,6 @@ const Perfil = () => <Layout content={
 
             </div>
             {/* Aquí termina la columna*/}
-        
         
         </div>
     </div>
