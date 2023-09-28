@@ -3,6 +3,7 @@ import '../styles/style_login.css'
 import '../styles/style_perfiles.css'
 import '../styles/style_registroUsuario.css'
 import '../styles/globals.css'
+import '../styles/style_detalleLibro.css'
 
 import { AppProps } from 'next/app'
 
