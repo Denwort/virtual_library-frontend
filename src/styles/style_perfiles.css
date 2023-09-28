@@ -121,7 +121,7 @@
 .guardar{
   border-radius: 25px;
   border: 1px #79747E solid;
-  color: var(--m-3-sys-light-on-secondary-container, #1D192B);
+  color: #1D192B;
   text-align: center;
   /* M3/label/large */
   font-family: "Roboto", sans-serif;
@@ -129,7 +129,7 @@
   font-style: normal;
   font-weight: bold;
   line-height: 20px; /* 142.857% */
-  background: var(--m-3-sys-light-secondary-container, #E8DEF8);
+  background: #746d80;
   display: flex;
   padding: 10px 24px;
   justify-content: center;
