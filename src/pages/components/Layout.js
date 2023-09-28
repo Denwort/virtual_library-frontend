@@ -10,7 +10,6 @@ export default props => (
                 <div class="">
                     <div class="w-48px h-48px items-center justify-center gap-10">
                         <Image src="/boton_nav.png" width={24} height={24} alt='imagen de nav'></Image>
-                        <image class="w-full h-max" src="/."></image>
                     </div>
                 </div>
             </div>
@@ -21,7 +20,6 @@ export default props => (
                 <div class="">
                     <div class="w-48px h-48px items-center justify-center gap-10">
                         <Image src="/boton_perfil.png" width={24} height={24} alt='imagen de perfil'></Image>
-                        <image class="" src="/."></image>
                     </div>  
                 </div>
             </div>

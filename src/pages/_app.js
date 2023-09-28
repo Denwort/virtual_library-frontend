@@ -1,8 +1,8 @@
-import './styles/all.css'
-import './styles/style_login.css'
-import './styles/style_perfiles.css'
-import './styles/style_registroUsuario.css'
-import './globals.css'
+import '../styles/style_layout.css'
+import '../styles/style_login.css'
+import '../styles/style_perfiles.css'
+import '../styles/style_registroUsuario.css'
+import '../styles/globals.css'
 
 import { AppProps } from 'next/app'
 
