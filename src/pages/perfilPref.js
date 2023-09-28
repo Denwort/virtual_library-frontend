@@ -14,14 +14,14 @@ const Perfil = () => <Layout content={
     </div>
     <div id="form_perfil">
         <div id="barra_perfil">
+            <div id="barra_texto_notselected">
+                <Link href="/perfilDatos">DATOS PERSONALES</Link>
+            </div>
+            <div id="barra_texto_notselected">
+                <Link href="/perfilCuenta">CUENTA</Link>
+            </div>
             <div id="barra_texto_selected" className="selected">
-                <p>DATOS PERSONALES</p>
-            </div>
-            <div id="barra_texto_notselected">
-                <p>CUENTA</p>
-            </div>
-            <div id="barra_texto_notselected">
-                <p>PREFERENCIAS</p>
+                <Link href="/perfilPref">PREFERENCIAS</Link>
             </div>
         </div>
         
@@ -104,7 +104,7 @@ const Perfil = () => <Layout content={
                 </div> 
             </div>
 
-            <input type="button" value ="Guardar" class="guardar"/>
+            <input type="button" value ="Guardar" class="guardar" />
 
             </div>
             {/* Aquí termina la columna*/}
