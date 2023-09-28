@@ -64,7 +64,7 @@ const login = () => {
                     <Link href="/registroUsuario" class="regis">Registro usuario</Link>
                 </div>
             </div>
-            <input type="button" value ="Ingresar" class="bIngre"/>
+            <input type="button"  value ="Ingresar" id="bIngre"/>
             </div>
             </form>
             
