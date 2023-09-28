@@ -11,16 +11,17 @@
 
 #form_perfil {
     display: flex;
+    flex-direction: column;
     width: 95%;
-    height: 65vh;
+    height: 76vh;
     flex-shrink: 0;
     background: #F3EDF7;
     margin: 20px;
 }
   
   #barra_perfil {
-    width: 80%;
-    height: 11%;
+    width: 70%;
+    height:9%;
     background: #FEF7FF;
     border-radius: 10px;
     border: 1px #6750A4 solid;
@@ -29,7 +30,7 @@
     align-items: center;
     margin-top: 2%; /* Espacio de 30px arriba */
     margin-right: 1%;
-    margin-left: 35%;
+    margin-left: 29%;
     padding-left: 8px;
     padding-right: 8px;
   }
@@ -38,8 +39,8 @@
     color: #6750A4;
     font-size: 12px;
     font-family: 'Times New Roman', Times, serif;
-    font-weight: 700;
-    line-height: 16px;
+    font-weight: 1000;
+    line-height: 34px;
     word-wrap: break-word;
     flex: 1; /* Distribuir el espacio horizontalmente */
     text-align: center; /* Centrar el texto horizontalmente */
@@ -59,4 +60,79 @@
   .selected {
     border-bottom: 5px #6750A4 solid;
   }
+
+  #imagen_perfil {
+    margin-left: 4%;
+    margin-top: 4%;
+  }
   
+  #cuadro_texto_perfil{
+    display: flex;
+    width: 291px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 4px 4px 0px 0px;
+    margin-left: 0%;
+    margin-right: auto;
+    margin-top: 4%;
+}
+
+#text_perfil{
+  display: flex;
+  padding: 0px 4px;
+  align-items: center;
+  position: absolute;
+  background: var(--m-3-sys-light-surface, #FEF7FF);
+  color: var(--m-3-sys-light-primary, #6750A4);
+  /* M3/body/small */
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 133.333% */
+  width: auto;
+  height: 20px;
+  left: -4%; /* Ajustar la posición horizontal según tus necesidades */
+  top: -48%; /* Ajustar la posición vertical según tus necesidades */
+}
+
+#input_text_perfil{
+  display: flex;
+  align-items: center;
+}
+
+#inputPerfil{
+  border: none;
+  background: transparent;
+  outline: none;
+  
+}
+
+.guardar{
+  border-radius: 25px;
+  border: 1px #79747E solid;
+  color: var(--m-3-sys-light-on-secondary-container, #1D192B);
+  text-align: center;
+  /* M3/label/large */
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 20px; /* 142.857% */
+  background: var(--m-3-sys-light-secondary-container, #E8DEF8);
+  display: flex;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  display: inline-flex;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: 1%;
+  margin-left: 3%;
+}
+
+.guardar:hover {
+  background-color: #ddceeb; /* Cambia el color de fondo al pasar el ratón */
+}
