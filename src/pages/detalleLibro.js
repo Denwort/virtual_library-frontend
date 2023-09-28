@@ -38,12 +38,12 @@ const detalleLibro = () => <Layout content={
                         <p id="editorial-name-dl">Van Nostrand Reinhold Company</p>
                     </div>
                 </div>
+
                 <div id="text-topicos">
                     <p id="topi">Tópicos</p>
                 </div>
 
                 <div id="todosTopicos">
-
                     <div id="contenedor_topi1">
                         <div class="topi-stateLayer">
                             <p id="top1">Ingeniería de Software</p>
@@ -56,14 +56,39 @@ const detalleLibro = () => <Layout content={
                     </div>
                 </div>
 
-            </div>
-            <div id="total-reserva">
-                <div id="contenedor_reserva-dl">
-                    <h1 id="reservar-dl">Reservar</h1>
+                <div id="dispo-nodispo">
+                    <p id="dispoNodispo">Disponible</p>
                 </div>
-                <Image src="/full-width.png" width={1800} height={1} alt="fullwith"></Image>
 
             </div>
+            <form action="reservarLibroDatos" method='get'>
+                <div id="total-reserva">
+                    <div id="contenedor_reserva-dl">
+                        <h1 id="reservar-dl">Reservar</h1>
+                    </div>
+                    <Image src="/full-width.png" width={1800} height={1} alt="fullwith"></Image>
+                    <div id="text_field_fecha-dl">
+                        <div class="text_field">
+                            <div class="state_layer">
+                                <div class="content">
+                                    <div id="text_usuario">
+                                        <p>Ingrese una Fecha limite</p>
+                                    </div>
+                                    <div id="input_text_usuario">
+                                        <input type='date' id="inputDate" value="2023-08-17"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="supporting-text">
+                            <p id="ddmmyyyy"> DD/MM/YYYY</p>
+                        </div> 
+                    </div>
+                    <div id="contenedor_breservar">
+                        <input type="button"  value ="Reservar" id="bReserv"/>
+                    </div>
+                </div>
+            </form>
 
 
 
