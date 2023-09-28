@@ -14,7 +14,7 @@
     width: 500px;
     margin: 0 auto;
     position: absolute;
-    top:-150px;
+    top:-120px;
     left: -240px;
     
 
@@ -76,7 +76,7 @@
 }
 .supporting-text{
     display: flex;
-    padding: 4px 16px 0px 16px;
+    padding: 10px 16px 10px 16px;
     align-items: flex-start;
     gap: 10px;
     align-self: stretch;
@@ -190,7 +190,7 @@
     line-height: 20px; /* 166.667% */
     text-decoration: none;
     position: absolute;
-    top:27%;
+    top: 70%;
     left: 58%;
 }
 #OlvideContra{
@@ -206,7 +206,7 @@
     position: relative;
 }
 
-.bIngre{
+#bIngre{
     color: var(--m-3-sys-light-on-secondary-container, #1D192B);
     text-align: center;
     /* M3/label/large */
@@ -221,17 +221,15 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
-    display: inline-flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 8px;
     border-radius: 25px;
-    background: var(--m-3-sys-light-secondary-container, #E8DEF8);
     border: none;
-
     position: absolute;
     right: 0%;
+    
+    
 }
 .bIngre:hover {
     background-color: #ddceeb; /* Cambia el color de fondo al pasar el ratón */
@@ -279,5 +277,6 @@
     position: relative;
     margin-left: auto;
     margin-right: auto;
+    top: 27%;
 }
 

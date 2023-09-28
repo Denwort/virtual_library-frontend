@@ -155,7 +155,7 @@ const registroUsuario = () => {
                     </div>
                     
                     <div id="alinearBoton">
-                        <input type="button" value ="Registrar" class="bReg"/>
+                        <input type="button" value ="Registrar" id="bReg"/>
                     </div>
                 </div>
             </form>

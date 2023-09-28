@@ -67,7 +67,7 @@
     font-weight: 700;
     line-height: 20px; /* 125% */
     position: absolute;
-    bottom: 102% ;
+    bottom: 110% ;
 }
 #text_datosCuenta{
     color: #6750A4;
@@ -79,7 +79,7 @@
     font-weight: 700;
     line-height: 20px; /* 125% */
     position: absolute;
-    bottom: 102% ;
+    bottom: 113% ;
 }
 
 #tipoDoc{
@@ -135,7 +135,7 @@
     background: var(--m-3-sys-light-secondary-container, #E8DEF8);
 }
 
-.bReg{
+#bReg{
     color: var(--m-3-sys-light-on-secondary-container, #1D192B);
     text-align: center;
     /* M3/label/large */
@@ -171,11 +171,11 @@
 #todo_datPers{
     position: absolute;
     left: 0%;
-    bottom: 5%;
+    bottom: 30%;
 }
 
 #todo_datCuenta{
     position: absolute;
     left: 63%;
-    bottom: 31%;
+    bottom: 51%;
 }
