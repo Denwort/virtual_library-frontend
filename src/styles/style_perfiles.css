@@ -66,7 +66,7 @@
     margin-top: 4%;
   }
   
-  #cuadro_texto_perfil{
+  #cuadro_texto_nombre{
     display: flex;
     width: 291px;
     flex-direction: column;
@@ -75,7 +75,40 @@
     margin-left: 0%;
     margin-right: auto;
     margin-top: 4%;
-}
+  }
+
+  #cuadro_texto_tipo{
+    display: flex;
+    width: 291px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 4px 4px 0px 0px;
+    margin-left: 0%;
+    margin-right: auto;
+    margin-top: 1%;
+  }
+
+  #cuadro_texto_ape{
+    display: flex;
+    width: 291px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 4px 4px 0px 0px;
+    margin-left: 0%;
+    margin-right: auto;
+    margin-top: 1%;
+  }
+
+  #cuadro_texto_nro{
+    display: flex;
+    width: 291px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 4px 4px 0px 0px;
+    margin-left: 0%;
+    margin-right: auto;
+    margin-top: 1%;
+  }
 
 #text_perfil{
   display: flex;
@@ -106,16 +139,48 @@
   flex: 1 0 0;
 }
 
-#input_text_perfil{
+#input_text_nombre{
   display: flex;
   align-items: center;
 }
 
-#inputPerfil{
+#input_text_tipo{
+  display: flex;
+  align-items: center;
+}
+
+#input_text_ape{
+  display: flex;
+  align-items: center;
+}
+
+#input_text_nro{
+  display: flex;
+  align-items: center;
+}
+
+#inputNombre{
   border: none;
   background: transparent;
   outline: none;
-  
+}
+
+#inputTipo{
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+#inputApe{
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+#inputNro{
+  border: none;
+  background: transparent;
+  outline: none;
 }
 
 .guardar{
@@ -139,7 +204,7 @@
   flex-direction: column;
   padding-left: 100px;
   padding-right: 100px;
-  margin-top: 2%;
+  margin-top: 0%;
   margin-left: 3%;
 }
 
