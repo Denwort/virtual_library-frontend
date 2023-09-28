@@ -231,7 +231,7 @@
     
     
 }
-.bIngre:hover {
+#bIngre:hover {
     background-color: #ddceeb; /* Cambia el color de fondo al pasar el ratón */
 }
 

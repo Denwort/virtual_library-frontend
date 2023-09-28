@@ -164,7 +164,7 @@
     right: 0%;
     top: 21px;
 }
-.bReg:hover {
+#bReg:hover {
     background-color: #ddceeb; /* Cambia el color de fondo al pasar el ratón */
 }
 
