@@ -16,13 +16,13 @@ const Index = () => <Layout content={
         <div class="rectangulo">
             <p id ="subtitulo">Últimas reservas</p>
             <br></br>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid gap-x-14 grid-cols-7">
                 <div class="col-span-1">
                     <div class="libro">
                     <Link href="">Clean Code</Link>
                     </div>
                 </div>
-                <div class="col-span-1">
+                <div class="col-start-4 col-span-1">
                     <div class="libro">
                     <Link href="">Introduction to the theory...</Link>
                     </div> 
@@ -32,13 +32,23 @@ const Index = () => <Layout content={
         <div class="rectangulo">
             <p id="subtitulo">Los más pedidos</p>
             <br></br>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid gap-x-14 grid-cols-7 ">
                 <div class="col-span-1">
                     <div class="libro">
-                        <Link href="">Clean Code</Link>
+                        <div class="grid grid-cols-6 col-span-1">
+                            <div class="col-start-1 col-span-1">
+                                
+                            </div>
+                            <div class="col-start-2 col-end-5">
+                                <Link href="">Clean Code</Link>
+                            </div>
+                            <div class="col-start-5 col-span-1">
+
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-span-1">
+                <div class="col-start-4 col-span-1">
                     <div class="libro">
                         <Link href="">Introduction to the theory...</Link>
                     </div> 

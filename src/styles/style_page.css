@@ -7,16 +7,13 @@
     align-items: center;
     width: 174px;
     height: 28px;
-    margin-top: 5%;
-    margin-bottom: 1%;
-    margin-left: 2%;
+    margin-bottom: 11px;
 }
 .rectangulo{
     width: 1084px;
     height: 264px;
     background: #F3EDF7;
-    margin-left: 2%;
-    margin-bottom: 1%;
+    margin-bottom: 11px;
 }
 .libro{
     width: 470px;
@@ -26,7 +23,7 @@
     border-width: 1px;
     border-style: solid;
     background: #F3EDF7;
-    margin-left: 2%;
+    margin-left: 22px;
 }
 #subtitulo{
     color:black;
@@ -37,6 +34,6 @@
     align-items: center;
     width: 149px;
     height: 28px;
-    padding-top: 1%;
-    margin-left: 2%;
+    padding-top: 11px;
+    margin-left: 22px;
 }
