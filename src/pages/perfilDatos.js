@@ -28,7 +28,7 @@ const Perfil = () => <Layout content={
         <div class="grid grid-cols-2 gap-4">
             <div class="col-span-1">
                 <div id="imagen_perfil">
-                    <Image src="/juliana.png" width={273} height={253} ></Image>
+                    <Image src="/juliana.png" width={279} height={253} ></Image>
                 </div>
             </div>
             <div class="col-span-1">

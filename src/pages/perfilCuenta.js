@@ -28,19 +28,19 @@ const Perfil = () => <Layout content={
         <div class="grid grid-cols-2 gap-4">
             <div class="col-span-1">
                 <div id="imagen_perfil">
-                    <Image src="/juliana.png" width={273} height={253} ></Image>
+                    <Image src="/juliana.png" width={279} height={253} ></Image>
                 </div>
             </div>
             <div class="col-span-1">
-            <div id="cuadro_texto_perfil">
+            <div id="cuadro_texto_correo">
                 <div class="text_field">
                     <div class="state_layer">
                         <div class="content_perfil">
                             <div id="text_perfil">
-                                <p>Nombres</p>
+                                <p>Correo</p>
                             </div>
-                            <div id="input_text_perfil">
-                                <input type='text' placeholder='Ingrese nombre' id="inputPerfil"/>
+                            <div id="input_text_correo">
+                                <input type='text' placeholder='Ingrese correo' id="inputCorreo"/>
                             </div>
                         </div>
                     </div>
@@ -50,51 +50,15 @@ const Perfil = () => <Layout content={
                 </div> 
             </div>
             
-            <div id="cuadro_texto_perfil">
+            <div id="cuadro_texto_contra">
                 <div class="text_field">
                     <div class="state_layer">
                         <div class="content_perfil">
                             <div id="text_perfil">
-                                <p>Tipo de Documento</p>
+                                <p>Contraseña</p>
                             </div>
-                            <div id="input_text_perfil">
-                                <input type='text' placeholder='Ingrese documento' id="inputPerfil"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="supporting-text">
-                    <p></p>
-                </div> 
-            </div>
-            
-            <div id="cuadro_texto_perfil">
-                <div class="text_field">
-                    <div class="state_layer">
-                        <div class="content_perfil">
-                            <div id="text_perfil">
-                                <p>Apellidos</p>
-                            </div>
-                            <div id="input_text_perfil">
-                                <input type='text' placeholder='Ingrese apellidos' id="inputPerfil"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="supporting-text">
-                    <p></p>
-                </div> 
-            </div>
-            
-            <div id="cuadro_texto_perfil">
-                <div class="text_field">
-                    <div class="state_layer">
-                        <div class="content_perfil">
-                            <div id="text_perfil">
-                                <p>Nro de documento</p>
-                            </div>
-                            <div id="input_text_perfil">
-                                <input type='text' placeholder='Ingrese número' id="inputPerfil"/>
+                            <div id="input_text_contra">
+                                <input type='password' placeholder='Ingrese contraseña' id="inputContra"/>
                             </div>
                         </div>
                     </div>

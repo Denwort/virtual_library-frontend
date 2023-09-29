@@ -28,19 +28,19 @@ const Perfil = () => <Layout content={
         <div class="grid grid-cols-2 gap-4">
             <div class="col-span-1">
                 <div id="imagen_perfil">
-                    <Image src="/juliana.png" width={273} height={253} ></Image>
+                    <Image src="/juliana.png" width={279} height={253} ></Image>
                 </div>
             </div>
             <div class="col-span-1">
-            <div id="cuadro_texto_perfil">
+            <div id="cuadro_texto_idioma">
                 <div class="text_field">
                     <div class="state_layer">
                         <div class="content_perfil">
                             <div id="text_perfil">
-                                <p>Nombres</p>
+                                <p>Idioma</p>
                             </div>
-                            <div id="input_text_perfil">
-                                <input type='text' placeholder='Ingrese nombre' id="inputPerfil"/>
+                            <div id="input_text_idioma">
+                                <input type='text' placeholder='Ingrese idioma' id="inputIdioma"/>
                             </div>
                         </div>
                     </div>
@@ -50,15 +50,15 @@ const Perfil = () => <Layout content={
                 </div> 
             </div>
             
-            <div id="cuadro_texto_perfil">
+            <div id="cuadro_texto_prefijo">
                 <div class="text_field">
                     <div class="state_layer">
                         <div class="content_perfil">
                             <div id="text_perfil">
-                                <p>Tipo de Documento</p>
+                                <p>Prefijo</p>
                             </div>
-                            <div id="input_text_perfil">
-                                <input type='text' placeholder='Ingrese documento' id="inputPerfil"/>
+                            <div id="input_text_prefijo">
+                                <input type='text' placeholder='Ingrese prefijo' id="inputPrefijo"/>
                             </div>
                         </div>
                     </div>
@@ -68,15 +68,15 @@ const Perfil = () => <Layout content={
                 </div> 
             </div>
             
-            <div id="cuadro_texto_perfil">
+            <div id="cuadro_texto_color">
                 <div class="text_field">
                     <div class="state_layer">
                         <div class="content_perfil">
                             <div id="text_perfil">
-                                <p>Apellidos</p>
+                                <p>Color</p>
                             </div>
-                            <div id="input_text_perfil">
-                                <input type='text' placeholder='Ingrese apellidos' id="inputPerfil"/>
+                            <div id="input_text_color">
+                                <input type='color' id="inputColor"/>
                             </div>
                         </div>
                     </div>
@@ -86,23 +86,6 @@ const Perfil = () => <Layout content={
                 </div> 
             </div>
             
-            <div id="cuadro_texto_perfil">
-                <div class="text_field">
-                    <div class="state_layer">
-                        <div class="content_perfil">
-                            <div id="text_perfil">
-                                <p>Nro de documento</p>
-                            </div>
-                            <div id="input_text_perfil">
-                                <input type='text' placeholder='Ingrese número' id="inputPerfil"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="supporting-text">
-                    <p></p>
-                </div> 
-            </div>
 
             <input type="button" value ="Guardar" class="guardar" />
 
