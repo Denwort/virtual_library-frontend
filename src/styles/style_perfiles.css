@@ -12,16 +12,16 @@
 #form_perfil {
     display: flex;
     flex-direction: column;
-    width: 95%;
-    height: 76vh;
+    width: 1088px;
+    height: 510px;
     flex-shrink: 0;
     background: #F3EDF7;
-    margin: 20px;
+    margin-top: 20px;
 }
   
   #barra_perfil {
-    width: 70%;
-    height:9%;
+    width: 763px;
+    height: 40px;
     background: #FEF7FF;
     border-radius: 10px;
     border: 1px #6750A4 solid;
@@ -64,6 +64,7 @@
   #imagen_perfil {
     margin-left: 4%;
     margin-top: 4%;
+    min-width: 200px;
   }
   
   #cuadro_texto_nombre{
@@ -74,7 +75,7 @@
     border-radius: 4px 4px 0px 0px;
     margin-left: 0%;
     margin-right: auto;
-    margin-top: 4%;
+    margin-top: 35px;
   }
 
   #cuadro_texto_tipo{
@@ -85,7 +86,7 @@
     border-radius: 4px 4px 0px 0px;
     margin-left: 0%;
     margin-right: auto;
-    margin-top: 1%;
+    margin-top: 8px;
   }
 
   #cuadro_texto_ape{
@@ -96,7 +97,7 @@
     border-radius: 4px 4px 0px 0px;
     margin-left: 0%;
     margin-right: auto;
-    margin-top: 1%;
+    margin-top: 8px;
   }
 
   #cuadro_texto_nro{
@@ -107,8 +108,10 @@
     border-radius: 4px 4px 0px 0px;
     margin-left: 0%;
     margin-right: auto;
-    margin-top: 1%;
+    margin-top: 8px;
   }
+
+
 
 #text_perfil{
   display: flex;
@@ -131,7 +134,7 @@
 
 .content_perfil{
   display: flex;
-  height: 35px;
+  height: 40px;
   position: relative;
   flex-direction: column;
   justify-content: center;
@@ -194,18 +197,18 @@
   font-style: normal;
   font-weight: bold;
   line-height: 20px; /* 142.857% */
-  background: #746d80;
+  background: var(--m-3-sys-light-secondary-container, #746d80);
   display: flex;
+  gap: 8px;
   padding: 10px 24px;
   justify-content: center;
   align-items: center;
-  gap: 8px;
   display: inline-flex;
   flex-direction: column;
   padding-left: 100px;
   padding-right: 100px;
   margin-top: 0%;
-  margin-left: 3%;
+  margin-left: 18px;
 }
 
 .guardar:hover {
