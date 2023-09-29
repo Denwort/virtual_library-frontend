@@ -1,0 +1,42 @@
+#bienvenida{
+    color:black;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 28px;
+    text-align: center;
+    align-items: center;
+    width: 174px;
+    height: 28px;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    margin-left: 2%;
+}
+.rectangulo{
+    width: 1084px;
+    height: 264px;
+    background: #F3EDF7;
+    margin-left: 2%;
+    margin-bottom: 1%;
+}
+.libro{
+    width: 470px;
+    height: 101px;
+    border-radius: 12px;
+    border-color: rgb(165, 165, 165);
+    border-width: 1px;
+    border-style: solid;
+    background: #F3EDF7;
+    margin-left: 2%;
+}
+#subtitulo{
+    color:black;
+    font-size: 22px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 28px;
+    text-align: center;
+    align-items: center;
+    width: 149px;
+    height: 28px;
+    padding-top: 1%;
+    margin-left: 2%;
+}
