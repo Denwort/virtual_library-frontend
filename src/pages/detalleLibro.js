@@ -51,7 +51,7 @@ const detalleLibro = () => <Layout content={
                     </div>
                     <div id="contenedor_topi2">
                         <div class="topi-stateLayer">
-                            <p id="top2">programación Web</p>
+                            <p id="top2">Programación Web</p>
                         </div>
                     </div>
                 </div>
