@@ -8,43 +8,44 @@ const Index = () => <Layout content={
         <Head>
             <title>..:: Pagina1 ::..</title>
         </Head>
-
         <div>
-            <p>Bienvenido, Juan!</p>
+            <p id="bienvenida"><b>Bienvenido, Juan!</b></p>
             <Image src="/divider.png" width={1088} height={1}></Image>
         </div>
-
-        <div>
-            <h1>Ultimas reservas</h1>
-            <Link href="">Clean Code</Link>
-            <Link href="">Introduction to the theory...</Link>
-            <p>hola</p><br/>  
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-            <p>hola</p><br/>        
-
+        <br></br>
+        <div class="rectangulo">
+            <p id ="subtitulo">Últimas reservas</p>
+            <br></br>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="col-span-1">
+                    <div class="libro">
+                    <Link href="">Clean Code</Link>
+                    </div>
+                </div>
+                <div class="col-span-1">
+                    <div class="libro">
+                    <Link href="">Introduction to the theory...</Link>
+                    </div> 
+                </div>
+            </div>  
+        </div>
+        <div class="rectangulo">
+            <p id="subtitulo">Los más pedidos</p>
+            <br></br>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="col-span-1">
+                    <div class="libro">
+                        <Link href="">Clean Code</Link>
+                    </div>
+                </div>
+                <div class="col-span-1">
+                    <div class="libro">
+                        <Link href="">Introduction to the theory...</Link>
+                    </div> 
+                </div>  
+            </div>
         </div>
     </>
 }
-
 ></Layout>
-
 export default Index
-
-
