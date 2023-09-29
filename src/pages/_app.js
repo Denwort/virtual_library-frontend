@@ -4,6 +4,7 @@ import '../styles/style_perfiles.css'
 import '../styles/style_registroUsuario.css'
 import '../styles/style_page.css'
 import '../styles/globals.css'
+import '../styles/style_detalleLibro.css'
 
 
 import { AppProps } from 'next/app'

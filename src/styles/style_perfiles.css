@@ -12,16 +12,16 @@
 #form_perfil {
     display: flex;
     flex-direction: column;
-    width: 95%;
-    height: 76vh;
+    width: 1088px;
+    height: 510px;
     flex-shrink: 0;
     background: #F3EDF7;
-    margin: 20px;
+    margin-top: 20px;
 }
   
   #barra_perfil {
-    width: 70%;
-    height:9%;
+    width: 763px;
+    height: 40px;
     background: #FEF7FF;
     border-radius: 10px;
     border: 1px #6750A4 solid;
@@ -64,9 +64,10 @@
   #imagen_perfil {
     margin-left: 4%;
     margin-top: 4%;
+    min-width: 200px;
   }
   
-  #cuadro_texto_perfil{
+  #cuadro_texto_nombre{
     display: flex;
     width: 291px;
     flex-direction: column;
@@ -74,8 +75,43 @@
     border-radius: 4px 4px 0px 0px;
     margin-left: 0%;
     margin-right: auto;
-    margin-top: 4%;
-}
+    margin-top: 35px;
+  }
+
+  #cuadro_texto_tipo{
+    display: flex;
+    width: 291px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 4px 4px 0px 0px;
+    margin-left: 0%;
+    margin-right: auto;
+    margin-top: 8px;
+  }
+
+  #cuadro_texto_ape{
+    display: flex;
+    width: 291px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 4px 4px 0px 0px;
+    margin-left: 0%;
+    margin-right: auto;
+    margin-top: 8px;
+  }
+
+  #cuadro_texto_nro{
+    display: flex;
+    width: 291px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 4px 4px 0px 0px;
+    margin-left: 0%;
+    margin-right: auto;
+    margin-top: 8px;
+  }
+
+
 
 #text_perfil{
   display: flex;
@@ -98,7 +134,7 @@
 
 .content_perfil{
   display: flex;
-  height: 35px;
+  height: 40px;
   position: relative;
   flex-direction: column;
   justify-content: center;
@@ -106,22 +142,54 @@
   flex: 1 0 0;
 }
 
-#input_text_perfil{
+#input_text_nombre{
   display: flex;
   align-items: center;
 }
 
-#inputPerfil{
+#input_text_tipo{
+  display: flex;
+  align-items: center;
+}
+
+#input_text_ape{
+  display: flex;
+  align-items: center;
+}
+
+#input_text_nro{
+  display: flex;
+  align-items: center;
+}
+
+#inputNombre{
   border: none;
   background: transparent;
   outline: none;
-  
+}
+
+#inputTipo{
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+#inputApe{
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+#inputNro{
+  border: none;
+  background: transparent;
+  outline: none;
 }
 
 .guardar{
   border-radius: 25px;
   border: 1px #79747E solid;
-  color: var(--m-3-sys-light-on-secondary-container, #1D192B);
+  color: #1D192B;
   text-align: center;
   /* M3/label/large */
   font-family: "Roboto", sans-serif;
@@ -129,18 +197,18 @@
   font-style: normal;
   font-weight: bold;
   line-height: 20px; /* 142.857% */
-  background: var(--m-3-sys-light-secondary-container, #E8DEF8);
+  background: var(--m-3-sys-light-secondary-container, #746d80);
   display: flex;
+  gap: 8px;
   padding: 10px 24px;
   justify-content: center;
   align-items: center;
-  gap: 8px;
   display: inline-flex;
   flex-direction: column;
   padding-left: 100px;
   padding-right: 100px;
-  margin-top: 2%;
-  margin-left: 3%;
+  margin-top: 0%;
+  margin-left: 18px;
 }
 
 .guardar:hover {
