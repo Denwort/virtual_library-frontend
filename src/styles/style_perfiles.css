@@ -24,7 +24,6 @@
     height: 40px;
     background: #FEF7FF;
     border-radius: 10px;
-    border: 1px #6750A4 solid;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,6 +32,21 @@
     margin-left: 324px;
     padding-left: 8px;
     padding-right: 8px;
+  }
+
+  #barra_perfil_usuario {
+    width: 747px;
+    height: 40px;
+    background: #FEF7FF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px; /* Espacio de 30px arriba */
+    margin-right: 11px;
+    margin-left: 324px;
+    padding-left: 83px;
+    padding-right: 83px;
   }
   
   #barra_texto_selected {
@@ -44,6 +58,18 @@
     word-wrap: break-word;
     flex: 1; /* Distribuir el espacio horizontalmente */
     text-align: center; /* Centrar el texto horizontalmente */
+  }
+
+  #barra_texto_selected_usuario {
+    color: #6750A4;
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 1000;
+    line-height: 34px;
+    flex: 1; /* Distribuir el espacio horizontalmente */
+    text-align: center; /* Centrar el texto horizontalmente */
+    margin-left: 25px;
+    margin-right: 25px;
   }
   
   #barra_texto_notselected {
@@ -57,6 +83,19 @@
     text-align: center;
   }
   
+  #barra_texto_notselected_usuario {
+    color: #79747E;
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    line-height: 16px;
+    word-wrap: break-word;
+    flex: 1;
+    text-align: center;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
   .selected {
     border-bottom: 5px #6750A4 solid;
   }
@@ -265,6 +304,30 @@
   outline: none;
 }
 
+#inputNombreUsu{
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+#inputTipoUsu{
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+#inputApeUsu{
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+#inputNroUsu{
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
 #inputCorreo{
   border: none;
   background: transparent;
@@ -272,6 +335,18 @@
 }
 
 #inputContra{
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+#inputCorreoUsu{
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+#inputContraUsu{
   border: none;
   background: transparent;
   outline: none;
@@ -298,7 +373,7 @@
 .guardar{
   border-radius: 25px;
   border: 1px #79747E solid;
-  color: #1D192B;
+  color: #6750A4;
   text-align: center;
   /* M3/label/large */
   font-family: "Roboto", sans-serif;

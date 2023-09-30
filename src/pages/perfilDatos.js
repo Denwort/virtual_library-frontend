@@ -104,7 +104,7 @@ const Perfil = () => <Layout content={
                 </div> 
             </div>
 
-            <input type="button" value ="Guardar" class="guardar"/>
+            <button type="button" class="guardar">Guardar</button>
 
             </div>
             {/* Aquí termina la columna*/}
