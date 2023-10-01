@@ -51,7 +51,7 @@ const login = () => {
 
             <div id="contenedorContra">
                 <div id="OlvideContra">
-                    <p><Link href="/olvideCon" class="olvC">Olvidé mi contraseña</Link></p>
+                    <p class="olvC">Olvidé mi contraseña</p>
                 </div>
             </div>
 
@@ -64,7 +64,7 @@ const login = () => {
                     <Link href="/registroUsuario" class="regis">Registro usuario</Link>
                 </div>
             </div>
-            <input type="button"  value ="Ingresar" id="bIngre"/>
+            <button  id="bIngre">Ingresar</button>
             </div>
             </form>
             

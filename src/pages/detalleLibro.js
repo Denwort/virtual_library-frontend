@@ -3,6 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout from './components/Layout.js'
 
+
+
 const detalleLibro = () => <Layout content={
     <>
     <Head>
@@ -61,7 +63,7 @@ const detalleLibro = () => <Layout content={
                 </div>
 
             </div>
-            <form action="reservarLibroDatos" method='get'>
+            <form action="reservarLibroDatos" onSubmit={hacernada}>
                 <div id="total-reserva">
                     <div id="contenedor_reserva-dl">
                         <h1 id="reservar-dl">Reservar</h1>
@@ -75,7 +77,7 @@ const detalleLibro = () => <Layout content={
                                         <p>Ingrese una Fecha limite</p>
                                     </div>
                                     <div id="input_text_usuario">
-                                        <input type='date' id="inputDate" value="2023-08-17"/>
+                                        <input type='date' id="inputDate" defaultValue={obtenerFechaActual()} onChange={handleChange}/>
                                     </div>
                                 </div>
                             </div>
@@ -85,20 +87,68 @@ const detalleLibro = () => <Layout content={
                         </div> 
                     </div>
                     <div id="contenedor_breservar">
-                        <input type="button"  value ="Reservar" id="bReserv"/>
+                        <button id="bReserv" onClick={reservardl} >Reservar</button>
                     </div>
+                    
                 </div>
             </form>
-
-
-
+            
         </div>
-
-
-
+        <div id="modalReser-dl" class="modal-container-dl">
+            <div class="modal-content-dl">
+                <h2>Reserva completada</h2>
+                <p>La reserva del recurso se ha realizado con éxito. Este debe ser devuelto hasta el día</p>
+                <div id="close-dl" class="cerrar-dl">
+                    <p>OK</p>
+                </div>
+            </div>
+        </div>
     </>
 
 }
 ></Layout>
 
 export default detalleLibro
+
+
+function obtenerFechaActual() {
+    const hoy = new Date();
+    const year = hoy.getFullYear();
+    const mes = String(hoy.getMonth() + 1).padStart(2, '0');
+    const dia = String(hoy.getDate()).padStart(2, '0');
+    return `${year}-${mes}-${dia}`;
+}
+function hacernada(e){
+    e.preventDefault()
+}
+function handleChange(event) {
+    const fechaSeleccionada = event.target.value;
+    // Realiza acciones con la fecha seleccionada si es necesario
+  }
+
+function reservardl() {
+    const inputDate = document.getElementById("inputDate");
+    const fechaParrafo = document.querySelector("#modalReser-dl p");
+    const openModal = document.getElementById("bReserv");
+    const modalReserva = document.getElementById("modalReser-dl");
+    const closeModal = document.getElementById("close-dl");
+
+    openModal.onclick = function(){
+        modalReserva.style.visibility = "visible";
+        const fechaSeleccionada = inputDate.value;
+        fechaParrafo.textContent = `La reserva del recurso se ha realizado con éxito. Este debe ser devuelto hasta el día ${fechaSeleccionada}`;
+    }
+
+    closeModal.onclick = function(){
+        modalReserva.style.visibility = "hidden";
+    }
+    // cerrar en ventana
+    modalReserva.onclick = function(){
+        modalReserva.style.visibility = "hidden";
+    }
+
+    // Aquí puedes realizar cualquier otra acción relacionada con la reserva
+
+  }
+
+
