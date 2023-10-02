@@ -6,7 +6,7 @@ import '../styles/style_page.css'
 import '../styles/globals.css'
 import '../styles/style_detalleLibro.css'
 import '../styles/modal.css'
-
+import '../styles/style_agregarLibroadm.css'
 
 import { AppProps } from 'next/app'
 
