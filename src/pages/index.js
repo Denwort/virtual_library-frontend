@@ -1,7 +1,13 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import {useRouter} from 'next/router'
+import cuentas from '../json/cuentas.json'
+import { useMiProvider } from './context/contexto'
 
 const login = () => {
+    const router = useRouter()
+    const [estado, setEstado] = useMiProvider()
+
     return(
     <>
         <Head>
@@ -14,7 +20,7 @@ const login = () => {
                 </div>
             </div>
 
-            <form action="enviarDatos" method='get'>
+            <form action="" onSubmit={hacerNada} method='get'>
             <div id="text_field_usuario">
                 <div class="text_field">
                     <div class="state_layer">
@@ -64,7 +70,33 @@ const login = () => {
                     <Link href="/registroUsuario" class="regis">Registro usuario</Link>
                 </div>
             </div>
-            <button  id="bIngre">Ingresar</button>
+            <button id="bIngre" onClick={
+                ()=>{
+                    let res = Object.entries(cuentas).filter(
+                        (item) => {
+                            console.log(item[1])
+                            return item[1].correo == document.getElementById("inputUsu").value && 
+                            item[1].contrasenha == document.getElementById("inputContr").value}
+                    )
+                    if (res.length == 0) {
+                        alert("Datos incorrectos")
+                        return
+                    }
+
+                    let cuenta = res[0][1]
+                    if(cuenta.tipo == "admin"){
+                        console.log("administrador")
+                        setEstado('admin')
+                        router.push('/page')
+                    }
+                    else if(cuenta.tipo == "user"){
+                        console.log("usuario")
+                        setEstado('user')
+                        router.push('/page')
+                    }
+                    
+                }
+            }>Ingresar</button>
             </div>
             </form>
             
@@ -75,3 +107,8 @@ const login = () => {
 
 
 export default login
+
+
+function hacerNada(e){
+    e.preventDefault()
+}

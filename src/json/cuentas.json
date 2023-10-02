@@ -1,5 +1,6 @@
 [
     {
+        "tipo": "admin",
         "nombres": "admin",
         "apellidos" : "administrador",
         "tipo_documento" : "DNI",
@@ -10,5 +11,15 @@
         "idioma": "Español",
         "prefijo": "Sr.",
         "color": "#a1a1a1"
+    },
+    {
+        "tipo": "user",
+        "nombres": "David",
+        "apellidos" : "Mamani",
+        "tipo_documento" : "DNI",
+        "nro_doc/umento" : "76313767",
+        "correo" : "20211589@aloe.ulima.edu.pe",
+        "contrasenha" : "copapiston",
+        "foto" : "https://images.cdn2.buscalibre.com/fit-in/360x360/7e/5b/7e5bc71577b67b9a01af23568c1c74d6.jpg"
     }
 ]

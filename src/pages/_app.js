@@ -9,7 +9,12 @@ import '../styles/modal.css'
 import '../styles/style_agregarLibroadm.css'
 
 import { AppProps } from 'next/app'
+import { MiProvider } from './context/contexto'
 
 export default function MyApp( {Component, pageProps}) {
-    return <Component { ...pageProps} />
+    return (
+        <MiProvider>
+            <Component { ...pageProps} />
+        </MiProvider>
+    )
 }
