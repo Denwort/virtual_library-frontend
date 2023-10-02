@@ -1,0 +1,14 @@
+[
+    {
+        "nombres": "admin",
+        "apellidos" : "administrador",
+        "tipo_documento" : "DNI",
+        "nro_documento" : "99999999",
+        "correo" : "admin@aloe.ulima.edu.pe",
+        "contrasenha" : "password",
+        "foto" : "https://images.cdn1.buscalibre.com/fit-in/180x180/17/81/1781448af0263f21662db6c27bc1b48a.jpg",
+        "idioma": "Español",
+        "prefijo": "Sr.",
+        "color": "#a1a1a1"
+    }
+]
