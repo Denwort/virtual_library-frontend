@@ -3,10 +3,21 @@ import { createContext, useContext, useState } from 'react'
 const Context = createContext()
 
 export function MiProvider(  {children}  ){
-    const [estado, setEstado] = useState('user')
+
+    // Valores iniciales de una cuenta de invitado
+    const [cuenta, setCuenta] = useState({
+        "tipo": "invitado",
+        "nombres": "invitado",
+        "apellidos": "",
+        "tipo_documento" : "",
+        "nro_documento" : "",
+        "correo" : "",
+        "contrasenha" : "",
+        "foto" : "/boton_perfil.png"
+    }) 
 
     return (
-        <Context.Provider value={[estado, setEstado]}>
+        <Context.Provider value={[cuenta, setCuenta]}>
             {children}
         </Context.Provider>
     )

@@ -1,7 +1,51 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import {useState} from 'react'
+import {useRouter} from 'next/router'
 
 const registroUsuario = () => {
+
+    const router = useRouter()
+
+    // Valores por defecto de un nuevo usuario
+    const [nuevo, setNuevo] = useState({
+        "tipo": "user",
+        "nombres": "",
+        "apellidos": "",
+        "tipo_documento" : "",
+        "nro_documento" : "",
+        "correo" : "",
+        "contrasenha" : "",
+        "foto" : "/boton_perfil.png"
+    })
+
+    function registrarCambio(e){
+        setNuevo({...nuevo, [e.target.name]:e.target.value})
+    }
+    
+    const escribirJSON = async () =>{
+        const params = JSON.stringify(nuevo)
+        try {
+            const peticion = await fetch (
+                '/api/registroAPI',
+                {
+                    method : 'POST',
+                    body : params,
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    }
+                }
+            )
+
+            const data = await peticion.json()
+            router.push('/login')
+
+        } catch (err) {
+            console.log(err)
+        }
+  
+    }
+
     return(
     <>
         <Head>
@@ -19,7 +63,7 @@ const registroUsuario = () => {
                 </div>
             </div>
 
-            <form action="enviarDatos" method='get' id="formulario_registro">
+            <form action=""  onSubmit={(e)=>e.preventDefault()} method='get' id="formulario_registro">
 
                 <div id="todo_datPers">
                     <div id="text_datosPersonales">
@@ -33,7 +77,7 @@ const registroUsuario = () => {
                                         <p>Nombres</p>
                                     </div>
                                     <div id="input_text_usuario">
-                                        <input type='text'  id="nombres"/>
+                                        <input type='text'  id="nombres" name="nombres" onChange={registrarCambio}/>
                                     </div>
                                 </div>
                             </div>
@@ -50,7 +94,7 @@ const registroUsuario = () => {
                                         <p>Apellidos</p>
                                     </div>
                                     <div id="input_text_usuario">
-                                        <input type='text'  id="apellidos"/>
+                                        <input type='text'  id="apellidos" name="apellidos" onChange={registrarCambio}/>
                                     </div>
                                 </div>
                             </div>
@@ -67,7 +111,7 @@ const registroUsuario = () => {
                                         <p>Tipo de Documento</p>
                                     </div>
                                     <div id="input_text_usuario">
-                                        <input type='text'  id="tipoDoc" />
+                                        <input type='text'  id="tipoDoc" name="tipo_documento" onChange={registrarCambio}/>
                                     </div>
                                 </div>
                             </div>
@@ -85,7 +129,7 @@ const registroUsuario = () => {
                                         <p>Nro Documento</p>
                                     </div>
                                     <div id="input_text_usuario">
-                                        <input type='text'  id="nroDoc"/>
+                                        <input type='text'  id="nroDoc" name="nro_documento" onChange={registrarCambio}/>
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +152,7 @@ const registroUsuario = () => {
                                         <p>Correo Electrónico</p>
                                     </div>
                                     <div id="input_text_usuario">
-                                        <input type='email'  id="email"/>
+                                        <input type='email'  id="email" name="correo" onChange={registrarCambio}/>
                                     </div>
                                 </div>
                             </div>
@@ -126,7 +170,7 @@ const registroUsuario = () => {
                                         <p>Password</p>
                                     </div>
                                     <div id="input_text_usuario">
-                                        <input type='password'  id="password"/>
+                                        <input type='password'  id="password" name="contrasenha" onChange={registrarCambio}/>
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +199,7 @@ const registroUsuario = () => {
                     </div>
                     
                     <div id="alinearBoton">
-                        <button id="bReg">Registrar</button>
+                        <button id="bReg" onClick={escribirJSON}>Registrar</button>
                     </div>
                 </div>
             </form>
@@ -165,5 +209,5 @@ const registroUsuario = () => {
     </>
 )}
 
-
 export default registroUsuario
+
