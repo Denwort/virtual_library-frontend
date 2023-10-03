@@ -13,6 +13,31 @@ const Perfil = () => {
     function registrarCambio(e){
         cuenta_modificada[e.target.name] = e.target.value
     }
+
+    const guardarFoto = async (e) => {
+       if(e.target.files){
+            const foto = e.target.files[0]
+            const fd=new FormData()
+            fd.append('myfile',foto)
+            try {
+                const res = await fetch (
+                    '/api/imagenAPI',
+                    {
+                        method: 'POST',
+                        body: fd,
+                        headers: {
+                            "Content-Type": "image/jpeg",
+                        }
+                    }
+                )
+                const response=await res.json(); 
+                alert("imagen actualizada")
+            } catch (err) {
+                console.log(err)
+            }
+
+        }
+    }
     
     const escribirJSON = async () =>{
         const params = JSON.stringify(cuenta_modificada)
@@ -64,6 +89,7 @@ const Perfil = () => {
                     <div class="col-span-1">
                         <div id="imagen_perfil">
                             <Image src="/juliana.png" width={279} height={253} ></Image>
+                            <input type="file" name="imagen" onChange={guardarFoto}/>                      
                         </div>
                     </div>
                     <div class="col-span-1">
