@@ -6,19 +6,25 @@ const nextConfig = {
                 protocol : 'https',
                 hostname : 'images.cdn1.buscalibre.com',
                 port: '',
-                pathname : '/**'
+                pathname : '/**',
             },
             {
                 protocol : 'https',
                 hostname : 'images.cdn3.buscalibre.com',
                 port: '',
-                pathname : '/**'
+                pathname : '/**',
             },
             {
                 protocol : 'https',
                 hostname : 'images.cdn2.buscalibre.com',
                 port: '',
-                pathname : '/**'
+                pathname : '/**',
+            },
+            {
+                protocol : 'http',
+                hostname : 'dummyimage.com',
+                port: '',
+                pathname : '/**',
             }
         ]
     }
