@@ -23,6 +23,7 @@ header {
     align-items: center;
     background: var(--m-3-sys-light-surface-container, #F3EDF7);
     margin: 0;
+    z-index: 3;
 }
 
 
@@ -76,6 +77,7 @@ nav {
     margin: 0;
     height: 100%;
     width: 150px;
+    z-index: 1;
 }
 
 nav > ul {
@@ -115,6 +117,7 @@ footer {
     position: fixed;
     margin: 0;
     width: 150px;
+    z-index: 2;
 }
 
 footer p {
