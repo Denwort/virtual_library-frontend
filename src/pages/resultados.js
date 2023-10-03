@@ -4,10 +4,12 @@ import Image from 'next/image'
 import Layout from './components/Layout.js'
 import {useMiProvider} from './context/contexto'
 import resultados from '../json/resultados.json'
+import {useRouter} from 'next/router'
 
 const busqueda = () => 
 {
     const [cuenta, setCuenta] = useMiProvider()
+    const router = useRouter()
     
     let boton_texto = ''
     let boton_href = ''
@@ -52,7 +54,9 @@ const busqueda = () =>
                 {Object.entries(resultados).map( (value,index) => {
                     return ( 
                     
-                        <div class="w-80 h-96 border-2 border-gray-400 rounded-lg" key={index}>
+                        <div class="w-80 h-96 border-2 border-gray-400 rounded-lg cursor-pointer" key={value[1].id} onClick={()=>{
+                            router.push('/libro/'+value[1].id)
+                        }}>
                             <div class="h-10 flex justify-between items-center m-4">
                                 <div class="w-10 h-10 inline-flex bg-purple-primary text-purple-bg justify-center items-center text-center rounded-full">PP</div>
                                 <div class="w-60 h-18 line-clamp-3 pl-2 text-purple-primary text-left items-center align-middle">{value[1].titulo}</div>
@@ -66,7 +70,8 @@ const busqueda = () =>
                                 <div>Editorial: {value[1].editorial}</div>
                             </div>
                             <div class="h-14 flex justify-center items-center">
-                                <button type="button" disabled={boton_disabled} class="bg-purple-bg text-purple-primary border-2 border-purple-header px-4 py-2 hover:bg-blue-600  rounded-full">{boton_texto}</button>
+                                <button type="button" disabled={boton_disabled} 
+                                class="bg-purple-primary text-purple-bg border-2 border-purple-primary px-4 py-2 hover:bg-blue-600  rounded-full">{boton_texto}</button>
                             </div>
                         </div>
                     )}

@@ -2,11 +2,15 @@ import Link from "next/link"
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from './components/Layout.js'
-import {useMiProvider} from './context/contexto'
+import {useMiProvider} from './context/contexto.js'
+import {useRouter} from 'next/router'
 
 
 const busqueda = () => 
 {
+
+    const router = useRouter()
+
     return (
         <Layout content={
         <>
@@ -99,7 +103,11 @@ const busqueda = () =>
                     </form>
                     <div class="text-right space-x-2 ">
                         <button type="submit" class="bg-purple-bg text-purple-primary px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full">Limpiar</button>
-                        <button type="submit" class="bg-purple-primary text-purple-bg px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full">Buscar</button>
+                        <button type="submit" class="bg-purple-primary text-purple-bg px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full"
+                        onClick={()=>{
+                            router.push('/resultados')
+                        }}
+                        >Buscar</button>
                     </div>
                 </div>
             

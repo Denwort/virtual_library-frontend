@@ -2,7 +2,7 @@ import Link from "next/link"
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/Layout.js'
-import libros from '../../json/library.json'
+import libros from '../../json/libreria.json'
 import {useRouter} from 'next/router'
 
 const detalleLibro = () => 
@@ -26,7 +26,7 @@ const detalleLibro = () =>
                     <div id="state-layer-tituloLibro">
                         <div id="circuloConInicial">
                             <div id="BuildingblockeCircular">
-                                <p id="nombre-dl">JS</p>
+                                <p id="nombre-dl">PP</p>
                             </div>
                         </div>
                         <div id="content_libro_dl">
@@ -35,10 +35,10 @@ const detalleLibro = () =>
                         </div>
                     </div>
                     <div id="cont_libr_dl">
-                        <Image src={p["imagen-portada-url"]} width={184} height={151} alt="imagenLib" id="imglibro" class="w-auto h-40"></Image>
+                        <Image src={p.imagen} width={184} height={151} alt="imagenLib" id="imglibro" class="w-auto h-40"></Image>
                     </div>
                     <div id="contenedor_texto-dl">
-                        <p id="texto-dl">Este libro sólo tiene un objetivo principal: provocar el inicio de un nuevo campo de estudio: la programación informática como actividad humana o, en pocas palabras, la psicología de la programación informática. Todos los demás objetivos están subordinados a éste. Por ejemplo, he intentado que el libro sea interesante y no técnico, en la medida de lo posible, para animar al mayor número posible de personas a leerlo: no sólo programadores, sino gestores de programación y otras personas relacionadas con la programación en las muchas formas en que estamos relacionados con la programación hoy en día. Lo que intento conseguir es que el lector diga, al terminar el libro: "Sí, la programación no es sólo una cuestión de hardware y software. A partir de ahora tendré que ver las cosas de otra manera".</p>
+                        <p id="texto-dl">{p.descripcion}</p>
                     </div>
                     <div id="todo-edit">
                         <div id="contenedor_editorial-dl">
@@ -54,12 +54,12 @@ const detalleLibro = () =>
                     <div id="todosTopicos">
                         <div id="contenedor_topi1">
                             <div class="topi-stateLayer">
-                                <p id="top1">{p.categoria}</p>
+                                <p id="top1">{p.genero}</p>
                             </div>
                         </div>
                         <div id="contenedor_topi2">
                             <div class="topi-stateLayer">
-                                <p id="top2">{p["Categoría(s)"]}</p>
+                                <p id="top2">{p.genero}</p>
                             </div>
                         </div>
                     </div>

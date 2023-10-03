@@ -1,5 +1,6 @@
 [
 	{
+		"id": "0",
 		"tipo": "admin",
 		"nombres": "admin",
 		"apellidos": "administrador",
@@ -13,6 +14,7 @@
 		"color": "#a1a1a1"
 	},
 	{
+		"id": "1",
 		"tipo": "user",
 		"nombres": "David",
 		"apellidos": "Mamani",
@@ -23,6 +25,7 @@
 		"foto": "https://images.cdn2.buscalibre.com/fit-in/360x360/7e/5b/7e5bc71577b67b9a01af23568c1c74d6.jpg"
 	},
 	{
+		"id": "3",
 		"tipo": "user",
 		"nombres": "prueba_final",
 		"apellidos": "registrado",
@@ -30,6 +33,28 @@
 		"nro_documento": "77777777",
 		"correo": "alumno@ulima.edu.pe",
 		"contrasenha": "alumnito",
+		"foto": "/boton_perfil.png"
+	},
+	{
+		"id": "3",
+		"tipo": "user",
+		"nombres": "pruebita3",
+		"apellidos": "abc",
+		"tipo_documento": "dni",
+		"nro_documento": "77777778",
+		"correo": "pruebita3@gmail.com",
+		"contrasenha": "pruebita3",
+		"foto": "/boton_perfil.png"
+	},
+	{
+		"id": "4",
+		"tipo": "user",
+		"nombres": "aaa",
+		"apellidos": "sdds",
+		"tipo_documento": "dsad",
+		"nro_documento": "asdsa",
+		"correo": "dasd",
+		"contrasenha": "asdas",
 		"foto": "/boton_perfil.png"
 	}
 ]

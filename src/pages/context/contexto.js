@@ -6,7 +6,8 @@ export function MiProvider(  {children}  ){
 
     // Valores iniciales de una cuenta de invitado
     const [cuenta, setCuenta] = useState({
-        "tipo": "invitado",
+        "id": "-1",
+        "tipo": "guest",
         "nombres": "invitado",
         "apellidos": "",
         "tipo_documento" : "",
