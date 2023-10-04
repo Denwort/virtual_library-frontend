@@ -3,9 +3,51 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout from './components/Layout.js'
 import {useMiProvider} from './context/contexto'
+import {useState} from 'react'
 
 const Perfil = () => {
     const [cuenta, setCuenta] = useMiProvider()
+
+    const [nuevoLibro, setNuevoLibro] = useState({
+        "id": "",
+        "titulo": "",
+        "isbn": "",
+        "genero": "",
+        "autor": "",
+        "editorial": "",
+        "descripcion": "",
+        "imagen": ""
+    })
+
+    function registrarCambio(e){
+        setNuevoLibro({...nuevoLibro, [e.target.name]:e.target.value})
+    }
+
+    const escribirJSON = async () =>{
+        
+        const params = JSON.stringify(nuevoLibro)
+        try {
+            const peticion = await fetch (
+                '/api/agregarLibroAPI',
+                {
+                    method : 'POST',
+                    body : params,
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    }
+                }
+            )
+
+            const data = await peticion.json()
+            guardarLib()
+            alert("libro registrado")
+
+        } catch (err) {
+            console.log(err)
+        }
+  
+    }
+
 
     return (<Layout content={
         <>
@@ -39,7 +81,7 @@ const Perfil = () => {
                                                 <p>TÍTULO</p>
                                             </div>
                                             <div id="input_text_idioma">
-                                                <input type='text' id="inputTituloLibro" />
+                                                <input type='text' id="inputTituloLibro" name="titulo" onChange={registrarCambio}/>
                                             </div>
                                         </div>
                                     </div>
@@ -57,7 +99,7 @@ const Perfil = () => {
                                                 <p>Autor,autores</p>
                                             </div>
                                             <div id="input_text_prefijo">
-                                                <input type='text' id="inputAutorLibro" />
+                                                <input type='text' id="inputAutorLibro" name="autor" onChange={registrarCambio}/>
                                             </div>
                                         </div>
                                     </div>
@@ -75,7 +117,7 @@ const Perfil = () => {
                                                 <p>ISBN</p>
                                             </div>
                                             <div id="input_text_color">
-                                                <input type='text' id="inputisbn" />
+                                                <input type='text' id="inputisbn" name="isbn" onChange={registrarCambio}/>
                                             </div>
                                         </div>
                                     </div>
@@ -92,7 +134,7 @@ const Perfil = () => {
                                                 <p>Serie, tipo</p>
                                             </div>
                                             <div id="input_text_color">
-                                                <input type='text' id="inputSerie" />
+                                                <input type='text' id="inputSerie" name="genero" onChange={registrarCambio}/>
                                             </div>
                                         </div>
                                     </div>
@@ -109,7 +151,7 @@ const Perfil = () => {
                                                 <p>Descripcion</p>
                                             </div>
                                             <div id="input_text_color">
-                                                <input type='text' id="inputDescripcion" />
+                                                <input type='text' id="inputDescripcion" name="descripcion" onChange={registrarCambio}/>
                                             </div>
                                         </div>
                                     </div>
@@ -124,10 +166,10 @@ const Perfil = () => {
                                     <div class="state_layer">
                                         <div class="content_perfil">
                                             <div id="text_perfil">
-                                                <p>Topicos</p>
+                                                <p>Editorial</p>
                                             </div>
                                             <div id="input_text_color">
-                                                <input type='text' id="inputtopico" />
+                                                <input type='text' id="inputtopico" name="editorial" onChange={registrarCambio}/>
                                             </div>
                                         </div>
                                     </div>
@@ -138,7 +180,7 @@ const Perfil = () => {
                             </div>
 
 
-                            <button id="GuardarLibro" class="guardar" onClick={guardarLib}>Guardar</button>
+                            <button id="GuardarLibro" class="guardar" onClick={escribirJSON}>Guardar</button>
 
                         </div>
                         {/* Aquí termina la columna*/}
