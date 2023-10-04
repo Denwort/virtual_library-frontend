@@ -16,6 +16,9 @@ module.exports = {
       'purple-header': '#F3EDF7',
     },
   },
-  plugins: [],
+  plugins: [
+    // ...
+    require('@tailwindcss/line-clamp'),
+  ],
 }
 

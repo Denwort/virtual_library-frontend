@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import {useState} from 'react'
 import {useRouter} from 'next/router'
+import cuentas from '../json/cuentas.json'
 
 const registroUsuario = () => {
 
@@ -9,6 +10,7 @@ const registroUsuario = () => {
 
     // Valores por defecto de un nuevo usuario
     const [nuevo, setNuevo] = useState({
+        "id": (cuentas.length).toString(),
         "tipo": "user",
         "nombres": "",
         "apellidos": "",
@@ -24,6 +26,11 @@ const registroUsuario = () => {
     }
     
     const escribirJSON = async () =>{
+        if(document.getElementById("password").value != document.getElementById("nuevaPass").value){
+            alert("Las contraseñas no coinciden")
+            return
+        }
+        
         const params = JSON.stringify(nuevo)
         try {
             const peticion = await fetch (
