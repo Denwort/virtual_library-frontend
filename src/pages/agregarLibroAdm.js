@@ -24,12 +24,8 @@ const Perfil = () => {
     }
 
     const escribirJSON = async () =>{
-        if(document.getElementById("password").value != document.getElementById("nuevaPass").value){
-            alert("Las contraseñas no coinciden")
-            return
-        }
         
-        const params = JSON.stringify(nuevo)
+        const params = JSON.stringify(nuevoLibro)
         try {
             const peticion = await fetch (
                 '/api/agregarLibroAPI',

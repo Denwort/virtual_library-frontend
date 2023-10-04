@@ -10,7 +10,7 @@ export default async function registoAPI (req, res) {
 
         const tmp = JSON.stringify(req.body).replace("'",'"')
         const body = JSON.parse(tmp)
-        
+
         body["id"] = libros.length.toString()
 
         libros.push(body)
