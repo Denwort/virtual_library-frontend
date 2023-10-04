@@ -16,17 +16,6 @@
 	{
 		"id": "1",
 		"tipo": "user",
-		"nombres": "David",
-		"apellidos": "Mamani",
-		"tipo_documento": "DNI",
-		"nro_doc/umento": "76313767",
-		"correo": "20211589@aloe.ulima.edu.pe",
-		"contrasenha": "copapiston",
-		"foto": "https://images.cdn2.buscalibre.com/fit-in/360x360/7e/5b/7e5bc71577b67b9a01af23568c1c74d6.jpg"
-	},
-	{
-		"id": "3",
-		"tipo": "user",
 		"nombres": "prueba_final",
 		"apellidos": "registrado",
 		"tipo_documento": "dni",
@@ -36,7 +25,7 @@
 		"foto": "/boton_perfil.png"
 	},
 	{
-		"id": "3",
+		"id": "2",
 		"tipo": "user",
 		"nombres": "pruebita3",
 		"apellidos": "abc",
@@ -47,7 +36,7 @@
 		"foto": "/boton_perfil.png"
 	},
 	{
-		"id": "4",
+		"id": "3",
 		"tipo": "user",
 		"nombres": "aaa",
 		"apellidos": "sdds",
@@ -55,6 +44,28 @@
 		"nro_documento": "asdsa",
 		"correo": "dasd",
 		"contrasenha": "asdas",
+		"foto": "/boton_perfil.png"
+	},
+	{
+		"id": "4",
+		"tipo": "user",
+		"nombres": "123",
+		"apellidos": "123",
+		"tipo_documento": "123",
+		"nro_documento": "123",
+		"correo": "123",
+		"contrasenha": "123",
+		"foto": "/boton_perfil.png"
+	},
+	{
+		"id": "5",
+		"tipo": "user",
+		"nombres": "prueba_cambio_ids",
+		"apellidos": "xd",
+		"tipo_documento": "sjh",
+		"nro_documento": "jisjfjsd",
+		"correo": "jhfsdjfsd@gmail.com",
+		"contrasenha": "aaa",
 		"foto": "/boton_perfil.png"
 	}
 ]

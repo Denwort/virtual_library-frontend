@@ -1,34 +1,32 @@
 import Link from "next/link"
 import Head from 'next/head'
 import Image from 'next/image'
-import Layout from './components/Layout.js'
-import {useMiProvider} from './context/contexto'
+import Layout from '../components/Layout'
+import {useMiProvider} from '../context/contexto.js'
 import {useState} from 'react'
+import {useRouter} from 'next/router'
+import libros from '../../json/libreria.json'
 
-const Perfil = () => {
+const ModificarLibro = () => {
+
+    const router = useRouter()
     const [cuenta, setCuenta] = useMiProvider()
+    
+    const p = libros[router.query.id]
+    if (!p) return <p></p>
 
-    const [nuevoLibro, setNuevoLibro] = useState({
-        "id": "",
-        "titulo": "",
-        "isbn": "",
-        "genero": "",
-        "autor": "",
-        "editorial": "",
-        "descripcion": "",
-        "imagen": ""
-    })
-
+    let libroModificado = {...p}
+    
     function registrarCambio(e){
-        setNuevoLibro({...nuevoLibro, [e.target.name]:e.target.value})
+        libroModificado[e.target.name] = e.target.value
     }
 
     const escribirJSON = async () =>{
         
-        const params = JSON.stringify(nuevoLibro)
+        const params = JSON.stringify(libroModificado)
         try {
             const peticion = await fetch (
-                '/api/agregarLibroAPI',
+                '/api/modificarLibroAPI',
                 {
                     method : 'POST',
                     body : params,
@@ -40,7 +38,7 @@ const Perfil = () => {
 
             const data = await peticion.json()
             guardarLib()
-            alert("libro registrado")
+            alert("libro modificado")
 
         } catch (err) {
             console.log(err)
@@ -56,19 +54,19 @@ const Perfil = () => {
             </Head>
             <div id="tituloP2">
                 <p>Hola, {cuenta.nombres}</p>
-                <Image src="/divider.png" width={1088} height={1} ></Image>
+                <Image src="/divider.png" width={1088} height={1} alt="imagen de libro"></Image>
             </div>
             <div id="form_perfil2">
                 <div id="barra_perfil">
                     <div id="barra_texto_notselected" class="selected2">
-                        <p id="txt_insertar">INSERTAR NUEVO LIBRO</p>
+                        <p id="txt_insertar">MODIFICAR LIBRO</p>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-2 gap-4">
                     <div class="col-span-1">
                         <div id="imagen_perfil2">
-                            <Image src="/Rectangle 5.png" width={279} height={253} ></Image>
+                            <Image src="/Rectangle 5.png" width={279} height={253} alt="rectangulo"></Image>
                         </div>
                     </div>
                     <form action="registrarLibro" onSubmit={hacernada}>
@@ -81,7 +79,7 @@ const Perfil = () => {
                                                 <p>TÍTULO</p>
                                             </div>
                                             <div id="input_text_idioma">
-                                                <input type='text' id="inputTituloLibro" name="titulo" onChange={registrarCambio}/>
+                                                <input type='text' id="inputTituloLibro" name="titulo" onChange={registrarCambio} defaultValue={libroModificado.titulo}/>
                                             </div>
                                         </div>
                                     </div>
@@ -99,7 +97,7 @@ const Perfil = () => {
                                                 <p>Autor,autores</p>
                                             </div>
                                             <div id="input_text_prefijo">
-                                                <input type='text' id="inputAutorLibro" name="autor" onChange={registrarCambio}/>
+                                                <input type='text' id="inputAutorLibro" name="autor" onChange={registrarCambio} defaultValue={libroModificado.autor}/>
                                             </div>
                                         </div>
                                     </div>
@@ -117,7 +115,7 @@ const Perfil = () => {
                                                 <p>ISBN</p>
                                             </div>
                                             <div id="input_text_color">
-                                                <input type='text' id="inputisbn" name="isbn" onChange={registrarCambio}/>
+                                                <input type='text' id="inputisbn" name="isbn" onChange={registrarCambio} defaultValue={libroModificado.isbn}/>
                                             </div>
                                         </div>
                                     </div>
@@ -134,7 +132,7 @@ const Perfil = () => {
                                                 <p>Serie, tipo</p>
                                             </div>
                                             <div id="input_text_color">
-                                                <input type='text' id="inputSerie" name="genero" onChange={registrarCambio}/>
+                                                <input type='text' id="inputSerie" name="genero" onChange={registrarCambio} defaultValue={libroModificado.genero}/>
                                             </div>
                                         </div>
                                     </div>
@@ -151,7 +149,7 @@ const Perfil = () => {
                                                 <p>Descripcion</p>
                                             </div>
                                             <div id="input_text_color">
-                                                <input type='text' id="inputDescripcion" name="descripcion" onChange={registrarCambio}/>
+                                                <input type='text' id="inputDescripcion" name="descripcion" onChange={registrarCambio} defaultValue={libroModificado.descripcion}/>
                                             </div>
                                         </div>
                                     </div>
@@ -169,7 +167,7 @@ const Perfil = () => {
                                                 <p>Editorial</p>
                                             </div>
                                             <div id="input_text_color">
-                                                <input type='text' id="inputtopico" name="editorial" onChange={registrarCambio}/>
+                                                <input type='text' id="inputtopico" name="editorial" onChange={registrarCambio} defaultValue={libroModificado.editorial}/>
                                             </div>
                                         </div>
                                     </div>
@@ -202,7 +200,7 @@ const Perfil = () => {
     ></Layout>
     )
 }
-export default Perfil
+export default ModificarLibro
 
 function hacernada(e){
     e.preventDefault()

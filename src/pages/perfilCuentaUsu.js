@@ -2,8 +2,45 @@ import Link from "next/link"
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from './components/Layout.js'
+import { useMiProvider } from './context/contexto'
 
-const Perfil = () => <Layout content={
+const Perfil = () => {
+
+    const [cuenta, setCuenta] = useMiProvider()
+
+    let cuenta_modificada = {...cuenta}
+
+    function registrarCambio(e){
+        cuenta_modificada[e.target.name] = e.target.value
+    }
+    
+    const escribirJSON = async () =>{
+        const params = JSON.stringify(cuenta_modificada)
+        try {
+            const peticion = await fetch (
+                '/api/modificarAPI',
+                {
+                    method : 'POST',
+                    body : params,
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    }
+                }
+            )
+
+            const data = await peticion.json()
+            alert("Datos actualizados")
+
+        } catch (err) {
+            console.log(err)
+        }
+  
+    }
+
+    return (
+
+<Layout content={
+
 <>
     <Head>
         <title>Perfil</title>
@@ -37,7 +74,7 @@ const Perfil = () => <Layout content={
                                 <p>Correo</p>
                             </div>
                             <div id="input_text_correo">
-                                <input type='email' placeholder='Ingrese correo' id="inputCorreoUsu"/>
+                                <input type='email' placeholder='Ingrese correo' id="inputCorreoUsu" onChange={registrarCambio}/>
                             </div>
                         </div>
                     </div>
@@ -55,7 +92,7 @@ const Perfil = () => <Layout content={
                                 <p>Contraseña</p>
                             </div>
                             <div id="input_text_contra">
-                                <input type='password' placeholder='Ingrese contraseña' id="inputContraUsu"/>
+                                <input type='password' placeholder='Ingrese contraseña' id="inputContraUsu" onChange={registrarCambio}/>
                             </div>
                         </div>
                     </div>
@@ -65,7 +102,7 @@ const Perfil = () => <Layout content={
                 </div> 
             </div>
 
-            <button type="button" class="guardar">Guardar</button>
+            <button type="button" class="guardar" onClick={escribirJSON}>Guardar</button>
 
             </div>
             {/* Aquí termina la columna*/}
@@ -76,4 +113,6 @@ const Perfil = () => <Layout content={
 </>
 }
 ></Layout>
+    )
+}
 export default Perfil

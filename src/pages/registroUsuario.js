@@ -10,7 +10,7 @@ const registroUsuario = () => {
 
     // Valores por defecto de un nuevo usuario
     const [nuevo, setNuevo] = useState({
-        "id": (cuentas.length).toString(),
+        "id": "",
         "tipo": "user",
         "nombres": "",
         "apellidos": "",

@@ -98,6 +98,34 @@ const detalleLibro = () =>
                         
                     </div>
                 </form>
+
+             <button onClick={ async () =>{
+        
+                                    const params = JSON.stringify(p)
+                                    try {
+                                        const peticion = await fetch (
+                                            '/api/eliminarLibroAPI',
+                                            {
+                                                method : 'POST',
+                                                body : params,
+                                                headers : {
+                                                    'Content-Type' : 'application/json'
+                                                }
+                                            }
+                                        )
+                            
+                                        const data = await peticion.json()
+                                        guardarLib()
+                                        alert("libro eliminado")
+                            
+                                    } catch (err) {
+                                        console.log(err)
+                                    }
+                              
+                                }}>Eliminar</button>
+                
+                 
+
                 
             </div>
             <div id="modalReser-dl" class="modal-container-dl">
