@@ -69,7 +69,7 @@ const Perfil = () => {
                 <title>Perfil</title>
             </Head>
             <div id="tituloP">
-                    <p>Hola, Juan</p>
+                    <p>Hola, {cuenta.nombres}</p>
                     <Image src="/divider.png" width={1088} height={1}></Image>
             </div>
             <div id="form_perfil">

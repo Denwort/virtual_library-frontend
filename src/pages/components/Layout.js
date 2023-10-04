@@ -26,7 +26,7 @@ export default props => {
     else if (cuenta.tipo == 'user') {
         titulo = 'Sistema de bibliotecas'
         tercer_link_titulo = 'Prestamos'
-        tercer_link_href = '/busqueda'
+        tercer_link_href = '/busquedaUsu'
         foto_src = cuenta.foto
         foto_href = '/perfilDatosUsu'
     }
