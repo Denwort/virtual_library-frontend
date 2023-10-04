@@ -4,7 +4,7 @@ import cuentas from '../../json/cuentas.json'
 
 export default async function registoAPI (req, res) {
     if(req.method !== 'POST'){
-        res.status(405).send({"error": "metodo invalido"})
+        req.status(405).send({"error": "metodo invalido"})
     }
     else if(req.method === 'POST'){
         
@@ -12,7 +12,6 @@ export default async function registoAPI (req, res) {
         const body = JSON.parse(tmp)
         
         cuentas[body.id] = body
-        
         console.log(body)
         console.log(cuentas)
         await fsPromises.writeFile(

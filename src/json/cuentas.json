@@ -14,7 +14,7 @@
 		"color": "#a1a1a1"
 	},
 	{
-		"id": "0",
+		"id": "1",
 		"tipo": "user",
 		"nombres": "prueba_final",
 		"apellidos": "registrado",
@@ -25,7 +25,7 @@
 		"foto": "/boton_perfil.png"
 	},
 	{
-		"id": "0",
+		"id": "2",
 		"tipo": "user",
 		"nombres": "pruebita3",
 		"apellidos": "abc",
@@ -36,7 +36,7 @@
 		"foto": "/boton_perfil.png"
 	},
 	{
-		"id": "0",
+		"id": "3",
 		"tipo": "user",
 		"nombres": "aaa",
 		"apellidos": "sdds",
@@ -47,7 +47,7 @@
 		"foto": "/boton_perfil.png"
 	},
 	{
-		"id": "0",
+		"id": "4",
 		"tipo": "user",
 		"nombres": "123",
 		"apellidos": "123",
@@ -58,7 +58,7 @@
 		"foto": "/boton_perfil.png"
 	},
 	{
-		"id": "0",
+		"id": "5",
 		"tipo": "user",
 		"nombres": "prueba_cambio_ids",
 		"apellidos": "xd",
