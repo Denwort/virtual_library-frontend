@@ -9,41 +9,35 @@ import libreria from '../json/libreria.json'
 const busqueda = () => {
     const [palabraclave, setPalabraclave] = useState("");
     const [searchResults, setSearchResults] = useState([]);
+    const [tipoRecurso, setTipoRecurso] = useState("");
     const [selectedFilters, setSelectedFilters] = useState([]);
 
     const handleSearch = (e) => {
         e.preventDefault();
-    
+        console.log(palabraclave)
         // Inicializa results con la lista completa de libros
         let results = libreria;
-    
-        // Filtrar por campos seleccionados en los checkboxes
-        selectedFilters.forEach((filter) => {
-            switch (filter) {
-                case "titulo":
-                    results = results.filter((book) =>
-                        book.titulo.toLowerCase().includes(palabraclave.toLowerCase())
-                    );
-                    break;
-                case "isbn":
-                    results = results.filter((book) =>
-                        book.isbn.toLowerCase().includes(palabraclave.toLowerCase())
-                    );
-                    break;
-                case "autor":
-                    results = results.filter((book) =>
-                        book.autor.toLowerCase().includes(palabraclave.toLowerCase())
-                    );
-                    break;
-                // Agrega más casos para otros filtros si es necesario
-                default:
-                    break;
-            }
-        });
-    
+        // Quiere decir que si no se ingresa nada en esos cambios no filtrará
+        if (selectedFilters.length === 0 && palabraclave.trim() === "" && tipoRecurso.trim() === "") {
+            // Si no se selecciona ningún campo, no aplicar ningún filtro
+            setSearchResults([]);
+            return;
+          }
+          results = results.filter((book) => {
+            // Verificar si la palabra clave se encuentra en alguno de los campos seleccionados
+            const keywordMatch = selectedFilters.some((filter) =>
+              (book[filter] || "").toLowerCase().includes(palabraclave.toLowerCase())
+            );
+          
+            // Verificar si el tipo de recurso coincide
+            const tipoMatch = tipoRecurso.trim() === "" || (book.tipo || "").toLowerCase().includes(tipoRecurso.toLowerCase());
+          
+            return keywordMatch && tipoMatch;
+          });
         // Actualiza el estado de los resultados
         setSearchResults(results);
     };
+    // almacenar los filtros de checkbox
     const handleCheckboxChange = (e) => {
         const value = e.target.value;
         if (e.target.checked) {
@@ -53,6 +47,7 @@ const busqueda = () => {
             // Eliminar el campo seleccionado de la lista de filtros
             setSelectedFilters(selectedFilters.filter((filter) => filter !== value));
         }
+        console.log(selectedFilters)
     };
 
     return (<Layout content={
@@ -80,7 +75,7 @@ const busqueda = () => {
                                                     <p>ingresa la palabra clave</p>
                                                 </div>
                                                 <div id="input_text_usuario">
-                                                    <input type='text' placeholder='' id="inputUsu" />
+                                                    <input type='text' placeholder='' id="inputUsu" value={palabraclave} onChange={(e) => setPalabraclave(e.target.value)} />
                                                 </div>
                                             </div>
                                         </div>
@@ -100,7 +95,8 @@ const busqueda = () => {
                                                     <p>Tipo de Recurso</p>
                                                 </div>
                                                 <div id="input_text_usuario">
-                                                    <input type='text' placeholder='' id="inputUsu" />
+                                                    {/*El onChange captura el valor del tipo de recurso */}
+                                                    <input type='text' placeholder='' id="inputUsu" value={tipoRecurso} onChange={(e) => setTipoRecurso(e.target.value)} />
                                                 </div>
                                             </div>
                                         </div>
@@ -128,7 +124,7 @@ const busqueda = () => {
                                             <span class="ml-2 text-purple-primary font-bold">Autor, Autores</span>
                                         </label>
                                         <label class="flex items-center">
-                                            <input type="checkbox" name="filter3" value="serie" class="form-checkbox text-purple-primary border-purple-primary" onChange={handleCheckboxChange}></input>
+                                            <input type="checkbox" name="filter3" value="genero" class="form-checkbox text-purple-primary border-purple-primary" onChange={handleCheckboxChange}></input>
                                             <span class="ml-2 text-purple-primary font-bold">Serie</span>
                                         </label>
                                         <label class="flex items-center">
