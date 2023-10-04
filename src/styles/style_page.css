@@ -82,4 +82,24 @@
     width: 100%; /* La imagen ocupa todo el ancho del contenedor */
     height: 100%; /* El alto se ajustará automáticamente según la relación de aspecto original */
 }
+
+.contenedorTituloLibro{
+    width: 302px;
+    height: 48px;
+    margin-top: 5%;
+}
+.tituloLibro{
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 24px;
+    font-size: 16px;
+}
+.contenedorInfoLibro{
+    width: 302px;
+    height: 20px;
+}
+.infoLibro{
+    line-height: 20px;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+}
   
