@@ -56,5 +56,16 @@
 		"correo": "dasd",
 		"contrasenha": "asdas",
 		"foto": "/boton_perfil.png"
+	},
+	{
+		"id": "5",
+		"tipo": "user",
+		"nombres": "123",
+		"apellidos": "123",
+		"tipo_documento": "123",
+		"nro_documento": "123",
+		"correo": "123",
+		"contrasenha": "123",
+		"foto": "/boton_perfil.png"
 	}
 ]
