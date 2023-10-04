@@ -14,18 +14,7 @@
 		"color": "#a1a1a1"
 	},
 	{
-		"id": "1",
-		"tipo": "user",
-		"nombres": "David",
-		"apellidos": "xyz",
-		"tipo_documento": "DNI",
-		"nro_doc/umento": "77777777",
-		"correo": "xd@aloe.ulima.edu.pe",
-		"contrasenha": "copapiston",
-		"foto": "https://images.cdn2.buscalibre.com/fit-in/360x360/7e/5b/7e5bc71577b67b9a01af23568c1c74d6.jpg"
-	},
-	{
-		"id": "3",
+		"id": "0",
 		"tipo": "user",
 		"nombres": "prueba_final",
 		"apellidos": "registrado",
@@ -36,7 +25,7 @@
 		"foto": "/boton_perfil.png"
 	},
 	{
-		"id": "3",
+		"id": "0",
 		"tipo": "user",
 		"nombres": "pruebita3",
 		"apellidos": "abc",
@@ -47,7 +36,7 @@
 		"foto": "/boton_perfil.png"
 	},
 	{
-		"id": "4",
+		"id": "0",
 		"tipo": "user",
 		"nombres": "aaa",
 		"apellidos": "sdds",
@@ -58,7 +47,7 @@
 		"foto": "/boton_perfil.png"
 	},
 	{
-		"id": "5",
+		"id": "0",
 		"tipo": "user",
 		"nombres": "123",
 		"apellidos": "123",
@@ -69,7 +58,7 @@
 		"foto": "/boton_perfil.png"
 	},
 	{
-		"id": "6",
+		"id": "0",
 		"tipo": "user",
 		"nombres": "prueba_cambio_ids",
 		"apellidos": "xd",

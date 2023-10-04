@@ -27,7 +27,7 @@ const busqueda = () => {
                             <Link type="button" href="/agregarLibroAdm" class="bg-purple-primary text-purple-bg px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full">Agregar un nuevo recurso</Link>
                         </div>
                         <div class="bg-purple-bg py-4 px-4">
-                            <form class="flex">
+                            <form class="flex" onSubmit={(e)=>{e.preventDefault()}}>
 
                                 <div class="w-1/2 mr-4 space-y-4 m-3 ">
 
