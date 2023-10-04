@@ -9,19 +9,50 @@ import libreria from '../json/libreria.json'
 const busqueda = () => {
     const [palabraclave, setPalabraclave] = useState("");
     const [searchResults, setSearchResults] = useState([]);
+    const [selectedFilters, setSelectedFilters] = useState([]);
 
     const handleSearch = (e) => {
         e.preventDefault();
-
-        // Realizar toda la busqueda json en palabra clave con todos los campos de libreria.json
-        const results = libreria.filter((book) => {
-            return (
-                book.titulo.toLowerCase().includes(palabraclave.toLowerCase())
-            );
+    
+        // Inicializa results con la lista completa de libros
+        let results = libreria;
+    
+        // Filtrar por campos seleccionados en los checkboxes
+        selectedFilters.forEach((filter) => {
+            switch (filter) {
+                case "titulo":
+                    results = results.filter((book) =>
+                        book.titulo.toLowerCase().includes(palabraclave.toLowerCase())
+                    );
+                    break;
+                case "isbn":
+                    results = results.filter((book) =>
+                        book.isbn.toLowerCase().includes(palabraclave.toLowerCase())
+                    );
+                    break;
+                case "autor":
+                    results = results.filter((book) =>
+                        book.autor.toLowerCase().includes(palabraclave.toLowerCase())
+                    );
+                    break;
+                // Agrega más casos para otros filtros si es necesario
+                default:
+                    break;
+            }
         });
-
+    
         // Actualiza el estado de los resultados
         setSearchResults(results);
+    };
+    const handleCheckboxChange = (e) => {
+        const value = e.target.value;
+        if (e.target.checked) {
+            // Agregar el campo seleccionado a la lista de filtros
+            setSelectedFilters([...selectedFilters, value]);
+        } else {
+            // Eliminar el campo seleccionado de la lista de filtros
+            setSelectedFilters(selectedFilters.filter((filter) => filter !== value));
+        }
     };
 
     return (<Layout content={
@@ -84,25 +115,24 @@ const busqueda = () => {
                             </div>
 
 
-
                             <div class="w-1/2">
                                 <div class="mb-4">
                                     <p class="text-gray-700 text-sm text-purple-primary font-bold">Incluir busqueda en:</p>
                                     <div class="space-y-2">
                                         <label class="flex items-center">
-                                            <input type="checkbox" name="filter1" class="form-checkbox text-purple-primary border-purple-primary"></input>
+                                            <input type="checkbox" name="filter1" value="titulo" class="form-checkbox text-purple-primary border-purple-primary" onChange={handleCheckboxChange}></input>
                                             <span class="ml-2 text-purple-primary font-bold">Titulo</span>
                                         </label>
                                         <label class="flex items-center">
-                                            <input type="checkbox" name="filter2" class="form-checkbox text-purple-primary border-purple-primary"></input>
+                                            <input type="checkbox" name="filter2" value="autor" class="form-checkbox text-purple-primary border-purple-primary" onChange={handleCheckboxChange}></input>
                                             <span class="ml-2 text-purple-primary font-bold">Autor, Autores</span>
                                         </label>
                                         <label class="flex items-center">
-                                            <input type="checkbox" name="filter3" class="form-checkbox text-purple-primary border-purple-primary"></input>
+                                            <input type="checkbox" name="filter3" value="serie" class="form-checkbox text-purple-primary border-purple-primary" onChange={handleCheckboxChange}></input>
                                             <span class="ml-2 text-purple-primary font-bold">Serie</span>
                                         </label>
                                         <label class="flex items-center">
-                                            <input type="checkbox" name="filter4" class="form-checkbox text-purple-primary border-purple-primary"></input>
+                                            <input type="checkbox" name="filter4" value="isbn" class="form-checkbox text-purple-primary border-purple-primary" onChange={handleCheckboxChange}></input>
                                             <span class="ml-2 text-purple-primary font-bold">ISBN</span>
                                         </label>
                                     </div>
@@ -116,7 +146,6 @@ const busqueda = () => {
                     </div>
 
                 </div>
-
 
             </div>
             <div>
