@@ -1,82 +1,68 @@
 [
   {
     "id": 0,
-    "titulo": "Dear Heart",
-    "isbn": "877792245-X",
+    "titulo": "Dr",
+    "autor": "Vincent Crawforth",
+    "isbn": "623487642-0",
+    "editorial": "Kwideo",
     "genero": "fiction",
-    "autor": "Mathew Whitefoot",
-    "editorial": "Jayo",
-    "descripcion": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
-    "imagen": "http://dummyimage.com/141x100.png/cc0000/ffffff"
+    "tipo": "revista",
+    "descripcion": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+    "imagen": "http://dummyimage.com/113x391.png/5fa2dd/ffffff"
   },
   {
     "id": 1,
-    "titulo": "Hostel: Part II",
-    "isbn": "478368374-3",
-    "genero": "adventure",
-    "autor": "Roanna O'Kielt",
-    "editorial": "Gigazoom",
-    "descripcion": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
-    "imagen": "http://dummyimage.com/138x100.png/cc0000/ffffff"
+    "titulo": "Mr",
+    "autor": "Tim Gresswell",
+    "isbn": "254779147-1",
+    "editorial": "Snaptags",
+    "genero": "romance",
+    "tipo": "libro",
+    "descripcion": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+    "imagen": "http://dummyimage.com/182x386.png/5fa2dd/ffffff"
   },
   {
     "id": 2,
-    "titulo": "Machine That Kills Bad People, The (La Macchina Ammazzacattivi)",
-    "isbn": "219324961-X",
-    "genero": "mystery",
-    "autor": "Ema Dundridge",
-    "editorial": "Skipstorm",
-    "descripcion": "Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
-    "imagen": "http://dummyimage.com/156x100.png/5fa2dd/ffffff"
+    "titulo": "Mrs",
+    "autor": "Suki Ilyinski",
+    "isbn": "867799256-1",
+    "editorial": "Mymm",
+    "genero": "romance",
+    "tipo": "articulo cientifico",
+    "descripcion": "In congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
+    "imagen": "http://dummyimage.com/106x368.png/cc0000/ffffff"
   },
   {
     "id": 3,
-    "titulo": "Spider-Man",
-    "isbn": "585164821-X",
+    "titulo": "Dr",
+    "autor": "Aldo Henrichs",
+    "isbn": "810760966-2",
+    "editorial": "Dynabox",
     "genero": "mystery",
-    "autor": "Brand Cahen",
-    "editorial": "Thoughtbridge",
-    "descripcion": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
-    "imagen": "http://dummyimage.com/173x100.png/cc0000/ffffff"
+    "tipo": "articulo cientifico",
+    "descripcion": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+    "imagen": "http://dummyimage.com/148x112.png/5fa2dd/ffffff"
   },
   {
     "id": 4,
-    "titulo": "Just Buried",
-    "isbn": "967971197-8",
+    "titulo": "Dr",
+    "autor": "Demetrius De Micoli",
+    "isbn": "648668707-X",
+    "editorial": "Myworks",
     "genero": "romance",
-    "autor": "Sonnnie Olivo",
-    "editorial": "Tagfeed",
-    "descripcion": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
-    "imagen": "http://dummyimage.com/231x100.png/5fa2dd/ffffff"
+    "tipo": "revista",
+    "descripcion": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.",
+    "imagen": "http://dummyimage.com/230x307.png/5fa2dd/ffffff"
   },
   {
     "id": 5,
-    "titulo": "Irina Palm",
-    "isbn": "557803538-8",
-    "genero": "romance",
-    "autor": "Colene Dawson",
-    "editorial": "Brainlounge",
-    "descripcion": "Fusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.",
-    "imagen": "http://dummyimage.com/146x100.png/dddddd/000000"
-  },
-  {
-    "id": 6,
-    "titulo": "Together (Tillsammans)",
-    "isbn": "479182853-4",
-    "genero": "romance",
-    "autor": "Gawain Palffy",
-    "editorial": "Vidoo",
-    "descripcion": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
-    "imagen": "http://dummyimage.com/231x100.png/dddddd/000000"
-  },
-  {
-    "id": 7,
-    "titulo": "T-Men",
-    "isbn": "558866766-2",
-    "genero": "mystery",
-    "autor": "Warde Barrs",
-    "editorial": "Twitterworks",
-    "descripcion": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
-    "imagen": "http://dummyimage.com/250x100.png/5fa2dd/ffffff"
+    "titulo": "Rev",
+    "autor": "Sula Corrison",
+    "isbn": "681936321-4",
+    "editorial": "Quire",
+    "genero": "adventure",
+    "tipo": "novela",
+    "descripcion": "Fusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+    "imagen": "http://dummyimage.com/117x376.png/dddddd/000000"
   }
 ]

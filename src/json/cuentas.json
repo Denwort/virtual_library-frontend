@@ -67,5 +67,16 @@
 		"correo": "123",
 		"contrasenha": "123",
 		"foto": "/boton_perfil.png"
+	},
+	{
+		"id": "6",
+		"tipo": "user",
+		"nombres": "prueba_cambio_ids",
+		"apellidos": "xd",
+		"tipo_documento": "sjh",
+		"nro_documento": "jisjfjsd",
+		"correo": "jhfsdjfsd@gmail.com",
+		"contrasenha": "aaa",
+		"foto": "/boton_perfil.png"
 	}
 ]
