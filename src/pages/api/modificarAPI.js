@@ -4,7 +4,7 @@ import cuentas from '../../json/cuentas.json'
 
 export default async function registoAPI (req, res) {
     if(req.method !== 'POST'){
-        req.status(405).send({"error": "metodo invalido"})
+        res.status(405).send({"error": "metodo invalido"})
     }
     else if(req.method === 'POST'){
         

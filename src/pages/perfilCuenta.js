@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout from './components/Layout.js'
 import { useMiProvider } from './context/contexto'
+import {useState} from 'react'
 
 const Perfil = () => {
 
@@ -14,31 +15,6 @@ const Perfil = () => {
         cuenta_modificada[e.target.name] = e.target.value
     }
 
-    const guardarFoto = async (e) => {
-       if(e.target.files){
-            const foto = e.target.files[0]
-            const fd=new FormData()
-            fd.append('myfile',foto)
-            try {
-                const res = await fetch (
-                    '/api/imagenAPI',
-                    {
-                        method: 'POST',
-                        body: fd,
-                        headers: {
-                            "Content-Type": "image/jpeg",
-                        }
-                    }
-                )
-                const response=await res.json(); 
-                alert("imagen actualizada")
-            } catch (err) {
-                console.log(err)
-            }
-
-        }
-    }
-    
     const escribirJSON = async () =>{
         const params = JSON.stringify(cuenta_modificada)
         try {
@@ -61,6 +37,58 @@ const Perfil = () => {
         }
   
     }
+
+
+
+    const [image, setImage] = useState(null);
+    const [createObjectURL, setCreateObjectURL] = useState(null);
+    const uploadToClient = (event) => {
+        if (event.target.files && event.target.files[0]) {
+          const i = event.target.files[0];
+          setImage(i);
+          setCreateObjectURL(URL.createObjectURL(i));
+        }
+    };
+    const uploadToServer = async (event) => {    
+        event.preventDefault()    
+        const body = new FormData();
+        console.log("file", image)
+        body.append("file", image);    
+        const response = await fetch("/api/imagenAPI", {
+          method: "POST",
+          body
+        });
+    };
+
+    const guardarFoto = async (e) => {
+        e.preventDefault()
+        console.log("a")
+        console.log(e.target.files)
+            console.log("enviado")
+            const foto = e.target.files[0]
+            const fd=new FormData()
+            fd.append('myfile',e.target.files[0])
+            try {
+                const res = await fetch (
+                    '/api/imagenAPI',
+                    {
+                        method: 'POST',
+                        body: fd,
+                        headers: {
+                            "Content-Type": "image/jpeg",
+                        }
+                    }
+                )
+                const response=await res.json(); 
+                alert("imagen actualizada")
+            } catch (err) {
+                console.log(err)
+            }
+
+        
+    }
+    
+    
 
     return (
         <Layout content={
@@ -88,8 +116,11 @@ const Perfil = () => {
                 <div class="grid grid-cols-2 gap-4">
                     <div class="col-span-1">
                         <div id="imagen_perfil">
-                            <Image src="/juliana.png" width={279} height={253} ></Image>
-                            <input type="file" name="imagen" onChange={guardarFoto}/>                      
+                            <form onSubmit={uploadToServer} method="POST">
+                                <Image src="/juliana.png" width={279} height={253} ></Image>
+                                <input type="file" id='myfile' name="imagen" onChange={uploadToClient}/>
+                                <input type="submit" value="Submit"></input>
+                            </form>                      
                         </div>
                     </div>
                     <div class="col-span-1">
