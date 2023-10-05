@@ -1,3 +1,10 @@
+import upload from './uploadAPI';
+
+export default upload.single('foto'); // 'imagen' debe coincidir con el nombre del campo del formulario
+
+
+
+/*
 import { NextResponse } from "next/server";
 import path from "path";
 import { writeFile } from "fs/promises";
@@ -24,3 +31,4 @@ export const POST = async (req, res) => {
 };
 
 export default POST
+*/

@@ -3,28 +3,28 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout from './components/Layout.js'
 import { useMiProvider } from './context/contexto'
-import {useState} from 'react'
+import { useState } from 'react'
 
 const Perfil = () => {
 
     const [cuenta, setCuenta] = useMiProvider()
 
-    let cuenta_modificada = {...cuenta}
+    let cuenta_modificada = { ...cuenta }
 
-    function registrarCambio(e){
+    function registrarCambio(e) {
         cuenta_modificada[e.target.name] = e.target.value
     }
 
-    const escribirJSON = async () =>{
+    const escribirJSON = async () => {
         const params = JSON.stringify(cuenta_modificada)
         try {
-            const peticion = await fetch (
+            const peticion = await fetch(
                 '/api/modificarAPI',
                 {
-                    method : 'POST',
-                    body : params,
-                    headers : {
-                        'Content-Type' : 'application/json'
+                    method: 'POST',
+                    body: params,
+                    headers: {
+                        'Content-Type': 'application/json'
                     }
                 }
             )
@@ -35,31 +35,64 @@ const Perfil = () => {
         } catch (err) {
             console.log(err)
         }
-  
+
     }
-
-
 
     const [image, setImage] = useState(null);
     const [createObjectURL, setCreateObjectURL] = useState(null);
+
     const uploadToClient = (event) => {
         if (event.target.files && event.target.files[0]) {
-          const i = event.target.files[0];
-          setImage(i);
-          setCreateObjectURL(URL.createObjectURL(i));
+            const i = event.target.files[0];
+            setImage(i);
+            setCreateObjectURL(URL.createObjectURL(i));
         }
     };
-    const uploadToServer = async (event) => {    
-        event.preventDefault()    
-        const body = new FormData();
-        console.log("file", image)
-        body.append("file", image);    
-        const response = await fetch("/api/imagenAPI", {
-          method: "POST",
-          body
-        });
-    };
 
+    const uploadToServer = async (event) => {
+        event.preventDefault();
+        if (!image) {
+            alert("Por favor, selecciona una imagen antes de subirla.");
+            return;
+        }
+
+        const body = new FormData();
+        body.append("file", image);
+
+        try {
+            const response = await fetch("/api/imagenAPI", {
+                method: "POST",
+                body,
+            });
+
+            if (response.status === 200) {
+                const newImageUrl = await response.json();
+
+                // Actualiza el JSON con la nueva URL de la imagen
+                cuenta_modificada.foto = newImageUrl;
+
+                // Actualiza el JSON original con los datos modificados
+                const cuentasActualizadas = cuentas.map((cuenta) => {
+                    if (cuenta.id === cuenta_modificada.id) {
+                        return cuenta_modificada;
+                    }
+                    return cuenta;
+                });
+
+                // Guarda los datos actualizados en tu archivo JSON
+                fs.writeFileSync('../json/cuentas.json', JSON.stringify(cuentasActualizadas, null, 2));
+
+                alert("Imagen actualizada");
+
+            } else {
+                alert("Error al subir la imagen");
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Error al subir la imagen");
+        }
+    };
+/*
     const guardarFoto = async (e) => {
         e.preventDefault()
         console.log("a")
@@ -87,7 +120,7 @@ const Perfil = () => {
 
         
     }
-    
+    */
     
 
     return (
@@ -116,11 +149,17 @@ const Perfil = () => {
                 <div class="grid grid-cols-2 gap-4">
                     <div class="col-span-1">
                         <div id="imagen_perfil">
-                            <form onSubmit={uploadToServer} method="POST">
-                                <Image src="/juliana.png" width={279} height={253} ></Image>
-                                <input type="file" id='myfile' name="imagen" onChange={uploadToClient}/>
-                                <input type="submit" value="Submit"></input>
-                            </form>                      
+                            <form onSubmit={uploadToServer} encType="multipart/form-data">
+                                <Image src={createObjectURL || '/juliana.png'} width={279} height={253} />
+                                    <input
+                                    type="file"
+                                    id="myfile"
+                                    name="imagen"
+                                    onChange={uploadToClient}
+                                    accept="image/*" // Acepta solo archivos de imagen
+                                    />
+                                <input type="submit" value="Submit" />
+                            </form>
                         </div>
                     </div>
                     <div class="col-span-1">
