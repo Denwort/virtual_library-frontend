@@ -3,31 +3,37 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout from './components/Layout.js'
 import {useMiProvider} from './context/contexto'
-import {useRouter} from 'next/router'
+import { useEffect, useState } from "react"; // Importa useEffect y useState
+import { useRouter } from "next/router";
 
+const Busqueda = () => {
+  const [cuenta, setCuenta] = useMiProvider();
+  const router = useRouter();
 
-const busqueda = () => 
-{
-    const [cuenta, setCuenta] = useMiProvider()
-    const router = useRouter()
+  // Define un estado para almacenar los resultados de la API
+  const [resultados, setResultados] = useState([]);
 
-    async function leer() {
-        const opciones = {
-            method : 'GET',
-            headers : {
-                "Content-Type" : "application/json"
-            }
-        }
+  async function leer() {
+    const opciones = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
 
-        const request = await fetch( 'api/busqueda/leer', opciones)
-        const data = await request.json()
-        console.log( data)
-        return data
-    }
+    const request = await fetch("api/busqueda/leerInfoBusqueda", opciones);
+    const data = await request.json();
+    console.log(data);
 
-    let resultados = leer().then(()=>{
-        //router.push('/resultados')
-    })
+    // Actualiza el estado con los resultados de la API
+    setResultados(data);
+  }
+
+  // Llama a la función de leer cuando el componente se monta
+  useEffect(() => {
+    leer();
+  }, []); // El segundo argumento [] asegura que useEffect se ejecute solo una vez
+
 
     
     let boton_texto = ''
@@ -111,4 +117,4 @@ const busqueda = () =>
         ></Layout>
     )
 }
-export default busqueda
+export default Busqueda
