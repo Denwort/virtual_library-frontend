@@ -100,60 +100,30 @@ const Perfil = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="col-span-1">
-                        <div id="cuadro_texto_nombre">
-                            <div class="text_field">
-                                <div class="state_layer">
-                                    <div class="content_perfil">
-                                        <div id="text_perfil">
-                                            <p>Nombres</p>
-                                        </div>
-                                        <div id="input_text_nombre">
-                                            <input type='text' placeholder='Ingrese nombre' id="inputNombre" />
-                                        </div>
-                                    </div>
-                                </div>
+                </div>
+                <div class="supporting-text">
+                    <p></p>
+                </div> 
+            </div>
+
+
+            <div id="cuadro_texto_ape">
+                <div class="text_field">
+                    <div class="state_layer">
+                        <div class="content_perfil">
+                            <div id="text_perfil">
+                                <p>Apellidos</p>
                             </div>
                             <div id="input_text_ape">
-                                <input type='text' placeholder='Ingrese apellidos' id="inputApe" onChange={registrarCambio}/>
-                            </div>
-                        </div>
-
-                        <div id="cuadro_texto_tipo">
-                            <div class="text_field">
-                                <div class="state_layer">
-                                    <div class="content_perfil">
-                                        <div id="text_perfil">
-                                            <p>Tipo de Documento</p>
-                                        </div>
-                                        <div id="input_text_tipo">
-                                            <input type='text' placeholder='Ingrese documento' id="inputTipo" />
-                                        </div>
-                                    </div>
+                                <input type='text' placeholder='Ingrese apellidos' id="inputApe" />
                                 </div>
                             </div>
-                            <div id="input_text_nro">
-                                <input type='text' placeholder='Ingrese número' id="inputNro" onChange={registrarCambio}/>
-                            </div>
                         </div>
-
-                        <div id="cuadro_texto_ape">
-                            <div class="text_field">
-                                <div class="state_layer">
-                                    <div class="content_perfil">
-                                        <div id="text_perfil">
-                                            <p>Apellidos</p>
-                                        </div>
-                                        <div id="input_text_ape">
-                                            <input type='text' placeholder='Ingrese apellidos' id="inputApe" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="supporting-text">
-                                <p></p>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="supporting-text">
+                        <p></p>
+                    </div>
+                </div>
 
                         <div id="cuadro_texto_nro">
                             <div class="text_field">
@@ -173,21 +143,13 @@ const Perfil = () => {
                             </div>
                         </div>
 
-                        <button type="button" class="guardar">Guardar</button>
+                        <button type="button" class="guardar" onClick={escribirJSON}>Guardar</button>
 
                     </div>
                     {/* Aquí termina la columna*/}
 
                 </div>
-            </div>
-
-            <button type="button" class="guardar" onClick={escribirJSON}>Guardar</button>
-
-            </div>
-            {/* Aquí termina la columna*/}
-        
-        </div>
-    </div>
+            </div>   
 
 </>
 }

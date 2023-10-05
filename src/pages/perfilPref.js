@@ -98,75 +98,36 @@ const Perfil = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="col-span-1">
-                        <div id="cuadro_texto_idioma">
-                            <div class="text_field">
-                                <div class="state_layer">
-                                    <div class="content_perfil">
-                                        <div id="text_perfil">
-                                            <p>Idioma</p>
-                                        </div>
-                                        <div id="input_text_idioma">
-                                            <input type='text' placeholder='Ingrese idioma' id="inputIdioma" />
-                                        </div>
-                                    </div>
-                                </div>
+                </div>
+                <div class="supporting-text">
+                    <p></p>
+                </div>
+            </div>
+
+            <div id="cuadro_texto_color">
+                <div class="text_field">
+                    <div class="state_layer">
+                        <div class="content_perfil">
+                            <div id="text_perfil">
+                                <p>Color</p>
                             </div>
                             <div id="input_text_color">
                                 <input type='color' id="inputColor" onChange={registrarCambio}/>
                             </div>
                         </div>
-
-                        <div id="cuadro_texto_prefijo">
-                            <div class="text_field">
-                                <div class="state_layer">
-                                    <div class="content_perfil">
-                                        <div id="text_perfil">
-                                            <p>Prefijo</p>
-                                        </div>
-                                        <div id="input_text_prefijo">
-                                            <input type='text' placeholder='Ingrese prefijo' id="inputPrefijo" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="supporting-text">
-                                <p></p>
-                            </div>
-                        </div>
-
-                        <div id="cuadro_texto_color">
-                            <div class="text_field">
-                                <div class="state_layer">
-                                    <div class="content_perfil">
-                                        <div id="text_perfil">
-                                            <p>Color</p>
-                                        </div>
-                                        <div id="input_text_color">
-                                            <input type='color' id="inputColor" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="supporting-text">
-                                <p></p>
-                            </div>
-                        </div>
-
-
-                        <button type="button" class="guardar">Guardar</button>
-
                     </div>
-                    {/* Aquí termina la columna*/}
-
+                </div>
+                <div class="supporting-text">
+                    <p></p>
                 </div>
             </div>
+
 
             <button type="button" class="guardar" onClick={escribirJSON}>Guardar</button>
 
             </div>
             {/* Aquí termina la columna*/}
-        
+
         </div>
     </div>
 
