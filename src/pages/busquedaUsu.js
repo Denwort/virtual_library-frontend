@@ -2,11 +2,13 @@ import Link from "next/link"
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from './components/Layout.js'
-import React, { useState } from 'react'
+import { useState} from 'react';
 import { useRouter } from 'next/router'
 
 export default function busqueda() {
-    const router = useRouter();
+    const router = useRouter()
+
+
     var data
     async function leerJsonLibreria() {
         const opciones = {
