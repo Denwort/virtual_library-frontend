@@ -8,6 +8,10 @@ import { useState } from 'react'
 
 export default function busqueda() {
 
+    // Cambiar de acuerdo al tipo de cuenta
+    const [cuenta, setCuenta] = useMiProvider()
+    let agrega_recurso = cuenta.tipo == 'admin' ? true : false
+
     const router = useRouter()
     var data
     async function leerJsonLibreria() {
@@ -23,7 +27,7 @@ export default function busqueda() {
         return data
     }
     async function escribirJsonResultados(searchResults) {
-
+        //localStorage.setItem("searchResults", JSON.stringify(searchResults));
         const requestOptions = {
             method: 'POST',
             headers: {
@@ -96,8 +100,10 @@ export default function busqueda() {
                     <div class="bg-white p-6 rounded-md shadow-md w-12/12 h-full">
                         <div class="flex justify-between gap-4 mb-4">
                             <h1 class="text-2xl font-semibold">Búsqueda</h1>
+                            { agrega_recurso && (
                             <Link type="button" href="/agregarLibroAdm" class="bg-purple-primary text-purple-bg px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full">Agregar un nuevo recurso</Link>
-                        </div>
+                            )}
+                            </div>
                         <div class="bg-purple-bg py-4 px-4">
                             <form class="flex" onSubmit={handleSearch}>
 

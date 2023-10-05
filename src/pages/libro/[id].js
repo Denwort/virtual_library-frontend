@@ -2,14 +2,57 @@ import Link from "next/link"
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/Layout.js'
-import libros from '../../json/libreria.json'
 import {useRouter} from 'next/router'
+import {useState, useEffect} from 'react'
 
 const detalleLibro = () => 
 {
     const router = useRouter()
-    const p = libros[router.query.id]
+
+    const [libros, setLibros] = useState([]);
+    async function leer() {
+        const opciones = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        };
+        const request = await fetch("../api/libros/leer", opciones);
+        const data = await request.json();
+        console.log(data);
+        setLibros(data);
+    }
+    useEffect(() => {
+        leer();
+    }, []);
+
+    const id = router.query.id
+    const p = libros.filter((item)=>{return item["id"] == id.toString()})[0]
+    
     if (!p) return <p></p>
+
+    async function handleEliminar(){
+        const params = JSON.stringify(p)
+        try {
+            const peticion = await fetch (
+                '/api/libros/eliminar',
+                {
+                    method : 'POST',
+                    body : params,
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    }
+                }
+            )
+            const data = await peticion.json()
+            guardarLib()
+            alert("libro eliminado")
+
+        } catch (err) {
+            console.log(err)
+        }
+  
+    }
 
     return <Layout content={
         <>
@@ -99,30 +142,7 @@ const detalleLibro = () =>
                     </div>
                 </form>
 
-             <button onClick={ async () =>{
-        
-                                    const params = JSON.stringify(p)
-                                    try {
-                                        const peticion = await fetch (
-                                            '/api/libros/eliminar',
-                                            {
-                                                method : 'POST',
-                                                body : params,
-                                                headers : {
-                                                    'Content-Type' : 'application/json'
-                                                }
-                                            }
-                                        )
-                            
-                                        const data = await peticion.json()
-                                        guardarLib()
-                                        alert("libro eliminado")
-                            
-                                    } catch (err) {
-                                        console.log(err)
-                                    }
-                              
-                                }}>Eliminar</button>
+             <button onClick={handleEliminar}>Eliminar</button>
                 
                  
 
