@@ -67,5 +67,27 @@
 		"correo": "jhfsdjfsd@gmail.com",
 		"contrasenha": "aaa",
 		"foto": "/boton_perfil.png"
+	},
+	{
+		"id": "6",
+		"tipo": "user",
+		"nombres": "ai",
+		"apellidos": "si",
+		"tipo_documento": "dni",
+		"nro_documento": "737878787",
+		"correo": "aaa@gmail.com",
+		"contrasenha": "FFFF",
+		"foto": "/boton_perfil.png"
+	},
+	{
+		"id": "7",
+		"tipo": "user",
+		"nombres": "aaa19",
+		"apellidos": "xd",
+		"tipo_documento": "xd",
+		"nro_documento": "xd",
+		"correo": "abc@gmail.com",
+		"contrasenha": "aaa",
+		"foto": "/boton_perfil.png"
 	}
 ]

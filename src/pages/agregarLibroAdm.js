@@ -28,7 +28,7 @@ const Perfil = () => {
         const params = JSON.stringify(nuevoLibro)
         try {
             const peticion = await fetch (
-                '/api/agregarLibroAPI',
+                '/api/libros/agregar',
                 {
                     method : 'POST',
                     body : params,

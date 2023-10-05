@@ -1,6 +1,6 @@
 
 import fsPromises from 'fs/promises'
-import libros from '../../json/libreria.json'
+import libros from '../../../json/libros.json'
 
 export default async function registoAPI (req, res) {
     if(req.method !== 'POST'){
@@ -14,7 +14,7 @@ export default async function registoAPI (req, res) {
         libros[body.id] = body
 
         await fsPromises.writeFile(
-            './src/json/libreria.json',
+            './src/json/libros.json',
             JSON.stringify(libros, null, '\t')
         )
 

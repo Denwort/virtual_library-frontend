@@ -15,11 +15,11 @@ const Perfil = () => {
         cuenta_modificada[e.target.name] = e.target.value
     }
 
-    const escribirJSON = async () => {
+    const escribirJSON = async (e) => {
         const params = JSON.stringify(cuenta_modificada)
         try {
             const peticion = await fetch(
-                '/api/modificarAPI',
+                '/api/cuentas/modificar',
                 {
                     method: 'POST',
                     body: params,
@@ -162,7 +162,7 @@ const Perfil = () => {
                             </form>
                         </div>
                     </div>
-                    <div class="col-span-1">
+                    <form class="col-span-1" onSubmit={(e)=>e.preventDefault()}>
                     <div id="cuadro_texto_correo">
                         <div class="text_field">
                             <div class="state_layer">
@@ -201,7 +201,7 @@ const Perfil = () => {
 
                     <button type="button" class="guardar" onClick={escribirJSON}>Guardar</button>
 
-                    </div>
+                    </form>
                     {/* Aquí termina la columna*/}
                 
                 </div>

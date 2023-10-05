@@ -3,7 +3,7 @@ import path from 'path'
 import process from 'process'
 
 export default async function leerBusqueda (req, res) {
-    let filePath = 'src/json/libreria.json'
+    let filePath = 'src/json/libros.json'
     let ruta = path.join(process.cwd(), filePath)
 
     try{

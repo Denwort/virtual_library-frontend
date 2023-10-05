@@ -1,27 +1,26 @@
 
 import fsPromises from 'fs/promises'
-import libros from '../../json/libreria.json'
+import cuentas from '../../../json/cuentas.json'
 
 export default async function registoAPI (req, res) {
     if(req.method !== 'POST'){
-        res.status(405).send({"error": "metodo invalido"})
+        req.status(405).send({"error": "metodo invalido"})
     }
     else if(req.method === 'POST'){
-
+        
         const tmp = JSON.stringify(req.body).replace("'",'"')
         const body = JSON.parse(tmp)
-
-        body["id"] = libros.length.toString()
-
-        libros.push(body)
-
+        
+        cuentas[body.id] = body
+        console.log(body)
+        console.log(cuentas)
         await fsPromises.writeFile(
-            './src/json/libreria.json',
-            JSON.stringify(libros, null, '\t')
+            './src/json/cuentas.json',
+            JSON.stringify(cuentas, null, '\t')
         )
 
         res.status(200).json(
-            libros
+            cuentas
         )
 
     }

@@ -17,7 +17,7 @@ export default function busqueda() {
                 "Content-Type": "application/json"
             }
         }
-        const request = await fetch('api/LeerBusquedaAPI', opciones)
+        const request = await fetch('api/busqueda/leer', opciones)
         data = await request.json()
         console.log(data)
         return data
@@ -33,7 +33,7 @@ export default function busqueda() {
         };
 
         // Realiza la solicitud POST a la API de escritura de resultados
-        const request = await fetch('/api/escribeBusquedaAPI', requestOptions);
+        const request = await fetch('/api/busqueda/escribir', requestOptions);
         data = await request.json()
         console.log(data)
 

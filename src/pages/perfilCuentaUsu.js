@@ -18,7 +18,7 @@ const Perfil = () => {
         const params = JSON.stringify(cuenta_modificada)
         try {
             const peticion = await fetch (
-                '/api/modificarAPI',
+                '/api/cuentas/modificar',
                 {
                     method : 'POST',
                     body : params,

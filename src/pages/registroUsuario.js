@@ -34,7 +34,7 @@ const registroUsuario = () => {
         const params = JSON.stringify(nuevo)
         try {
             const peticion = await fetch (
-                '/api/registroAPI',
+                '/api/cuentas/registrar',
                 {
                     method : 'POST',
                     body : params,

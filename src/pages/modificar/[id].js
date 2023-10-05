@@ -26,7 +26,7 @@ const ModificarLibro = () => {
         const params = JSON.stringify(libroModificado)
         try {
             const peticion = await fetch (
-                '/api/modificarLibroAPI',
+                '/api/modificar',
                 {
                     method : 'POST',
                     body : params,

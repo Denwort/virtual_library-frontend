@@ -1,6 +1,6 @@
 
 import fsPromises from 'fs/promises'
-import libros from '../../json/libreria.json'
+import libros from '../../../json/libros.json'
 
 export default async function registoAPI (req, res) {
     if(req.method !== 'POST'){
@@ -12,16 +12,23 @@ export default async function registoAPI (req, res) {
         const body = JSON.parse(tmp)
         
         let indice = parseInt(body["id"])
-        libros.splice(indice,1)
+
+        var BreakException = {};
+        let idx = 0
+        try{
+            libros.forEach(item=>{
+                if( parseInt(item["id"]) == parseInt(body["id"]) ) throw BreakException
+                idx++
+            })
+        }catch(e){
+            if (e !== BreakException) throw e;
+        }
+
+        libros.splice(idx,1)
         
-        let contador = 0
-        libros.forEach((item)=>{
-            item["id"] = contador.toString()
-            contador++
-        })
 
         await fsPromises.writeFile(
-            './src/json/libreria.json',
+            './src/json/libros.json',
             JSON.stringify(libros, null, '\t')
         )
 

@@ -17,7 +17,7 @@ export default function busqueda() {
                 "Content-Type": "application/json"
             }
         }
-        const request = await fetch('api/LeerBusquedaAPI', opciones)
+        const request = await fetch('api/libros/leer', opciones)
         data = await request.json()
         console.log(data)
         return data
@@ -33,7 +33,7 @@ export default function busqueda() {
         };
 
         // Realiza la solicitud POST a la API de escritura de resultados
-        const request = await fetch('/api/escribeBusquedaAPI', requestOptions);
+        const request = await fetch('/api/busqueda/escribir', requestOptions);
         data = await request.json()
         console.log(data)
 
@@ -171,7 +171,7 @@ export default function busqueda() {
                                     </div>
                                 </div>
                                 <div class="text-right space-x-2 ">
-                                    <button type="submit" class="bg-purple-bg text-purple-primary px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full">Limpiar</button>
+                                    <button type="reset" class="bg-purple-bg text-purple-primary px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full">Limpiar</button>
                                     <button type="submit" onClick={handleSearch} class="bg-purple-primary text-purple-bg px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full" >Buscar</button>
                                 </div>
 

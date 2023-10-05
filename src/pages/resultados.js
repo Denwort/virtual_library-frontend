@@ -3,13 +3,32 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout from './components/Layout.js'
 import {useMiProvider} from './context/contexto'
-import resultados from '../json/resultados.json'
 import {useRouter} from 'next/router'
+
 
 const busqueda = () => 
 {
     const [cuenta, setCuenta] = useMiProvider()
     const router = useRouter()
+
+    async function leer() {
+        const opciones = {
+            method : 'GET',
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        }
+
+        const request = await fetch( 'api/busqueda/leer', opciones)
+        const data = await request.json()
+        console.log( data)
+        return data
+    }
+
+    let resultados = leer().then(()=>{
+        //router.push('/resultados')
+    })
+
     
     let boton_texto = ''
     let boton_href = ''
