@@ -2,41 +2,76 @@ import Link from "next/link"
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from './components/Layout.js'
-import React, { useState } from 'react'
-import libreria from '../json/libreria.json'
+import { useState} from 'react';
+import { useRouter } from 'next/router'
+
+export default function busqueda() {
+    const router = useRouter()
 
 
-const busqueda = () => {
+    var data
+    async function leerJsonLibreria() {
+        const opciones = {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+        const request = await fetch('api/LeerBusquedaAPI', opciones)
+        data = await request.json()
+        console.log(data)
+        return data
+    }
+    async function escribirJsonResultados(searchResults) {
+
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(searchResults),
+        };
+
+        // Realiza la solicitud POST a la API de escritura de resultados
+        const request = await fetch('/api/escribeBusquedaAPI', requestOptions);
+        data = await request.json()
+        console.log(data)
+
+    }
+
     const [palabraclave, setPalabraclave] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const [tipoRecurso, setTipoRecurso] = useState("");
     const [selectedFilters, setSelectedFilters] = useState([]);
 
-    const handleSearch = (e) => {
+    const handleSearch = async (e) => {
         e.preventDefault();
         console.log(palabraclave)
         // Inicializa results con la lista completa de libros
-        let results = libreria;
+        let results = await leerJsonLibreria();
         // Quiere decir que si no se ingresa nada en esos cambios no filtrará
         if (selectedFilters.length === 0 && palabraclave.trim() === "" && tipoRecurso.trim() === "") {
             // Si no se selecciona ningún campo, no aplicar ningún filtro
             setSearchResults([]);
             return;
-          }
-          results = results.filter((book) => {
+        }
+        results = results.filter((book) => {
             // Verificar si la palabra clave se encuentra en alguno de los campos seleccionados
             const keywordMatch = selectedFilters.some((filter) =>
-              (book[filter] || "").toLowerCase().includes(palabraclave.toLowerCase())
+                (book[filter] || "").toLowerCase().includes(palabraclave.toLowerCase())
             );
-          
+
             // Verificar si el tipo de recurso coincide
             const tipoMatch = tipoRecurso.trim() === "" || (book.tipo || "").toLowerCase().includes(tipoRecurso.toLowerCase());
-          
+
             return keywordMatch && tipoMatch;
-          });
+        });
         // Actualiza el estado de los resultados
         setSearchResults(results);
+        escribirJsonResultados(results);
+        router.push('/resultados');
     };
+
     // almacenar los filtros de checkbox
     const handleCheckboxChange = (e) => {
         const value = e.target.value;
@@ -49,6 +84,7 @@ const busqueda = () => {
         }
         console.log(selectedFilters)
     };
+
 
     return (<Layout content={
         <>
@@ -136,7 +172,7 @@ const busqueda = () => {
                             </div>
                             <div class="text-right space-x-2 ">
                                 <button type="reset" class="bg-purple-bg text-purple-primary px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full">Limpiar</button>
-                                <button type="submit" class="bg-purple-primary text-purple-bg px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full">Buscar</button>
+                                <button type="submit" onClick={handleSearch} class="bg-purple-primary text-purple-bg px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full">Buscar</button>
                             </div>
                         </form>
                     </div>
@@ -144,18 +180,8 @@ const busqueda = () => {
                 </div>
 
             </div>
-            <div>
-                {/* Mostrar los resultados */}
-                {searchResults.map((result) => (
-                    <div key={result.id}>
-                        <h2>{result.titulo}</h2>
-                        {/* Mostrar otros detalles del libro aquí */}
-                    </div>
-                ))}
-            </div>
 
         </>
     }
     ></Layout>)
 }
-export default busqueda

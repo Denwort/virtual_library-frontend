@@ -42,7 +42,7 @@ const busqueda = () =>
                 <button type="button" class="bg-purple-primary text-purple-bg px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full">Volver a buscar</button>
             </div>
 
-            <Image src="/divider.png" width={1088} height={1} class="py-4"></Image>
+            <Image src="/divider.png" width={1088} height={1} class="py-4" alt="imagenDefault"></Image>
 
             <div class="flex justify-between">
                 <h1 class="text-1xl font-semibold mb-4">Resultados de la busqueda</h1>
