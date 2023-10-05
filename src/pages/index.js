@@ -3,10 +3,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout from './components/Layout.js'
 import {useMiProvider} from './context/contexto'
+import library from '../json/library.json'
 
 const Index = () => {
 
     const [cuenta, setCuenta] = useMiProvider()
+    const libro1 = library[0]
+    const libro2 = library[1]
+    const libropv1 = library[0]
+    const libropv2 = library[1]
 
     return(
     <Layout content={
@@ -14,17 +19,20 @@ const Index = () => {
             <Head>
                 <title>..:: Pagina1 ::..</title>
             </Head>
+            <p></p>
             <div>
                 <p id="bienvenida"><b>Bienvenido, {cuenta.nombres}!</b></p>
                 <Image src="/divider.png" width={1088} height={1}></Image>
             </div>
             <br></br>
             <div class="rectangulo">
-                <p id ="subtitulo">Últimas reservas</p>
+            <div class="contenedorSubtitulo">
+                    <p class ="subtitulo">Últimas reservas</p>
+                </div>
                 <br></br>
                 <div class="grid gap-x-14 grid-cols-7 ">
                 <div class="col-span-1">
-                        <Link href="https://www.buscalibre.pe/libro-software-la-superbabosa/9788423687572/p/2858249">
+                        <Link href={libro1["url-compra"]}>
                             <div class="libro">
                                 <div class="grid grid-cols-6 col-span-1">
                                     <div class="col-start-1 col-span-1">
@@ -35,7 +43,7 @@ const Index = () => {
                                     <div class="col-start-2 col-end-5">
                                         <div className="contenedorTituloLibro">
                                             <div class="line-clamp-2">
-                                                <p class= "tituloLibro"><b>"Software la Superbabosa"</b></p>
+                                                <p class= "tituloLibro"><b>"{libro1.titulo}"</b></p>
                                             </div>
                                         </div>
                                         <div className="contenedorInfoLibro">
@@ -46,7 +54,7 @@ const Index = () => {
                                     </div>
                                     <div class="col-start-6 col-span-1">
                                         <div class="imagenLibro">
-                                            <Image src="https://images.cdn2.buscalibre.com/fit-in/180x180/1f/a6/1fa666e0f93fb0bc63c4c214188f3a46.jpg" width={80} height={101}></Image>
+                                            <Image src={libro1["imagen-portada-url"]} width={80} height={101}></Image>
                                         </div>
                                     </div>
                                 </div>
@@ -54,7 +62,7 @@ const Index = () => {
                         </Link>    
                     </div>
                     <div class="col-start-4 col-span-1">
-                    <Link href="https://www.buscalibre.pe/libro-software-la-superbabosa/9788423687572/p/2858249">
+                    <Link href={libro2["url-compra"]}>
                             <div class="libro">
                                 <div class="grid grid-cols-6 col-span-1">
                                     <div class="col-start-1 col-span-1">
@@ -65,7 +73,7 @@ const Index = () => {
                                     <div class="col-start-2 col-end-5">
                                         <div className="contenedorTituloLibro">
                                             <div class="line-clamp-2">
-                                                <p class= "tituloLibro"><b>"Gestion de proyectos de Software"</b></p>
+                                                <p class= "tituloLibro"><b>"{libro2.titulo}"</b></p>
                                             </div>
                                         </div>
                                         <div className="contenedorInfoLibro">
@@ -76,7 +84,7 @@ const Index = () => {
                                     </div>
                                     <div class="col-start-6 col-span-1">
                                         <div class="imagenLibro">
-                                            <Image src="https://images.cdn1.buscalibre.com/fit-in/180x180/20/82/2082a4e5a59dcf7e8531feb8e488c30b.jpg" width={80} height={101}></Image>
+                                            <Image src={libro2["imagen-portada-url"]} width={80} height={101}></Image>
                                         </div>
                                     </div>
                                 </div>
@@ -86,11 +94,13 @@ const Index = () => {
                 </div>
             </div>
             <div class="rectangulo">
-                <h2 id="subtitulo">Los más pedidos</h2>
+                <div class="contenedorSubtitulo">
+                    <h2 class="subtitulo">Próximos a vencer</h2>
+                </div>
                 <br></br>
                 <div class="grid gap-x-14 grid-cols-7 ">
                     <div class="col-span-1">
-                        <Link href="https://www.buscalibre.pe/libro-software-la-superbabosa/9788423687572/p/2858249">
+                        <Link href={libropv1["url-compra"]}>
                             <div class="libro">
                                 <div class="grid grid-cols-6 col-span-1">
                                     <div class="col-start-1 col-span-1">
@@ -101,7 +111,7 @@ const Index = () => {
                                     <div class="col-start-2 col-end-5">
                                         <div className="contenedorTituloLibro">
                                             <div class="line-clamp-2">
-                                                <p class= "tituloLibro"><b>"Software la Superbabosa"</b></p>
+                                                <p class= "tituloLibro"><b>"{libropv1.titulo}"</b></p>
                                             </div>
                                         </div>
                                         <div className="contenedorInfoLibro">
@@ -112,7 +122,7 @@ const Index = () => {
                                     </div>
                                     <div class="col-start-6 col-span-1">
                                         <div class="imagenLibro">
-                                            <Image src="https://images.cdn2.buscalibre.com/fit-in/180x180/1f/a6/1fa666e0f93fb0bc63c4c214188f3a46.jpg" width={80} height={101}></Image>
+                                            <Image src={libropv1["imagen-portada-url"]} width={80} height={101}></Image>
                                         </div>
                                     </div>
                                 </div>
@@ -120,7 +130,7 @@ const Index = () => {
                         </Link>    
                     </div>
                     <div class="col-start-4 col-span-1">
-                    <Link href="https://www.buscalibre.pe/libro-software-la-superbabosa/9788423687572/p/2858249">
+                    <Link href={libropv2["url-compra"]}>
                             <div class="libro">
                                 <div class="grid grid-cols-6 col-span-1">
                                     <div class="col-start-1 col-span-1">
@@ -131,7 +141,7 @@ const Index = () => {
                                     <div class="col-start-2 col-end-5">
                                         <div className="contenedorTituloLibro">
                                             <div class="line-clamp-2">
-                                                <p class= "tituloLibro"><b>"Gestion de proyectos de Software"</b></p>
+                                                <p class= "tituloLibro"><b>"{libropv2.titulo}"</b></p>
                                             </div>
                                         </div>
                                         <div className="contenedorInfoLibro">
@@ -142,7 +152,7 @@ const Index = () => {
                                     </div>
                                     <div class="col-start-6 col-span-1">
                                         <div class="imagenLibro">
-                                            <Image src="https://images.cdn1.buscalibre.com/fit-in/180x180/20/82/2082a4e5a59dcf7e8531feb8e488c30b.jpg" width={80} height={101}></Image>
+                                            <Image src={libropv2["imagen-portada-url"]} width={80} height={101}></Image>
                                         </div>
                                     </div>
                                 </div>
