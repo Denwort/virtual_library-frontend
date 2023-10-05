@@ -21,26 +21,20 @@ export default function busqueda() {
         return data
     }
     async function escribirJsonResultados(searchResults) {
-        try {
-            const requestOptions = {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(searchResults),
-            };
-    
-            // Realiza la solicitud POST a la API de escritura de resultados
-            const response = await fetch('/api/escribeBusquedaAPI', requestOptions);
-    
-            if (response.ok) {
-                console.log('Resultados guardados correctamente.');
-            } else {
-                console.error('Error al guardar los resultados:', response.statusText);
-            }
-        } catch (error) {
-            console.error('Ocurrió un error al guardar los resultados:', error);
-        }
+
+        const requestOptions = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(searchResults),
+        };
+
+        // Realiza la solicitud POST a la API de escritura de resultados
+        const request = await fetch('/api/escribeBusquedaAPI', requestOptions);
+        data = await request.json()
+        console.log(data)
+
     }
 
     const [palabraclave, setPalabraclave] = useState("");
