@@ -14,6 +14,7 @@ export default function busqueda() {
 
     const router = useRouter()
     var data
+
     async function leerJsonLibreria() {
         const opciones = {
             method: 'GET',
@@ -26,6 +27,7 @@ export default function busqueda() {
         console.log(data)
         return data
     }
+    
     async function escribirJsonResultados(searchResults) {
         //localStorage.setItem("searchResults", JSON.stringify(searchResults));
         const requestOptions = {

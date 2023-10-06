@@ -5,7 +5,7 @@
 		"autor": "Neel Kinge",
 		"isbn": "87-1",
 		"editorial": "Eadel",
-		"genero": "romance",
+		"genero": "mystery",
 		"tipo": "novela",
 		"descripcion": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
 		"imagen": "http://dummyimage.com/220x156.png/5fa2dd/ffffff"
@@ -1095,6 +1095,16 @@
 		"autor": "yo",
 		"editorial": "yodenuevo",
 		"descripcion": "buen libro, recomendado",
+		"imagen": ""
+	},
+	{
+		"id": "101",
+		"titulo": "nuevecito3",
+		"isbn": "b",
+		"genero": "c",
+		"autor": "a",
+		"editorial": "e",
+		"descripcion": "d",
 		"imagen": ""
 	}
 ]

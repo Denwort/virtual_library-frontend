@@ -101,7 +101,7 @@ const Busqueda = () => {
                                 class="bg-purple-primary text-purple-bg border-2 border-purple-primary px-4 py-2 hover:bg-blue-600  rounded-full"
                                 onClick={()=>{
                                     if(cuenta.tipo == 'admin') {
-                                        const ruta = '/libro/modificar/' + value[1].id.toString()
+                                        const ruta = '/modificar/' + value[1].id.toString()
                                         router.push(ruta)
                                     }
                                 }}>{boton_texto}</button>
