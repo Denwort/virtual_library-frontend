@@ -2,16 +2,16 @@
 	{
 		"id": "0",
 		"tipo": "admin",
-		"nombres": "admin",
+		"nombres": "soyadmin",
 		"apellidos": "administrador",
-		"tipo_documento": "DNI",
-		"nro_documento": "99999999",
-		"correo": "admin@aloe.ulima.edu.pe",
-		"contrasenha": "password",
-		"foto": "https://images.cdn1.buscalibre.com/fit-in/180x180/17/81/1781448af0263f21662db6c27bc1b48a.jpg",
-		"idioma": "Español",
-		"prefijo": "Sr.",
-		"color": "#a1a1a1"
+		"tipo_documento": "dni",
+		"nro_documento": "77777777",
+		"correo": "admin@ulima.edu.pe",
+		"contrasenha": "admin",
+		"foto": "/Juan.png",
+		"idioma": "Ingles",
+		"prefijo": "Srt",
+		"color": "#f2c2ff"
 	},
 	{
 		"id": "1",
@@ -20,74 +20,19 @@
 		"apellidos": "registrado",
 		"tipo_documento": "dni",
 		"nro_documento": "77777777",
-		"correo": "alumno@ulima.edu.pe",
-		"contrasenha": "alumnito",
-		"foto": "/boton_perfil.png"
+		"correo": "user@ulima.edu.pe",
+		"contrasenha": "user",
+		"foto": "/Juliana.png"
 	},
 	{
 		"id": "2",
 		"tipo": "user",
 		"nombres": "pruebita3",
-		"apellidos": "abc",
-		"tipo_documento": "dni",
-		"nro_documento": "77777778",
-		"correo": "pruebita3@gmail.com",
-		"contrasenha": "pruebita3",
-		"foto": "/boton_perfil.png"
-	},
-	{
-		"id": "3",
-		"tipo": "user",
-		"nombres": "aaa",
-		"apellidos": "sdds",
-		"tipo_documento": "dsad",
-		"nro_documento": "asdsa",
-		"correo": "dasd",
-		"contrasenha": "asdas",
-		"foto": "/boton_perfil.png"
-	},
-	{
-		"id": "4",
-		"tipo": "user",
-		"nombres": "123",
-		"apellidos": "123",
-		"tipo_documento": "123",
-		"nro_documento": "123",
-		"correo": "123",
-		"contrasenha": "123",
-		"foto": "/boton_perfil.png"
-	},
-	{
-		"id": "5",
-		"tipo": "user",
-		"nombres": "prueba_cambio_ids",
-		"apellidos": "xd",
-		"tipo_documento": "sjh",
-		"nro_documento": "jisjfjsd",
-		"correo": "jhfsdjfsd@gmail.com",
-		"contrasenha": "aaa",
-		"foto": "/boton_perfil.png"
-	},
-	{
-		"id": "6",
-		"tipo": "user",
-		"nombres": "ai",
-		"apellidos": "si",
-		"tipo_documento": "dni",
-		"nro_documento": "737878787",
-		"correo": "aaa@gmail.com",
-		"contrasenha": "ABCD",
-		"foto": "/boton_perfil.png"
-	},
-	{
-		"id": "7",
-		"tipo": "user",
-		"nombres": "aaa19",
-		"apellidos": "xd",
-		"tipo_documento": "xd",
-		"nro_documento": "xd",
-		"correo": "abc@gmail.com",
-		"contrasenha": "aaa",
+		"apellidos": "b",
+		"tipo_documento": "c",
+		"nro_documento": "d",
+		"correo": "pruebita@ulima.edu.pe",
+		"contrasenha": "pruebita",
 		"foto": "/boton_perfil.png"
 	}
 ]

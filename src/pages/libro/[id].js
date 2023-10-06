@@ -2,12 +2,14 @@ import Link from "next/link"
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/Layout.js'
+import {useMiProvider} from '../context/contexto'
 import {useRouter} from 'next/router'
 import {useState, useEffect} from 'react'
 
 const detalleLibro = () => 
 {
     const router = useRouter()
+    const [cuenta, setCuenta] = useMiProvider()
 
     const [libros, setLibros] = useState([]);
     async function leer() {
@@ -45,8 +47,8 @@ const detalleLibro = () =>
                 }
             )
             const data = await peticion.json()
-            guardarLib()
             alert("libro eliminado")
+            router.push('/busqueda')
 
         } catch (err) {
             console.log(err)
@@ -142,8 +144,9 @@ const detalleLibro = () =>
                     </div>
                 </form>
 
-             <button onClick={handleEliminar}>Eliminar</button>
-                
+            {cuenta.tipo == 'admin' && (
+                <button onClick={handleEliminar}>Eliminar</button>
+            )}
                  
 
                 

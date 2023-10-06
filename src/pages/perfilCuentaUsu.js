@@ -29,8 +29,8 @@ const Perfil = () => {
                     }
                 }
             )
-
             const data = await peticion.json()
+            setCuenta(cuenta_modificada)
             alert("Datos actualizados")
 
         } catch (err) {
@@ -78,7 +78,7 @@ const Perfil = () => {
         <div class="grid grid-cols-2 gap-4">
             <div class="col-span-1">
                 <div id="imagen_perfil">
-                    <Image src={createObjectURL || '/Juan.png'} name="foto" alt="foto de perfil" width={279} height={253} />
+                    <Image src={cuenta.foto} name="foto" alt="foto de perfil" width={279} height={253} />
                         <input
                             type="file"
                             id="myfile"
@@ -97,7 +97,7 @@ const Perfil = () => {
                                 <p>Correo</p>
                             </div>
                             <div id="input_text_correo">
-                                <input type='email' placeholder='Ingrese correo' name="correo" id="inputCorreoUsu" onChange={registrarCambio}/>
+                                <input type='email' placeholder='Ingrese correo' name="correo" id="inputCorreoUsu" defaultValue={cuenta.correo} onChange={registrarCambio}/>
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@ const Perfil = () => {
                                 <p>Contraseña</p>
                             </div>
                             <div id="input_text_contra">
-                                <input type='password' placeholder='Ingrese contraseña' name="contrasenha" id="inputContraUsu" onChange={registrarCambio}/>
+                                <input type='password' placeholder='Ingrese contraseña' name="contrasenha" id="inputContraUsu" defaultValue={cuenta.contrasenha} onChange={registrarCambio}/>
                             </div>
                         </div>
                     </div>

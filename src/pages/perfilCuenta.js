@@ -28,8 +28,8 @@ const Perfil = () => {
                     }
                 }
             )
-
             const data = await peticion.json()
+            setCuenta(cuenta_modificada)
             alert("Datos actualizados")
 
         } catch (err) {
@@ -131,7 +131,7 @@ const Perfil = () => {
             </Head>
             <div id="tituloP">
                     <p>Hola, {cuenta.nombres}</p>
-                    <Image src="/divider.png" width={1088} height={1}></Image>
+                    <Image src="/divider.png" width={1088} height={1} alt="divider"></Image>
             </div>
             <div id="form_perfil">
                 <div id="barra_perfil">
@@ -150,7 +150,7 @@ const Perfil = () => {
                     <div class="col-span-1">
                         <div id="imagen_perfil">
                             <form onSubmit={uploadToServer} encType="multipart/form-data">
-                                <Image src={createObjectURL || '/juliana.png'} width={279} height={253} />
+                                <Image src={cuenta.foto} width={279} height={253} alt="foto"/>
                                     <input
                                     type="file"
                                     id="myfile"
@@ -171,7 +171,7 @@ const Perfil = () => {
                                         <p>Correo</p>
                                     </div>
                                     <div id="input_text_correo">
-                                        <input type='email' placeholder='Ingrese correo' id="inputCorreo" name="correo" onChange={registrarCambio}/>
+                                        <input type='email' placeholder='Ingrese correo' id="inputCorreo" name="correo" defaultValue={cuenta.correo} onChange={registrarCambio}/>
                                     </div>
                                 </div>
                             </div>
@@ -189,7 +189,7 @@ const Perfil = () => {
                                         <p>Contraseña</p>
                                     </div>
                                     <div id="input_text_contra">
-                                        <input type='password' placeholder='Ingrese contraseña' id="inputContra" name="contrasenha" onChange={registrarCambio}/>
+                                        <input type='password' placeholder='Ingrese contraseña' id="inputContra" name="contrasenha" defaultValue={cuenta.contrasenha} onChange={registrarCambio}/>
                                     </div>
                                 </div>
                             </div>

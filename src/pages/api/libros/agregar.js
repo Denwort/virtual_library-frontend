@@ -5,8 +5,6 @@ import process from 'process'
 export default async function registoAPI (req, res) {
 
     // Leer json
-    let filePath = 'src/json/libros.json'
-    let ruta = path.join( process.cwd() , filePath )
     const opciones = {
         method : 'GET',
         headers : {
@@ -31,10 +29,9 @@ export default async function registoAPI (req, res) {
     libros.push(body)
 
     // Escribir el json
-    await fsPromises.writeFile(
-        './src/json/libros.json',
-        JSON.stringify(libros, null, '\t')
-    )
+    let filePath = 'src/json/libros.json'
+    let ruta = path.join( process.cwd() , filePath )
+    await fsPromises.writeFile(ruta, JSON.stringify(libros, null, '\t'))
     res.status(200).json(libros)
     
 }
