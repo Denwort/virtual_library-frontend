@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout from './components/Layout.js'
 import { useMiProvider } from './context/contexto'
+import { useState } from 'react'
 
 const Perfil = () => {
 
@@ -12,6 +13,7 @@ const Perfil = () => {
 
     function registrarCambio(e){
         cuenta_modificada[e.target.name] = e.target.value
+        console.log(e.target.value)
     }
     
     const escribirJSON = async () =>{
@@ -35,6 +37,20 @@ const Perfil = () => {
             console.log(err)
         }
   
+    }
+
+    const [image, setImage] = useState(null);
+    const [createObjectURL, setCreateObjectURL] = useState(null);
+
+    function uploadToClient(event){
+        if (event.target.files && event.target.files[0]) {
+            const i = event.target.files[0];
+            const filename = i.name; // Get the filename
+            setImage(i);
+            setCreateObjectURL(URL.createObjectURL(i));
+            cuenta_modificada[event.target.name]= filename;
+            console.log(filename)
+        }
     }
 
     return (
@@ -62,7 +78,14 @@ const Perfil = () => {
         <div class="grid grid-cols-2 gap-4">
             <div class="col-span-1">
                 <div id="imagen_perfil">
-                    <Image src="/Juan.png" width={279} height={253} ></Image>
+                    <Image src={createObjectURL || '/Juan.png'} name="foto" alt="foto de perfil" width={279} height={253} />
+                        <input
+                            type="file"
+                            id="myfile"
+                            name="foto"
+                            onChange={uploadToClient}
+                            accept="image/*" // Acepta solo archivos de imagen
+                        />
                 </div>
             </div>
             <div class="col-span-1">
@@ -74,7 +97,7 @@ const Perfil = () => {
                                 <p>Correo</p>
                             </div>
                             <div id="input_text_correo">
-                                <input type='email' placeholder='Ingrese correo' id="inputCorreoUsu" onChange={registrarCambio}/>
+                                <input type='email' placeholder='Ingrese correo' name="correo" id="inputCorreoUsu" onChange={registrarCambio}/>
                             </div>
                         </div>
                     </div>
@@ -92,7 +115,7 @@ const Perfil = () => {
                                 <p>Contraseña</p>
                             </div>
                             <div id="input_text_contra">
-                                <input type='password' placeholder='Ingrese contraseña' id="inputContraUsu" onChange={registrarCambio}/>
+                                <input type='password' placeholder='Ingrese contraseña' name="contrasenha" id="inputContraUsu" onChange={registrarCambio}/>
                             </div>
                         </div>
                     </div>
