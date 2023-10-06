@@ -7,32 +7,32 @@ import { useEffect, useState } from "react"; // Importa useEffect y useState
 import { useRouter } from "next/router";
 
 const Busqueda = () => {
-  const [cuenta, setCuenta] = useMiProvider();
-  const router = useRouter();
+    const [cuenta, setCuenta] = useMiProvider();
+    const router = useRouter();
 
-  // Define un estado para almacenar los resultados de la API
-  const [resultados, setResultados] = useState([]);
+    // Define un estado para almacenar los resultados de la API
+    const [resultados, setResultados] = useState([]);
 
-  async function leer() {
-    const opciones = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
+    async function leer() {
+        const opciones = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        };
 
-    const request = await fetch("api/busqueda/leerInfoBusqueda", opciones);
-    const data = await request.json();
-    console.log(data);
+        const request = await fetch("api/busqueda/leer", opciones);
+        const data = await request.json();
+        console.log(data);
 
-    // Actualiza el estado con los resultados de la API
-    setResultados(data);
-  }
+        // Actualiza el estado con los resultados de la API
+        setResultados(data);
+    }
 
-  // Llama a la función de leer cuando el componente se monta
-  useEffect(() => {
-    leer();
-  }, []); // El segundo argumento [] asegura que useEffect se ejecute solo una vez
+    // Llama a la función de leer cuando el componente se monta
+    useEffect(() => {
+        leer();
+    }, []); // El segundo argumento [] asegura que useEffect se ejecute solo una vez
 
 
     
@@ -101,7 +101,7 @@ const Busqueda = () => {
                                 class="bg-purple-primary text-purple-bg border-2 border-purple-primary px-4 py-2 hover:bg-blue-600  rounded-full"
                                 onClick={()=>{
                                     if(cuenta.tipo == 'admin') {
-                                        const ruta = '/libro/modificar/' + value[1].id.toString()
+                                        const ruta = '/modificar/' + value[1].id.toString()
                                         router.push(ruta)
                                     }
                                 }}>{boton_texto}</button>

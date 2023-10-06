@@ -1,13 +1,29 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
-import cuentas from '../json/cuentas.json'
+import {useState, useEffect} from 'react'
 import { useMiProvider } from './context/contexto'
 
 const login = () => {
     const router = useRouter()
     const [cuenta, setCuenta] = useMiProvider()
 
+    const [cuentas, setCuentas] = useState([]);
+    async function leer() {
+        const opciones = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        };
+        const request = await fetch("/api/cuentas/leer", opciones);
+        const data = await request.json();
+        console.log(data);
+        setCuentas(data);
+    }
+    useEffect(() => {
+        leer();
+    }, []);
     
 
     return(
@@ -97,7 +113,6 @@ const login = () => {
                         setCuenta(cuenta)
                         router.push('/')
                     }
-                    
                 }
             }>Ingresar</button>
             </div>

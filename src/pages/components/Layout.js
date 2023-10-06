@@ -10,7 +10,7 @@ export default props => {
 
     const [cuenta, setCuenta] = useMiProvider()
     let titulo = ''
-    let segundo_link_href = ''
+    let segundo_link_mostrar = false
     let tercer_link_titulo = ''
     let tercer_link_href = ''
     let foto_src = ''
@@ -18,6 +18,7 @@ export default props => {
 
     if (cuenta.tipo == 'admin') {
         titulo = 'Administracion de bibliotecas'
+        segundo_link_mostrar = true
         tercer_link_titulo = 'Bibliotecas'
         tercer_link_href = '/busqueda'
         foto_src = cuenta.foto
@@ -25,14 +26,16 @@ export default props => {
     }
     else if (cuenta.tipo == 'user') {
         titulo = 'Sistema de bibliotecas'
+        segundo_link_mostrar = true
         tercer_link_titulo = 'Prestamos'
-        tercer_link_href = '/busquedaUsu'
+        tercer_link_href = '/busqueda'
         foto_src = cuenta.foto
         foto_href = '/perfilDatosUsu'
     }
     else { // Sin haberse logeado (invitado) (guest)
         titulo = 'Biblioteca'
-        tercer_link_titulo = 'Bibliotecas'
+        segundo_link_mostrar = false
+        tercer_link_titulo = 'Buscar'
         tercer_link_href = '/busqueda'
         foto_src = '/login.svg'
         foto_href = '/login'
@@ -64,7 +67,9 @@ export default props => {
             <nav id="nav">
                 <ul>
                     <li><Link href="/">Inicio</Link></li>
-                    <li><Link href={foto_href}>Perfil</Link></li>
+                    {segundo_link_mostrar && (
+                        <li><Link href={foto_href}>Perfil</Link></li>
+                    )}
                     <li><Link href={tercer_link_href}>{tercer_link_titulo}</Link></li>
                 </ul>
             </nav>

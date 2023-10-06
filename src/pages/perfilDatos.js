@@ -27,8 +27,8 @@ const Perfil = () => {
                     }
                 }
             )
-
             const data = await peticion.json()
+            setCuenta(cuenta_modificada)
             alert("Datos actualizados")
 
         } catch (err) {
@@ -48,7 +48,7 @@ const Perfil = () => {
     </Head>
     <div id="tituloP">
             <p>Hola, Juan</p>
-            <Image src="/divider.png" width={1088} height={1}></Image>
+            <Image src="/divider.png" width={1088} height={1} alt="divider"></Image>
     </div>
     <div id="form_perfil">
         <div id="barra_perfil">
@@ -66,7 +66,7 @@ const Perfil = () => {
         <div class="grid grid-cols-2 gap-4">
             <div class="col-span-1">
                 <div id="imagen_perfil">
-                    <Image src="/juliana.png" width={279} height={253} ></Image>
+                    <Image src={cuenta.foto} width={279} height={253} alt="foto"></Image>
                 </div>
             </div>
             <div class="col-span-1">
@@ -78,7 +78,7 @@ const Perfil = () => {
                                 <p>Nombres</p>
                             </div>
                             <div id="input_text_nombre">
-                                <input type='text' placeholder='Ingrese nombre' id="inputNombre" onChange={registrarCambio}/>
+                                <input type='text' placeholder='Ingrese nombre' id="inputNombre" name="nombres" defaultValue={cuenta.nombres} onChange={registrarCambio}/>
                             </div>
                         </div>
                     </div>
@@ -96,7 +96,7 @@ const Perfil = () => {
                                 <p>Tipo de Documento</p>
                             </div>
                             <div id="input_text_tipo">
-                                <input type='text' placeholder='Ingrese documento' id="inputTipo" onChange={registrarCambio}/>
+                                <input type='text' placeholder='Ingrese documento' id="inputTipo" name="tipo_documento" defaultValue={cuenta.tipo_documento} onChange={registrarCambio}/>
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@ const Perfil = () => {
                                 <p>Apellidos</p>
                             </div>
                             <div id="input_text_ape">
-                                <input type='text' placeholder='Ingrese apellidos' id="inputApe" />
+                                <input type='text' placeholder='Ingrese apellidos' id="inputApe" name="apeliidos" defaultValue={cuenta.apellidos} onChange={registrarCambio} />
                                 </div>
                             </div>
                         </div>
@@ -133,7 +133,7 @@ const Perfil = () => {
                                             <p>Nro de documento</p>
                                         </div>
                                         <div id="input_text_nro">
-                                            <input type='text' placeholder='Ingrese número' id="inputNro" />
+                                            <input type='text' placeholder='Ingrese número' id="inputNro" name="nro_documento" defaultValue={cuenta.nro_documento} onChange={registrarCambio}/>
                                         </div>
                                     </div>
                                 </div>

@@ -3,16 +3,33 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/Layout'
 import {useMiProvider} from '../context/contexto.js'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {useRouter} from 'next/router'
-import libros from '../../json/libreria.json'
 
 const ModificarLibro = () => {
 
     const router = useRouter()
     const [cuenta, setCuenta] = useMiProvider()
     
-    const p = libros[router.query.id]
+    const [libros, setLibros] = useState([]);
+    async function leer() {
+        const opciones = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        };
+        const request = await fetch("../api/libros/leer", opciones);
+        const data = await request.json();
+        console.log(data);
+        setLibros(data);
+    }
+    useEffect(() => {
+        leer();
+    }, []);
+
+    const id = router.query.id
+    const p = libros.filter((item)=>{return item["id"] == id.toString()})[0]
     if (!p) return <p></p>
 
     let libroModificado = {...p}
@@ -22,11 +39,11 @@ const ModificarLibro = () => {
     }
 
     const escribirJSON = async () =>{
-        
+        console.log(libroModificado)
         const params = JSON.stringify(libroModificado)
         try {
             const peticion = await fetch (
-                '/api/modificar',
+                '../api/libros/modificar',
                 {
                     method : 'POST',
                     body : params,
@@ -37,7 +54,6 @@ const ModificarLibro = () => {
             )
 
             const data = await peticion.json()
-            guardarLib()
             alert("libro modificado")
 
         } catch (err) {

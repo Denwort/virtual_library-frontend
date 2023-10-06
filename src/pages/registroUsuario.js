@@ -1,10 +1,27 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {useRouter} from 'next/router'
-import cuentas from '../json/cuentas.json'
 
 const registroUsuario = () => {
+
+    // Leer cuentas
+    const [cuentas, setCuentas] = useState([]);
+    async function leer() {
+        const opciones = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        };
+        const request = await fetch("/api/cuentas/leer", opciones);
+        const data = await request.json();
+        console.log(data);
+        setCuentas(data);
+    }
+    useEffect(() => {
+        leer();
+    }, []);
 
     const router = useRouter()
 

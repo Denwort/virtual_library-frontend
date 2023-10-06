@@ -2,14 +2,85 @@ import Link from "next/link"
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/Layout.js'
-import libros from '../../json/libreria.json'
+import {useMiProvider} from '../context/contexto'
 import {useRouter} from 'next/router'
+import {useState, useEffect} from 'react'
 
 const detalleLibro = () => 
 {
     const router = useRouter()
-    const p = libros[router.query.id]
+    const [cuenta, setCuenta] = useMiProvider()
+
+    const [libros, setLibros] = useState([]);
+    const [reservas, setReservas] = useState([]);
+    async function leer() {
+        const opciones = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        };
+        const request = await fetch("../api/libros/leer", opciones);
+        const data = await request.json();
+        console.log(data);
+        setLibros(data);
+    }
+    async function leerReservas() {
+        const opciones = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        };
+        const request = await fetch("../api/reservas/leer", opciones);
+        const data = await request.json();
+        console.log(data);
+        setReservas(data);
+    }
+    useEffect(() => {
+        leer();
+        leerReservas();
+    }, []);
+
+    const id = router.query.id
+    const p = libros.filter((item)=>{return item["id"] == id.toString()})[0]
+    
     if (!p) return <p></p>
+
+    // Revisar disponibilidad
+    let disponibilidad = 'Disponible'
+    reservas.forEach((item,index)=>{
+        if(item["libro_id"] == id) {
+            disponibilidad = 'No disponible'
+        }
+    })
+    if(cuenta.tipo == 'admin') {}
+
+    // Eliminar
+    async function handleEliminar(){
+        const params = JSON.stringify(p)
+        try {
+            const peticion = await fetch (
+                '/api/libros/eliminar',
+                {
+                    method : 'POST',
+                    body : params,
+                    headers : {
+                        'Content-Type' : 'application/json'
+                    }
+                }
+            )
+            const data = await peticion.json()
+            alert("libro eliminado")
+            router.push('/busqueda')
+
+        } catch (err) {
+            console.log(err)
+        }
+  
+    }
+
+    
 
     return <Layout content={
         <>
@@ -83,7 +154,7 @@ const detalleLibro = () =>
                                             <p>Ingrese una Fecha limite</p>
                                         </div>
                                         <div id="input_text_usuario">
-                                            <input type='date' id="inputDate" defaultValue={obtenerFechaActual()} onChange={handleChange}/>
+                                            <input type='date' id="inputDate" defaultValue={obtenerFechaActual()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={handleChange}/>
                                         </div>
                                     </div>
                                 </div>
@@ -99,31 +170,9 @@ const detalleLibro = () =>
                     </div>
                 </form>
 
-             <button onClick={ async () =>{
-        
-                                    const params = JSON.stringify(p)
-                                    try {
-                                        const peticion = await fetch (
-                                            '/api/libros/eliminar',
-                                            {
-                                                method : 'POST',
-                                                body : params,
-                                                headers : {
-                                                    'Content-Type' : 'application/json'
-                                                }
-                                            }
-                                        )
-                            
-                                        const data = await peticion.json()
-                                        guardarLib()
-                                        alert("libro eliminado")
-                            
-                                    } catch (err) {
-                                        console.log(err)
-                                    }
-                              
-                                }}>Eliminar</button>
-                
+            {cuenta.tipo == 'admin' && (
+                <button onClick={handleEliminar}>Eliminar</button>
+            )}
                  
 
                 
@@ -152,8 +201,19 @@ function obtenerFechaActual() {
     const year = hoy.getFullYear();
     const mes = String(hoy.getMonth() + 1).padStart(2, '0');
     const dia = String(hoy.getDate()).padStart(2, '0');
+    console.log(`${year}-${mes}-${dia}`)
     return `${year}-${mes}-${dia}`;
 }
+function obtenerFechaFutura(){
+    let treintaDias = new Date();
+    treintaDias.setDate(treintaDias.getDate() + 30)
+    const year = treintaDias.getFullYear();
+    const mes = String(treintaDias.getMonth() + 1).padStart(2, '0');
+    const dia = String(treintaDias.getDate()).padStart(2, '0');
+    console.log(`${year}-${mes}-${dia}`)
+    return `${year}-${mes}-${dia}`;
+}
+
 function hacernada(e){
     e.preventDefault()
 }

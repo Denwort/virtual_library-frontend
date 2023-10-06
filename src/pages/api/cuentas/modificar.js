@@ -1,27 +1,32 @@
-
 import fsPromises from 'fs/promises'
-import cuentas from '../../../json/cuentas.json'
+import path from 'path'
+import process from 'process'
 
 export default async function registoAPI (req, res) {
-    if(req.method !== 'POST'){
-        req.status(405).send({"error": "metodo invalido"})
-    }
-    else if(req.method === 'POST'){
         
-        const tmp = JSON.stringify(req.body).replace("'",'"')
-        const body = JSON.parse(tmp)
-        
-        cuentas[body.id] = body
-        console.log(body)
-        console.log(cuentas)
-        await fsPromises.writeFile(
-            './src/json/cuentas.json',
-            JSON.stringify(cuentas, null, '\t')
-        )
-
-        res.status(200).json(
-            cuentas
-        )
-
+    // Leer json
+    const opciones = {
+        method : 'GET',
+        headers : {
+            "Content-Type" : "application/json"
+        }
     }
+    const request = await fetch( process.env.URL + '/api/cuentas/leer', opciones)
+    let cuentas = await request.json()
+
+    // Obtener body
+    const tmp = JSON.stringify(req.body).replace("'",'"')
+    const body = JSON.parse(tmp)
+    
+    cuentas.forEach((element,index) => {
+        if(element["id"] == body["id"]) cuentas[index] = body
+    });
+
+    // Escribir
+    let filePath = 'src/json/cuentas.json'
+    let ruta = path.join( process.cwd() , filePath )
+    await fsPromises.writeFile(ruta, JSON.stringify(cuentas, null, '\t'))
+    res.status(200).json(cuentas)
+
+    
 }

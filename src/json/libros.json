@@ -22,17 +22,6 @@
 		"imagen": "http://dummyimage.com/216x235.png/5fa2dd/ffffff"
 	},
 	{
-		"id": "2",
-		"titulo": "Journey Into Fear",
-		"autor": "Abram Conlaund",
-		"isbn": "878613058-7",
-		"editorial": "Buzzbean",
-		"genero": "fiction",
-		"tipo": "revista",
-		"descripcion": "Fusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
-		"imagen": "http://dummyimage.com/110x128.png/dddddd/000000"
-	},
-	{
 		"id": "3",
 		"titulo": "Trapped in the Closet: Chapters 1-12",
 		"autor": "Jordan Filkov",
@@ -53,28 +42,6 @@
 		"tipo": "novela",
 		"descripcion": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
 		"imagen": "http://dummyimage.com/175x325.png/5fa2dd/ffffff"
-	},
-	{
-		"id": "5",
-		"titulo": "All-Star Superman",
-		"autor": "Marilin Cosely",
-		"isbn": "685031365-7",
-		"editorial": "Kanoodle",
-		"genero": "fiction",
-		"tipo": "articulo",
-		"descripcion": "Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
-		"imagen": "http://dummyimage.com/116x182.png/ff4444/ffffff"
-	},
-	{
-		"id": "6",
-		"titulo": "Year of the Dragon",
-		"autor": "Vin McMyler",
-		"isbn": "672664843-X",
-		"editorial": "Quimm",
-		"genero": "fiction",
-		"tipo": "libro",
-		"descripcion": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
-		"imagen": "http://dummyimage.com/202x384.png/ff4444/ffffff"
 	},
 	{
 		"id": "7",
@@ -165,17 +132,6 @@
 		"imagen": "http://dummyimage.com/225x170.png/cc0000/ffffff"
 	},
 	{
-		"id": "15",
-		"titulo": "Hunters, The (Jägarna)",
-		"autor": "Alexandre Longworthy",
-		"isbn": "978001651-1",
-		"editorial": "Bluejam",
-		"genero": "fiction",
-		"tipo": "libro",
-		"descripcion": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.",
-		"imagen": "http://dummyimage.com/100x325.png/dddddd/000000"
-	},
-	{
 		"id": "16",
 		"titulo": "Copenhagen",
 		"autor": "Angele Abry",
@@ -185,17 +141,6 @@
 		"tipo": "articulo",
 		"descripcion": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
 		"imagen": "http://dummyimage.com/108x204.png/ff4444/ffffff"
-	},
-	{
-		"id": "17",
-		"titulo": "Wings in the Dark",
-		"autor": "Tyler Brambell",
-		"isbn": "915211700-6",
-		"editorial": "Twinte",
-		"genero": "romance",
-		"tipo": "articulo",
-		"descripcion": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
-		"imagen": "http://dummyimage.com/177x107.png/dddddd/000000"
 	},
 	{
 		"id": "18",
@@ -482,17 +427,6 @@
 		"tipo": "novela",
 		"descripcion": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
 		"imagen": "http://dummyimage.com/214x299.png/dddddd/000000"
-	},
-	{
-		"id": "44",
-		"titulo": "Female Trouble",
-		"autor": "Karoly Cathie",
-		"isbn": "382422529-8",
-		"editorial": "Gigashots",
-		"genero": "romance",
-		"tipo": "novela",
-		"descripcion": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.",
-		"imagen": "http://dummyimage.com/181x375.png/ff4444/ffffff"
 	},
 	{
 		"id": "45",
@@ -1106,6 +1040,16 @@
 		"autor": "yo",
 		"editorial": "yodenuevo",
 		"descripcion": "buen libro, recomendado",
+		"imagen": ""
+	},
+	{
+		"id": "101",
+		"titulo": "nuevecito3",
+		"isbn": "b",
+		"genero": "c",
+		"autor": "a",
+		"editorial": "e",
+		"descripcion": "d",
 		"imagen": ""
 	}
 ]

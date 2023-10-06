@@ -27,8 +27,8 @@ const Perfil = () => {
                     }
                 }
             )
-
             const data = await peticion.json()
+            setCuenta(cuenta_modificada)
             alert("Datos actualizados")
 
         } catch (err) {
@@ -46,7 +46,7 @@ const Perfil = () => {
     </Head>
     <div id="tituloP">
             <p>Hola, Juan</p>
-            <Image src="/divider.png" width={1088} height={1}></Image>
+            <Image src="/divider.png" width={1088} height={1} alt="divider"></Image>
     </div>
     <div id="form_perfil">
         <div id="barra_perfil">
@@ -64,7 +64,7 @@ const Perfil = () => {
         <div class="grid grid-cols-2 gap-4">
             <div class="col-span-1">
                 <div id="imagen_perfil">
-                    <Image src="/juliana.png" width={279} height={253} ></Image>
+                    <Image src={cuenta.foto} width={279} height={253} alt="divider"></Image>
                 </div>
             </div>
             <div class="col-span-1">
@@ -76,7 +76,7 @@ const Perfil = () => {
                                 <p>Idioma</p>
                             </div>
                             <div id="input_text_idioma">
-                                <input type='text' placeholder='Ingrese idioma' id="inputIdioma" onChange={registrarCambio}/>
+                                <input type='text' placeholder='Ingrese idioma' id="inputIdioma" name="idioma" defaultValue={cuenta.idioma} onChange={registrarCambio}/>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@ const Perfil = () => {
                                 <p>Prefijo</p>
                             </div>
                             <div id="input_text_prefijo">
-                                <input type='text' placeholder='Ingrese prefijo' id="inputPrefijo" onChange={registrarCambio}/>
+                                <input type='text' placeholder='Ingrese prefijo' id="inputPrefijo" name="prefijo" defaultValue={cuenta.prefijo} onChange={registrarCambio}/>
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@ const Perfil = () => {
                                 <p>Color</p>
                             </div>
                             <div id="input_text_color">
-                                <input type='color' id="inputColor" onChange={registrarCambio}/>
+                                <input type='color' id="inputColor" name="color" defaultValue={cuenta.color} onChange={registrarCambio}/>
                             </div>
                         </div>
                     </div>
