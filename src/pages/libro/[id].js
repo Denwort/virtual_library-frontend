@@ -12,6 +12,7 @@ const detalleLibro = () =>
     const [cuenta, setCuenta] = useMiProvider()
 
     const [libros, setLibros] = useState([]);
+    const [reservas, setReservas] = useState([]);
     async function leer() {
         const opciones = {
         method: "GET",
@@ -24,8 +25,21 @@ const detalleLibro = () =>
         console.log(data);
         setLibros(data);
     }
+    async function leerReservas() {
+        const opciones = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        };
+        const request = await fetch("../api/reservas/leer", opciones);
+        const data = await request.json();
+        console.log(data);
+        setReservas(data);
+    }
     useEffect(() => {
         leer();
+        leerReservas();
     }, []);
 
     const id = router.query.id
@@ -33,6 +47,16 @@ const detalleLibro = () =>
     
     if (!p) return <p></p>
 
+    // Revisar disponibilidad
+    let disponibilidad = 'Disponible'
+    reservas.forEach((item,index)=>{
+        if(item["libro_id"] == id) {
+            disponibilidad = 'No disponible'
+        }
+    })
+    if(cuenta.tipo == 'admin') {}
+
+    // Eliminar
     async function handleEliminar(){
         const params = JSON.stringify(p)
         try {
@@ -55,6 +79,8 @@ const detalleLibro = () =>
         }
   
     }
+
+    
 
     return <Layout content={
         <>
@@ -128,7 +154,7 @@ const detalleLibro = () =>
                                             <p>Ingrese una Fecha limite</p>
                                         </div>
                                         <div id="input_text_usuario">
-                                            <input type='date' id="inputDate" defaultValue={obtenerFechaActual()} onChange={handleChange}/>
+                                            <input type='date' id="inputDate" defaultValue={obtenerFechaActual()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={handleChange}/>
                                         </div>
                                     </div>
                                 </div>
@@ -175,8 +201,19 @@ function obtenerFechaActual() {
     const year = hoy.getFullYear();
     const mes = String(hoy.getMonth() + 1).padStart(2, '0');
     const dia = String(hoy.getDate()).padStart(2, '0');
+    console.log(`${year}-${mes}-${dia}`)
     return `${year}-${mes}-${dia}`;
 }
+function obtenerFechaFutura(){
+    let treintaDias = new Date();
+    treintaDias.setDate(treintaDias.getDate() + 30)
+    const year = treintaDias.getFullYear();
+    const mes = String(treintaDias.getMonth() + 1).padStart(2, '0');
+    const dia = String(treintaDias.getDate()).padStart(2, '0');
+    console.log(`${year}-${mes}-${dia}`)
+    return `${year}-${mes}-${dia}`;
+}
+
 function hacernada(e){
     e.preventDefault()
 }

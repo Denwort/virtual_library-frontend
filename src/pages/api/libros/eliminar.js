@@ -39,4 +39,6 @@ export default async function registoAPI (req, res) {
     await fsPromises.writeFile(ruta , JSON.stringify(libros, null, '\t'))
     res.status(200).json(libros)
     
+    // Eliminar todas las reservas con ese libro
+    // TODO
 }

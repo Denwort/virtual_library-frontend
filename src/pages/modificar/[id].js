@@ -54,7 +54,6 @@ const ModificarLibro = () => {
             )
 
             const data = await peticion.json()
-            guardarLib()
             alert("libro modificado")
 
         } catch (err) {
