@@ -154,7 +154,7 @@ const Perfil = () => {
                                     <input
                                     type="file"
                                     id="myfile"
-                                    name="imagen"
+                                    name="foto"
                                     onChange={uploadToClient}
                                     accept="image/*" // Acepta solo archivos de imagen
                                     />

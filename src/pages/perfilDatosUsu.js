@@ -61,7 +61,7 @@ const Perfil = () => {
         <div class="grid grid-cols-2 gap-4">
             <div class="col-span-1">
                 <div id="imagen_perfil">
-                    <Image src="/Juan.png" width={279} height={253} ></Image>
+                    <Image src={cuenta_modificada.imagen || "/Juan.png"} width={279} height={253} />
                 </div>
             </div>
             <div class="col-span-1">
