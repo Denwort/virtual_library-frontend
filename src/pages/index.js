@@ -102,7 +102,7 @@ const Index = () => {
                                                 <div class="grid grid-cols-6 col-span-1">
                                                     <div class="col-start-1 col-span-1">
                                                         <div class="circulo">
-                                                            <p className="inicial">A</p>
+                                                        <p className="inicial">{obtenerInicialesEnMayuscula(value[1].titulo)}</p>
                                                         </div>
                                                     </div>
                                                     <div class="col-start-2 col-end-5">
@@ -146,7 +146,7 @@ const Index = () => {
                                                 <div class="grid grid-cols-6 col-span-1">
                                                     <div class="col-start-1 col-span-1">
                                                         <div class="circulo">
-                                                            <p className="inicial">A</p>
+                                                            <p className="inicial">{obtenerInicialesEnMayuscula(value[1].titulo)}</p>
                                                         </div>
                                                     </div>
                                                     <div class="col-start-2 col-end-5">
@@ -185,3 +185,22 @@ const Index = () => {
 }
 
 export default Index
+
+function obtenerInicialesEnMayuscula(texto) {
+    const palabras = texto.split(" ");
+    let iniciales = "";
+  
+    for (let i = 0; i < palabras.length && i < 2; i++) {
+      const palabra = palabras[i];
+      if (palabra.length > 0) {
+        const inicial = palabra.charAt(0).toUpperCase();
+        iniciales += inicial;
+      }
+    }
+
+    if (iniciales === "") {
+      return texto.toUpperCase();
+    }
+  
+    return iniciales;
+  }
