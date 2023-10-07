@@ -15,6 +15,27 @@ const Index = () => {
     const libropv1 = library[0]
     const libropv2 = library[1]
 
+    const escribirJSON = async (e) => {
+        const params = JSON.stringify(cuenta)
+        try {
+            const peticion = await fetch(
+                '/api/proximos/escribir.js',
+                {
+                    method: 'POST',
+                    body: params,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+            )
+            const data = await peticion.json()
+
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
+
     const [recientes, setRecientes] = useState([]);
     async function leerRecientes() {
         const opciones = {
