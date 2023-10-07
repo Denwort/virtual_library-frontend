@@ -1,0 +1,14 @@
+[
+    {
+        "libro_id":"0",
+        "titulo": "Programando con David",
+        "imagen": "https://images.cdn2.buscalibre.com/fit-in/180x180/1f/a6/1fa666e0f93fb0bc63c4c214188f3a46.jpg",
+        "fecha_inicio": "06/10/23"
+    },
+    {
+        "libro_id":"1",
+        "titulo": "Programando con Rozas",
+        "imagen": "https://images.cdn1.buscalibre.com/fit-in/180x180/20/82/2082a4e5a59dcf7e8531feb8e488c30b.jpg",
+        "fecha_inicio": "07/10/23"
+    }  
+]
