@@ -78,14 +78,16 @@ const Perfil = () => {
         <div class="grid grid-cols-2 gap-4">
             <div class="col-span-1">
                 <div id="imagen_perfil">
-                    <Image src={cuenta.foto} name="foto" alt="foto de perfil" width={279} height={253} />
-                        <input
+                    <form encType="multipart/form-data">
+                        <Image src={cuenta.foto} width={279} height={253} alt="foto"/>
+                            <input
                             type="file"
                             id="myfile"
                             name="foto"
-                            onChange={uploadToClient}
                             accept="image/*" // Acepta solo archivos de imagen
-                        />
+                            />
+                        <input type="submit" value="Submit" />
+                    </form>
                 </div>
             </div>
             <div class="col-span-1">

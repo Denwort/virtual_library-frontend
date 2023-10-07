@@ -38,9 +38,32 @@ const Perfil = () => {
 
     }
 
-    const [image, setImage] = useState(null);
-    const [createObjectURL, setCreateObjectURL] = useState(null);
+    const [image, setImage] = useState(null); // Estado para la imagen seleccionada
 
+    const handleImageUpload = async (e) => {
+        const formData = new FormData();
+        formData.append('myfile', e.target.files[0]);
+    
+        try {
+          const response = await fetch('/api/cuentas/upload', {
+            method: 'POST',
+            body: formData,
+          });
+    
+          if (response.ok) {
+            const data = await response.json();
+            cuenta_modificada.foto = data.imageUrl; // Actualiza la URL de la imagen
+            setImage(data.imageUrl); // Actualiza la vista previa de la imagen
+            alert('Imagen subida con éxito');
+          } else {
+            alert('Error al subir la imagen handle');
+          }
+        } catch (err) {
+          console.error(err);
+        }
+    };
+
+/*
     const uploadToClient = (event) => {
         if (event.target.files && event.target.files[0]) {
             const i = event.target.files[0];
@@ -92,6 +115,8 @@ const Perfil = () => {
             alert("Error al subir la imagen");
         }
     };
+*/
+
 /*
     const guardarFoto = async (e) => {
         e.preventDefault()
@@ -149,15 +174,19 @@ const Perfil = () => {
                 <div class="grid grid-cols-2 gap-4">
                     <div class="col-span-1">
                         <div id="imagen_perfil">
-                            <form onSubmit={uploadToServer} encType="multipart/form-data">
-                                <Image src={cuenta.foto} width={279} height={253} alt="foto"/>
-                                    <input
+                            <form encType="multipart/form-data">
+                                {image ? (
+                                    <Image src={image} width={279} height={253} alt="foto" />
+                                    ) : (
+                                    <Image src={cuenta.foto} width={279} height={253} alt="foto" />
+                                    )}
+                                <input
                                     type="file"
                                     id="myfile"
-                                    name="foto"
-                                    onChange={uploadToClient}
-                                    accept="image/*" // Acepta solo archivos de imagen
-                                    />
+                                    name="myfile"
+                                    accept="image/*"
+                                    onChange={handleImageUpload}
+                                />
                                 <input type="submit" value="Submit" />
                             </form>
                         </div>
