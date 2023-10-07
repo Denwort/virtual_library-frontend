@@ -2,12 +2,11 @@ import Link from "next/link"
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/Layout.js'
-import {useMiProvider} from '../context/contexto'
-import {useRouter} from 'next/router'
-import {useState, useEffect} from 'react'
+import { useMiProvider } from '../context/contexto'
+import { useRouter } from 'next/router'
+import { useState, useEffect } from 'react'
 
-const detalleLibro = () => 
-{
+const detalleLibro = () => {
     const router = useRouter()
     const [cuenta, setCuenta] = useMiProvider()
 
@@ -15,10 +14,10 @@ const detalleLibro = () =>
     const [reservas, setReservas] = useState([]);
     async function leer() {
         const opciones = {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
         };
         const request = await fetch("../api/libros/leer", opciones);
         const data = await request.json();
@@ -27,10 +26,10 @@ const detalleLibro = () =>
     }
     async function leerReservas() {
         const opciones = {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
         };
         const request = await fetch("../api/reservas/leer", opciones);
         const data = await request.json();
@@ -43,30 +42,30 @@ const detalleLibro = () =>
     }, []);
 
     const id = router.query.id
-    const p = libros.filter((item)=>{return item["id"] == id.toString()})[0]
-    
+    const p = libros.filter((item) => { return item["id"] == id.toString() })[0]
+
     if (!p) return <p></p>
 
     // Revisar disponibilidad
     let disponibilidad = 'Disponible'
-    reservas.forEach((item,index)=>{
-        if(item["libro_id"] == id) {
+    reservas.forEach((item, index) => {
+        if (item["libro_id"] == id) {
             disponibilidad = 'No disponible'
         }
     })
-    if(cuenta.tipo == 'admin') {}
+    if (cuenta.tipo == 'admin') { }
 
     // Eliminar
-    async function handleEliminar(){
+    async function handleEliminar() {
         const params = JSON.stringify(p)
         try {
-            const peticion = await fetch (
+            const peticion = await fetch(
                 '/api/libros/eliminar',
                 {
-                    method : 'POST',
-                    body : params,
-                    headers : {
-                        'Content-Type' : 'application/json'
+                    method: 'POST',
+                    body: params,
+                    headers: {
+                        'Content-Type': 'application/json'
                     }
                 }
             )
@@ -77,16 +76,16 @@ const detalleLibro = () =>
         } catch (err) {
             console.log(err)
         }
-  
+
     }
 
-    
+
 
     return <Layout content={
         <>
-        <Head>
-            <title>Citas</title>
-        </Head>
+            <Head>
+                <title>Citas</title>
+            </Head>
             <div id="cuerpo_citas">
 
                 <div id="contendor_ListItem">
@@ -97,7 +96,7 @@ const detalleLibro = () =>
                     <div id="state-layer-tituloLibro">
                         <div id="circuloConInicial">
                             <div id="BuildingblockeCircular">
-                                <p id="nombre-dl">PP</p>
+                                <p id="nombre-dl">{obtenerIniciales(p.titulo)}</p>
                             </div>
                         </div>
                         <div id="content_libro_dl">
@@ -154,28 +153,28 @@ const detalleLibro = () =>
                                             <p>Ingrese una Fecha limite</p>
                                         </div>
                                         <div id="input_text_usuario">
-                                            <input type='date' id="inputDate" defaultValue={obtenerFechaActual()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={handleChange}/>
+                                            <input type='date' id="inputDate" defaultValue={obtenerFechaActual()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={handleChange} />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="supporting-text">
                                 <p id="ddmmyyyy"> DD/MM/YYYY</p>
-                            </div> 
+                            </div>
                         </div>
                         <div id="contenedor_breservar">
                             <button id="bReserv" onClick={reservardl} >Reservar</button>
                         </div>
-                        
+
                     </div>
                 </form>
 
-            {cuenta.tipo == 'admin' && (
-                <button onClick={handleEliminar}>Eliminar</button>
-            )}
-                 
+                {cuenta.tipo == 'admin' && (
+                    <button onClick={handleEliminar}>Eliminar</button>
+                )}
 
-                
+
+
             </div>
             <div id="modalReser-dl" class="modal-container-dl">
                 <div class="modal-content-dl">
@@ -204,7 +203,7 @@ function obtenerFechaActual() {
     console.log(`${year}-${mes}-${dia}`)
     return `${year}-${mes}-${dia}`;
 }
-function obtenerFechaFutura(){
+function obtenerFechaFutura() {
     let treintaDias = new Date();
     treintaDias.setDate(treintaDias.getDate() + 30)
     const year = treintaDias.getFullYear();
@@ -214,12 +213,19 @@ function obtenerFechaFutura(){
     return `${year}-${mes}-${dia}`;
 }
 
-function hacernada(e){
+function hacernada(e) {
     e.preventDefault()
 }
 function handleChange(event) {
     const fechaSeleccionada = event.target.value;
     // Realiza acciones con la fecha seleccionada si es necesario
+}
+function obtenerIniciales(titulo) {
+    const palabras = titulo.split(" ");
+    const iniciales = palabras
+      .slice(0, 2) 
+      .map((palabra) => palabra[0].toUpperCase());
+    return iniciales.join("");
   }
 
 function reservardl() {
@@ -229,22 +235,22 @@ function reservardl() {
     const modalReserva = document.getElementById("modalReser-dl");
     const closeModal = document.getElementById("close-dl");
 
-    openModal.onclick = function(){
+    openModal.onclick = function () {
         modalReserva.style.visibility = "visible";
         const fechaSeleccionada = inputDate.value;
         fechaParrafo.textContent = `La reserva del recurso se ha realizado con éxito. Este debe ser devuelto hasta el día ${fechaSeleccionada}`;
     }
 
-    closeModal.onclick = function(){
+    closeModal.onclick = function () {
         modalReserva.style.visibility = "hidden";
     }
     // cerrar en ventana
-    modalReserva.onclick = function(){
+    modalReserva.onclick = function () {
         modalReserva.style.visibility = "hidden";
     }
 
     // Aquí puedes realizar cualquier otra acción relacionada con la reserva
 
-  }
+}
 
 
