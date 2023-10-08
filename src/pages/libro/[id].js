@@ -49,11 +49,12 @@ const detalleLibro = () => {
     // Revisar disponibilidad
     let disponibilidad = 'Disponible'
     reservas.forEach((item, index) => {
-        if (item["libro_id"] == id) {
+        let fecha_final = Date.parse(item["fecha_final"])
+        if (item.libro.id == id && fecha_final > new Date()) {
             disponibilidad = 'No disponible'
+            if(cuenta.tipo == 'admin') disponibilidad = 'Reservado por: ' + item.cuenta.nombres
         }
     })
-    if (cuenta.tipo == 'admin') { }
 
     // Eliminar
     async function handleEliminar() {
@@ -135,10 +136,11 @@ const detalleLibro = () => {
                     </div>
 
                     <div id="dispo-nodispo">
-                        <p id="dispoNodispo">Disponible</p>
+                        <p id="dispoNodispo">{disponibilidad}</p>
                     </div>
 
                 </div>
+                {cuenta.tipo == 'user' && (
                 <form action="reservarLibroDatos" onSubmit={hacernada}>
                     <div id="total-reserva">
                         <div id="contenedor_reserva-dl">
@@ -163,14 +165,18 @@ const detalleLibro = () => {
                             </div>
                         </div>
                         <div id="contenedor_breservar">
-                            <button id="bReserv" onClick={reservardl} >Reservar</button>
+                            <button id="bReserv" onClick={reservardl} disabled={disponibilidad!='Disponible'}>Reservar</button>
                         </div>
 
                     </div>
                 </form>
+                )}
 
                 {cuenta.tipo == 'admin' && (
-                    <button onClick={handleEliminar}>Eliminar</button>
+                    <div>
+                        <br/>
+                        <button onClick={handleEliminar}>Eliminar</button>
+                    </div>
                 )}
 
 
