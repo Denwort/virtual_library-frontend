@@ -13,6 +13,7 @@ const Busqueda = () => {
 
     // Define un estado para almacenar los resultados de la API
     const [resultados, setResultados] = useState([]);
+    const [reservas, setReservas] = useState([]);
 
     async function leer() {
         const opciones = {
@@ -33,6 +34,7 @@ const Busqueda = () => {
     // Llama a la función de leer cuando el componente se monta
     useEffect(() => {
         leer();
+        leerReservas();
     }, []); // El segundo argumento [] asegura que useEffect se ejecute solo una vez
 
     async function leer_reserva() {
@@ -82,24 +84,43 @@ const Busqueda = () => {
         console.log( data)
     }
 
+    // Revisar disponibilidad
+    async function leerReservas() {
+        const opciones = {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        };
+        const request = await fetch("../api/reservas/leer", opciones);
+        const data = await request.json();
+        console.log(data);
+        setReservas(data);
+    }
+    let disponibilidades = []
+    resultados.forEach((libroActual, idx) => {
+        disponibilidades.push(true)
+        reservas.forEach((item, index) => {
+            let fecha_final = Date.parse(item["fecha_final"])
+            if (item.libro.id == libroActual.id && fecha_final >= new Date()) {
+                disponibilidades[idx] = false
+            }
+        })
+    })
     
     let boton_texto = ''
     let boton_href = ''
-    let boton_disabled = ''
     if (cuenta.tipo == 'admin') {
         boton_texto = 'Modificar'
         boton_href = '/modificar'
-        boton_disabled = false
     }
     else if (cuenta.tipo == 'user') {
         boton_texto = 'Reservar'
         boton_href = '/reservar'
-        boton_disabled = false
     }
     else { // Sin haberse logeado (invitado)
         boton_texto = 'Reservar'
         boton_href = '/login'
-        boton_disabled = true
     }
 
     const [isModalOpen, setIsModalOpen] = useState(false);
