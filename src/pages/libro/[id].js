@@ -2,9 +2,10 @@ import Link from "next/link"
 import Head from 'next/head'
 import Image from 'next/image'
 import Layout from '../components/Layout.js'
-import { useMiProvider } from '../context/contexto'
-import { useRouter } from 'next/router'
-import { useState, useEffect } from 'react'
+import {useMiProvider} from '../context/contexto'
+import {useRouter} from 'next/router'
+import {useState, useEffect} from 'react'
+import Script from "next/script.js"
 
 const detalleLibro = () => {
     const router = useRouter()
@@ -12,6 +13,7 @@ const detalleLibro = () => {
 
     const [libros, setLibros] = useState([]);
     const [reservas, setReservas] = useState([]);
+
     async function leer() {
         const opciones = {
             method: "GET",
@@ -24,6 +26,8 @@ const detalleLibro = () => {
         console.log(data);
         setLibros(data);
     }
+
+
     async function leerReservas() {
         const opciones = {
             method: "GET",
@@ -49,11 +53,12 @@ const detalleLibro = () => {
     // Revisar disponibilidad
     let disponibilidad = 'Disponible'
     reservas.forEach((item, index) => {
-        if (item["libro_id"] == id) {
+        let fecha_final = Date.parse(item["fecha_final"])
+        if (item.libro.id == id && fecha_final > new Date()) {
             disponibilidad = 'No disponible'
+            if(cuenta.tipo == 'admin') disponibilidad = 'Reservado por: ' + item.cuenta.nombres
         }
     })
-    if (cuenta.tipo == 'admin') { }
 
     // Eliminar
     async function handleEliminar() {
@@ -79,7 +84,52 @@ const detalleLibro = () => {
 
     }
 
+    async function leer_reserva1() {
+        const opciones = {
+            method : 'GET',
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        }
 
+        var data
+        const request = await fetch( '../api/reservas/leer', opciones)
+        data = await request.json()
+        console.log( data)
+        return data
+
+    }
+
+
+
+    async function escribir_reserva() {
+        let data = await leer_reserva1()
+        
+        // Generar nuevo objeto JSON
+        let obj = { 
+            "cuenta" : cuenta,
+            "libro" : p,
+            "fecha_inicio" : obtenerFechaActual(),
+            "fecha_final" : obtenerFechaFutura_us()
+        }
+
+        // Agregar al arreglo JSON
+        data.push( obj)
+
+        console.log( JSON.stringify(data))
+        // Llamar a escribir
+        const opciones = {
+            method : 'POST',
+            body : JSON.stringify( data ),
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        }
+
+        const request = await fetch( '../api/reservas/escribir', opciones)
+        data = await request.json()
+        console.log( data)
+    }
 
     return <Layout content={
         <>
@@ -135,10 +185,11 @@ const detalleLibro = () => {
                     </div>
 
                     <div id="dispo-nodispo">
-                        <p id="dispoNodispo">Disponible</p>
+                        <p id="dispoNodispo">{disponibilidad}</p>
                     </div>
 
                 </div>
+                {cuenta.tipo == 'user' && (
                 <form action="reservarLibroDatos" onSubmit={hacernada}>
                     <div id="total-reserva">
                         <div id="contenedor_reserva-dl">
@@ -163,19 +214,25 @@ const detalleLibro = () => {
                             </div>
                         </div>
                         <div id="contenedor_breservar">
-                            <button id="bReserv" onClick={reservardl} >Reservar</button>
+                            <button id="bReserv" onClick={escribir_reserva()} disabled={disponibilidad!='Disponible'}>Reservar</button>
+
                         </div>
 
                     </div>
                 </form>
+                )}
 
                 {cuenta.tipo == 'admin' && (
-                    <button onClick={handleEliminar}>Eliminar</button>
+                    <div>
+                        <br/>
+                        <button onClick={handleEliminar}>Eliminar</button>
+                    </div>
                 )}
 
 
 
             </div>
+
             <div id="modalReser-dl" class="modal-container-dl">
                 <div class="modal-content-dl">
                     <h2>Reserva completada</h2>
@@ -213,7 +270,13 @@ function obtenerFechaFutura() {
     return `${year}-${mes}-${dia}`;
 }
 
-function hacernada(e) {
+function obtenerFechaFutura_us(){
+    const fecha = document.getElementById("inputDate").value
+    return fecha
+}
+
+
+function hacernada(e){
     e.preventDefault()
 }
 function handleChange(event) {
@@ -250,7 +313,7 @@ function reservardl() {
     }
 
     // Aquí puedes realizar cualquier otra acción relacionada con la reserva
-
+    
 }
 
 

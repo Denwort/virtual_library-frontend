@@ -1,9 +1,9 @@
 [
     {
         "cuenta" : {
-            "id" : "1",
-            "tipo": "user'",
-            "nombres": "prueba _final",
+            "id": "1",
+            "tipo": "user",
+            "nombres": "prueba_final",
             "apellidos": "registrado",
             "tipo_documento": "dni",
             "nro_documento": "77777777",

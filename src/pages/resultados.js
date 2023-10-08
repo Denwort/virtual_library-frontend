@@ -34,6 +34,52 @@ const Busqueda = () => {
         leer();
     }, []); // El segundo argumento [] asegura que useEffect se ejecute solo una vez
 
+    async function leer_reserva() {
+        const opciones = {
+            method : 'GET',
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        }
+
+        var data
+        const request = await fetch( 'api/reservas/leer', opciones)
+        data = await request.json()
+        console.log( data)
+        return data
+
+    }
+
+
+
+    async function escribir(libro) {
+        let data = await leer_reserva()
+        
+        // Generar nuevo objeto JSON
+        let obj = { 
+            "cuenta" : cuenta,
+            "libro" : libro,
+            "fecha_inicio" : "2023-10-01",
+            "fecha_final" : "2023-10-30"
+        }
+
+        // Agregar al arreglo JSON
+        data.push( obj)
+
+        console.log( JSON.stringify(data))
+        // Llamar a escribir
+        const opciones = {
+            method : 'POST',
+            body : JSON.stringify( data ),
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        }
+
+        const request = await fetch( 'api/reservas/escribir', opciones)
+        data = await request.json()
+        console.log( data)
+    }
 
     
     let boton_texto = ''
@@ -108,6 +154,8 @@ const Busqueda = () => {
                                     if(cuenta.tipo == 'admin') {
                                         const ruta = '/modificar/' + value[1].id.toString()
                                         router.push(ruta)
+                                    }else if(cuenta.tipo == 'user' ){
+                                        escribir(value[1])
                                     }
                                 }}>{boton_texto}</button>
                             </div>
@@ -121,5 +169,46 @@ const Busqueda = () => {
         }
         ></Layout>
     )
+
+    //xd
+
+    const openModalButtons = document.querySelectorAll(".open-modal-button");
+    const closeModalButtons = document.querySelectorAll(".close-modal-button");
+    const modals = document.querySelectorAll(".modal");
+    const modalOverlays = document.querySelectorAll(".modal-overlay");
+
+    // Función para abrir el modal
+    function openModal(e) {
+        const modal = e.target.nextElementSibling;
+        modal.classList.remove("hidden");
+    }
+
+    // Función para cerrar el modal
+    function closeModal(e) {
+        const modal = e.target.closest(".modal");
+        modal.classList.add("hidden");
+    }
+
+    // Función para cerrar el modal cuando se hace clic en el fondo negro
+    function closeModalOutside(e) {
+        if (e.target.classList.contains("modal-overlay")) {
+        closeModal(e);
+        }
+    }
+
+    // Asignar eventos a los botones
+    openModalButtons.forEach((button) => {
+        button.addEventListener("click", openModal);
+    });
+
+    closeModalButtons.forEach((button) => {
+        button.addEventListener("click", closeModal);
+    });
+
+    modalOverlays.forEach((overlay) => {
+        overlay.addEventListener("click", closeModalOutside);
+    });
+
+    //xd
 }
 export default Busqueda
