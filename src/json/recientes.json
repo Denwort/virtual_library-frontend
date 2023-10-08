@@ -1,5 +1,17 @@
 [
 	{
+		"libro_id": "8",
+		"titulo": "Zombie High",
+		"imagen": "http://dummyimage.com/124x124.png/cc0000/ffffff",
+		"fecha_inicio": "2023-11-07"
+	},
+	{
+		"libro_id": "1",
+		"titulo": "dadsadsadasdsad",
+		"imagen": "https://images.cdn2.buscalibre.com/fit-in/180x180/1f/a6/1fa666e0f93fb0bc63c4c214188f3a46.jpg",
+		"fecha_inicio": "2023-10-07"
+	},
+	{
 		"libro_id": "1",
 		"titulo": "Camilla",
 		"imagen": "https://images.cdn2.buscalibre.com/fit-in/180x180/1f/a6/1fa666e0f93fb0bc63c4c214188f3a46.jpg",

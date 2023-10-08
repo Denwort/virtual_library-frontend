@@ -76,7 +76,7 @@ export default props => {
 
 
 
-            <main>
+            <main id="main">
                 {props.content}
             </main>
             
@@ -93,9 +93,11 @@ function toggleNav(){
     let foot = document.getElementById("footer")
     console.log(navUl.style.display)
     if(navUl.style.display=="block" || navUl.style.display==""){
+        document.getElementById("main").style.marginLeft = "0px"
         navUl.style.display="none";
         foot.style.display="none";
     }else{
+        document.getElementById("main").style.marginLeft = "166px"
         navUl.style.display="block";
         foot.style.display="block";
     }
