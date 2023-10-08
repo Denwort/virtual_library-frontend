@@ -54,7 +54,7 @@ const detalleLibro = () => {
     let disponibilidad = 'Disponible'
     reservas.forEach((item, index) => {
         let fecha_final = Date.parse(item["fecha_final"])
-        if (item.libro.id == id && fecha_final > new Date()) {
+        if (item.libro.id == id && fecha_final >= new Date()) {
             disponibilidad = 'No disponible'
             if(cuenta.tipo == 'admin') disponibilidad = 'Reservado por: ' + item.cuenta.nombres
         }

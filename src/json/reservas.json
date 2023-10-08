@@ -9,9 +9,9 @@
             "nro_documento": "77777777",
             "correo": "user@ulima.edu.pe",
             "contrasenha": "user",
-            "foto":"/Juliana.png"
+            "foto": "/Juliana.png"
         },
-        "libro": {
+        "libro" : {
             "id": "0",
             "titulo": "Saragossa Manuscript, The (Rekopis znaleziony w Saragossie)",
             "autor": "Neel Kinge",

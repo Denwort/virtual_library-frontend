@@ -81,15 +81,16 @@ const Perfil = () => {
             <div class="col-span-1">
                 <div id="imagen_perfil">
                     <form encType="multipart/form-data">
-                        <Image src={cuenta.foto} width={279} height={253} alt="foto" onChange={registrarCambio}/>
+                        <Image src={cuenta.foto} class="foto_perfil" width={279} height={253} alt="foto" onChange={registrarCambio}/>
                             <input
                             type="file"
+                            class="text_foto"
                             id="myfile"
                             name="foto"
                             accept="image/*" // Acepta solo archivos de imagen
                             onChange={handleImagenSeleccionada}
                             />
-                        <button type="button" className="guardar" onClick={handleGuardar}>Guardar</button>
+                        <button type="button" className="guardar_foto" onClick={handleGuardar}>Guardar</button>
                     </form>
                 </div>
             </div>
