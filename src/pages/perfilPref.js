@@ -64,7 +64,7 @@ const Perfil = () => {
         <div class="grid grid-cols-2 gap-4">
             <div class="col-span-1">
                 <div id="imagen_perfil">
-                    <Image src={cuenta.foto} width={279} height={253} alt="divider"></Image>
+                    <Image src={cuenta.foto} class="foto_perfil" width={279} height={253} alt="divider"></Image>
                 </div>
             </div>
             <div class="col-span-1">
