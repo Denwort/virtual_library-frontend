@@ -18,8 +18,9 @@ const Index = () => {
     const escribirJSON = async (e) => {
         const params = JSON.stringify(cuenta)
         try {
+            console.log("si")
             const peticion = await fetch(
-                '/api/proximos/escribir.js',
+                '/api/proximos/escribir',
                 {
                     method: 'POST',
                     body: params,
@@ -70,6 +71,7 @@ const Index = () => {
     useEffect(() => {
         leerRecientes();
         leerProximos();
+        escribirJSON();
     }, []);
 
 

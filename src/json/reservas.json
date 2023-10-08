@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
 	{
 		"cuenta": {
 			"id": "1",
@@ -103,4 +104,58 @@
 		"fecha_inicio": "2023-10-07",
 		"fecha_final": "2023-10-07"
 	}
+=======
+    {
+        "cuenta" : {
+            "id": "1",
+            "tipo": "user",
+            "nombres": "prueba_final",
+            "apellidos": "registrado",
+            "tipo_documento": "dni",
+            "nro_documento": "77777777",
+            "correo": "user@ulima.edu.pe",
+            "contrasenha": "user",
+            "foto":"/Juliana.png"
+        },
+        "libro": {
+            "id": "0",
+            "titulo": "Saragossa Manuscript, The (Rekopis znaleziony w Saragossie)",
+            "autor": "Neel Kinge",
+            "isbn": "87-1",
+            "editorial": "Eadel",
+            "genero": "romance",
+            "tipo": "novela",
+            "descripcion": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in fauc",
+            "imagen":"https://images.cdn1.buscalibre.com/fit-in/180x180/20/82/2082a4e5a59dcf7e8531feb8e488c30b.jpg"
+        },
+        "fecha_inicio":"2023-11-07",
+        "fecha_final":"2023-12-07"
+    },
+    {
+        "cuenta" : {
+            "id" : "1",
+            "tipo": "user'",
+            "nombres": "prueba _final",
+            "apellidos": "registrado",
+            "tipo_documento": "dni",
+            "nro_documento": "77777777",
+            "correo": "user@ulima.edu.pe",
+            "contrasenha": "user",
+            "foto":"/Juliana.png"
+        },
+        "libro": {
+            "id": "1",
+            "titulo": "Camilla",
+            "autor": "Blake Stobart",
+            "isbn": "795994569-1",
+            "editorial": "Mynte",
+            "genero": "adventure",
+            "tipo": "novela",
+            "descripcion": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+            "imagen": "https://images.cdn2.buscalibre.com/fit-in/180x180/1f/a6/1fa666e0f93fb0bc63c4c214188f3a46.jpg"
+        },
+        "fecha_inicio":"2023-10-07",
+        "fecha_final":"2023-11-07"
+    }
+>>>>>>> b4e4065a492399e2aafe8c53aa90191afcf2c537
 ]
