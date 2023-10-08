@@ -5,6 +5,7 @@ import Layout from './components/Layout.js'
 import {useMiProvider} from './context/contexto'
 import { useEffect, useState } from "react"; // Importa useEffect y useState
 import { useRouter } from "next/router";
+import Modal from "./modal.js"
 
 const Busqueda = () => {
     const [cuenta, setCuenta] = useMiProvider();
@@ -59,8 +60,8 @@ const Busqueda = () => {
         let obj = { 
             "cuenta" : cuenta,
             "libro" : libro,
-            "fecha_inicio" : "2023-10-01",
-            "fecha_final" : "2023-10-30"
+            "fecha_inicio" : obtenerFechaActual(),
+            "fecha_final" : obtenerFechaFutura_us()
         }
 
         // Agregar al arreglo JSON
@@ -100,6 +101,16 @@ const Busqueda = () => {
         boton_href = '/login'
         boton_disabled = true
     }
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal1 = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal1 = () => {
+        setIsModalOpen(false);
+    };
 
     return (
         <Layout content={
@@ -150,14 +161,17 @@ const Busqueda = () => {
                             <div class="h-16 flex justify-center items-center">
                                 <button type="button" disabled={boton_disabled}
                                 class="bg-purple-primary text-purple-bg border-2 border-purple-primary px-4 py-2 hover:bg-blue-600  rounded-full"
-                                onClick={()=>{
-                                    if(cuenta.tipo == 'admin') {
-                                        const ruta = '/modificar/' + value[1].id.toString()
-                                        router.push(ruta)
-                                    }else if(cuenta.tipo == 'user' ){
-                                        escribir(value[1])
-                                    }
-                                }}>{boton_texto}</button>
+                                onClick={openModal1}
+                                    
+                                >{boton_texto}</button>
+
+                                <Modal isOpen={isModalOpen} onClose={closeModal1}>
+                                    <p>Ingrese la Fecha de devolucion:</p>
+                                    <br></br>
+                                    <input type='date' id="inputDate" defaultValue={obtenerFechaActual()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={(e)=> handleChange(e,value[1])} />
+                                    <br></br>
+                                    <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={closeModal1}>Confirmar</button>
+                                </Modal>
                             </div>
                         </div>
                     )}
@@ -194,6 +208,46 @@ const Busqueda = () => {
         if (e.target.classList.contains("modal-overlay")) {
         closeModal(e);
         }
+    }
+
+    function obtenerFechaActual() {
+        const hoy = new Date();
+        const year = hoy.getFullYear();
+        const mes = String(hoy.getMonth() + 1).padStart(2, '0');
+        const dia = String(hoy.getDate()).padStart(2, '0');
+        console.log(`${year}-${mes}-${dia}`)
+        return `${year}-${mes}-${dia}`;
+    }
+    function obtenerFechaFutura() {
+        let treintaDias = new Date();
+        treintaDias.setDate(treintaDias.getDate() + 30)
+        const year = treintaDias.getFullYear();
+        const mes = String(treintaDias.getMonth() + 1).padStart(2, '0');
+        const dia = String(treintaDias.getDate()).padStart(2, '0');
+        console.log(`${year}-${mes}-${dia}`)
+        return `${year}-${mes}-${dia}`;
+    }
+    
+    function obtenerFechaFutura_us(){
+        const fecha = document.getElementById("inputDate").value
+        return fecha
+    }
+    
+    function handleChange(event,val) {
+        const fechaSeleccionada = event.target.value;
+        
+        if(cuenta.tipo == 'admin') {
+             const ruta = '/modificar/' + val.id.toString()
+             router.push(ruta)
+        }
+        else if(cuenta.tipo == 'user' ){
+      
+        escribir(val)
+        }
+
+        
+        
+        // Realiza acciones con la fecha seleccionada si es necesario
     }
 
     // Asignar eventos a los botones

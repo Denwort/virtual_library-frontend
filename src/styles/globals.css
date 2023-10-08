@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.modal{
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.modalcontenido{
+  background-color: white;
+  width: 400px;
+  height: auto;
+  padding: 20px;
+}
+
+/*
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -15,7 +27,7 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-/*
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
