@@ -10,11 +10,6 @@ const Index = () => {
 
     const [cuenta, setCuenta] = useMiProvider()
 
-    const libro1 = library[0]
-    const libro2 = library[1]
-    const libropv1 = library[0]
-    const libropv2 = library[1]
-
     const escribirJSON = async (e) => {
         const params = JSON.stringify(cuenta)
         try {
@@ -135,6 +130,9 @@ const Index = () => {
         todo();
     }, []);
 
+    // Funcionalidad para "Ver todo"
+    const [verTodo, setVerTodo] = useState(false);
+
 
     return(
     <Layout content={
@@ -157,7 +155,7 @@ const Index = () => {
                         </div>
                         <br></br>
                         <div class="flex flex-wrap">
-                            {Object.entries(recientes).map( (value,index) => {
+                            {Object.entries(verTodo?recientes:recientes.slice(0,2)).map( (value,index) => {
                                 return ( 
                                     <div>
                                         <Link href="/libros/[id]" as={"/libros/"}>
@@ -193,7 +191,7 @@ const Index = () => {
                             })
                             }
                         </div>
-                            <button className="verTodo"> Ver todo</button>
+                            <button className="verTodo" id="verTodo" onClick={()=>{setVerTodo(!verTodo)}}> Ver todo</button>
                 </div>
                 {cuenta.tipo == 'user' && (
                 <div class="rectangulo">
