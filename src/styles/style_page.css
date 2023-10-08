@@ -23,6 +23,7 @@
     border-style: solid;
     background: #F3EDF7;
     margin-left: 22px;
+    margin-bottom: 1%;
 }
 .contenedorSubtitulo{
     align-items: center;
@@ -55,20 +56,7 @@
     padding-top: 15%;
     color: #FEF7FF;
 }
-/* .imagenLibro{
-    width: 80px;
-    height: 101px;
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-    background-color: aqua;
-}
-.imagenLibro img {
-    width: 100%;
-    height: 101px;
-    object-fit: cover;
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-  } */
+
 .imagenLibro {
     width: 80px; /* Ancho del contenedor */
     height: 101px; /* Alto del contenedor */
@@ -102,5 +90,11 @@
     line-height: 20px;
     font-size: 14px;
     font-family: 'Times New Roman', Times, serif;
+}
+
+
+.verTodo{
+    margin-left: 90%;
+    margin-top: 5%;
 }
   

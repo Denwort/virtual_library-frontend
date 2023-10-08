@@ -18,9 +18,47 @@ const Index = () => {
     const escribirJSON = async (e) => {
         const params = JSON.stringify(cuenta)
         try {
-            console.log("si")
             const peticion = await fetch(
                 '/api/proximos/escribir',
+                {
+                    method: 'POST',
+                    body: params,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+            )
+            const data = await peticion.json()
+
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
+    const escribirJSONMasPedidos = async (e) => {
+        try {
+            const peticion = await fetch(
+                '/api/masPedidos/escribir',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }
+            )
+            const data = await peticion.json()
+
+        } catch (err) {
+            console.log(err)
+        }
+
+    }
+
+    const escribirJSONRecientes = async (e) => {
+        const params = JSON.stringify(cuenta)
+        try {
+            const peticion = await fetch(
+                '/api/recientes/escribir',
                 {
                     method: 'POST',
                     body: params,
@@ -67,11 +105,34 @@ const Index = () => {
         setProximos(data)
         return data
     }
+    const [masPedidos, setMasPedidos] = useState([]);
+    async function leerMasPedidos() {
+        const opciones = {
+            method : 'GET',
+            headers : {
+                "Content-Type" : "application/json"
+            }
+        }
 
+        const request = await fetch( 'api/masPedidos/leer', opciones)
+        const data = await request.json()
+        console.log( data)
+        setMasPedidos(data)
+        return data
+    }
+
+
+    //Syncronizar las funciones
+    async function todo(){
+        await escribirJSONRecientes();
+        await escribirJSON();
+        await escribirJSONMasPedidos();
+        await leerRecientes();
+        await leerProximos();
+        await leerMasPedidos();
+    }
     useEffect(() => {
-        leerRecientes();
-        leerProximos();
-        escribirJSON();
+        todo();
     }, []);
 
 
@@ -99,7 +160,7 @@ const Index = () => {
                             {Object.entries(recientes).map( (value,index) => {
                                 return ( 
                                     <div>
-                                        <Link href="/libros/[id]" as={"/libros/" + value[1].libro_id}>
+                                        <Link href="/libros/[id]" as={"/libros/"}>
                                             <div class="libro">
                                                 <div class="grid grid-cols-6 col-span-1">
                                                     <div class="col-start-1 col-span-1">
@@ -132,8 +193,9 @@ const Index = () => {
                             })
                             }
                         </div>
+                            <button className="verTodo"> Ver todo</button>
                 </div>
-                
+                {cuenta.tipo == 'user' && (
                 <div class="rectangulo">
                     <div class="contenedorSubtitulo">
                         <h2 class="subtitulo">Próximos a vencer</h2>
@@ -176,7 +238,51 @@ const Index = () => {
                             })
                             } 
                     </div>
-                </div>
+                </div>)}
+                {cuenta.tipo == 'admin' && (
+                <div class="rectangulo">
+                    <div class="contenedorSubtitulo">
+                        <h2 class="subtitulo">Los más pedidos</h2>
+                    </div>
+                    <br></br>
+                    <div class="flex flex-wrap">
+                            {Object.entries(masPedidos).map( (value,index) => {
+                                return ( 
+                                    <div>
+                                        <Link href="/libros/[id]" as={"/libros/" + value[1].libro.id}>
+                                            <div class="libro">
+                                                <div class="grid grid-cols-6 col-span-1">
+                                                    <div class="col-start-1 col-span-1">
+                                                        <div class="circulo">
+                                                            <p className="inicial">{obtenerInicialesEnMayuscula(value[1].libro.titulo)}</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-start-2 col-end-5">
+                                                        <div className="contenedorTituloLibro">
+                                                            <div class="line-clamp-2">
+                                                                <p class= "tituloLibro"><b>"{value[1].libro.titulo}"</b></p>
+                                                            </div>
+                                                        </div>
+                                                        <div className="contenedorInfoLibro">
+                                                            <div class="line-clamp-1">
+                                                                <p className="infoLibro">Veces pedido: {value[1].cantidad}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-start-6 col-span-1">
+                                                        <div class="imagenLibro">
+                                                            <Image src={value[1].libro.imagen} width={80} height={101}></Image>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </Link>    
+                                    </div>
+                                )
+                            })
+                            } 
+                    </div>
+                </div>)}
 
             </div>
             )}

@@ -50,5 +50,32 @@
         },
         "fecha_inicio":"2023-10-07",
         "fecha_final":"2023-11-07"
+    },
+    {
+        "cuenta" : {
+            "id": "2",
+            "tipo": "user",
+            "nombres": "pruebita3",
+            "apellidos": "b",
+            "tipo_documento": "c",
+            "nro_documento": "d",
+            "correo": "pruebita@ulima.edu.pe",
+            "contrasenha": "pruebita",
+            "foto": "/boton_perfil.png"
+        },
+        "libro": {
+            "id": "1",
+            "titulo": "dadsadsadasdsad",
+            "autor": "Blake Stobart",
+            "isbn": "795994569-1",
+            "editorial": "Mynte",
+            "genero": "adventure",
+            "tipo": "novela",
+            "descripcion": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+            "imagen": "https://images.cdn2.buscalibre.com/fit-in/180x180/1f/a6/1fa666e0f93fb0bc63c4c214188f3a46.jpg"
+        },
+        "fecha_inicio":"2023-10-07",
+        "fecha_final":"2023-11-07"
     }
+
 ]

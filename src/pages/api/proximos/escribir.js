@@ -26,10 +26,10 @@ export default async function leer(req, res) {
     data.forEach(element => {
         if (element.cuenta.id == body.id) {
             let aux = {}
-            aux['id'] = element.libro.id
+            aux['libro_id'] = element.libro.id
             aux['titulo'] = element.libro.titulo
             aux['imagen'] = element.libro.imagen
-            aux['fecha_final'] = element.fecha_inicio
+            aux['fecha_final'] = element.fecha_final
             resultado.push(aux)
         }
     });
@@ -42,6 +42,7 @@ export default async function leer(req, res) {
         console.log( tmp )
 
         await fsPromises.writeFile( ruta, tmp )
+        console.log("terminado proximos")
         return res.status(200).json( { "rpta" : "Se grabo OK"} )
 
     } catch( error) {
