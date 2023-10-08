@@ -38,90 +38,23 @@ const Perfil = () => {
 
     }
 
-    const [image, setImage] = useState(null);
-    const [createObjectURL, setCreateObjectURL] = useState(null);
-
-    const uploadToClient = (event) => {
-        if (event.target.files && event.target.files[0]) {
-            const i = event.target.files[0];
-            setImage(i);
-            setCreateObjectURL(URL.createObjectURL(i));
+    function handleImagenSeleccionada(e) {
+        const nuevaImagen = e.target.files[0];
+      
+        if (nuevaImagen) {
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            const nuevaURLImagen = event.target.result;
+            cuenta_modificada.foto = nuevaURLImagen;
+          };
+          reader.readAsDataURL(nuevaImagen);
         }
-    };
-
-    const uploadToServer = async (event) => {
-        event.preventDefault();
-        if (!image) {
-            alert("Por favor, selecciona una imagen antes de subirla.");
-            return;
-        }
-
-        const body = new FormData();
-        body.append("file", image);
-
-        try {
-            const response = await fetch("/api/imagenAPI", {
-                method: "POST",
-                body,
-            });
-
-            if (response.status === 200) {
-                const newImageUrl = await response.json();
-
-                // Actualiza el JSON con la nueva URL de la imagen
-                cuenta_modificada.foto = newImageUrl;
-
-                // Actualiza el JSON original con los datos modificados
-                const cuentasActualizadas = cuentas.map((cuenta) => {
-                    if (cuenta.id === cuenta_modificada.id) {
-                        return cuenta_modificada;
-                    }
-                    return cuenta;
-                });
-
-                // Guarda los datos actualizados en tu archivo JSON
-                fs.writeFileSync('../json/cuentas.json', JSON.stringify(cuentasActualizadas, null, 2));
-
-                alert("Imagen actualizada");
-
-            } else {
-                alert("Error al subir la imagen");
-            }
-        } catch (err) {
-            console.error(err);
-            alert("Error al subir la imagen");
-        }
-    };
-/*
-    const guardarFoto = async (e) => {
-        e.preventDefault()
-        console.log("a")
-        console.log(e.target.files)
-            console.log("enviado")
-            const foto = e.target.files[0]
-            const fd=new FormData()
-            fd.append('myfile',e.target.files[0])
-            try {
-                const res = await fetch (
-                    '/api/imagenAPI',
-                    {
-                        method: 'POST',
-                        body: fd,
-                        headers: {
-                            "Content-Type": "image/jpeg",
-                        }
-                    }
-                )
-                const response=await res.json(); 
-                alert("imagen actualizada")
-            } catch (err) {
-                console.log(err)
-            }
-
-        
+      }
+    function handleGuardar() {
+        // Realiza cualquier validación o procesamiento adicional aquí si es necesario
+      
+        escribirJSON(); // Llama a tu función para enviar los datos al servidor
     }
-    */
-    
 
     return (
         <Layout content={
@@ -149,16 +82,16 @@ const Perfil = () => {
                 <div class="grid grid-cols-2 gap-4">
                     <div class="col-span-1">
                         <div id="imagen_perfil">
-                            <form onSubmit={uploadToServer} encType="multipart/form-data">
-                                <Image src={cuenta.foto} width={279} height={253} alt="foto"/>
-                                    <input
+                            <form encType="multipart/form-data" >
+                                    <Image src={cuenta.foto} width={279} height={253} alt="foto" onChange={registrarCambio}/>
+                                <input
                                     type="file"
                                     id="myfile"
-                                    name="foto"
-                                    onChange={uploadToClient}
-                                    accept="image/*" // Acepta solo archivos de imagen
-                                    />
-                                <input type="submit" value="Submit" />
+                                    name="myfile"
+                                    accept="image/*"
+                                    onChange={handleImagenSeleccionada}
+                                />
+                                <button type="button" className="guardar" onClick={handleGuardar}>Guardar</button>
                             </form>
                         </div>
                     </div>

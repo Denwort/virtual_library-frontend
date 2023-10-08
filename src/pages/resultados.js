@@ -123,6 +123,11 @@ const Busqueda = () => {
             <div class="flex flex-wrap shrink-0 gap-3 bg-white p-6 rounded-md shadow-md w-12/12 h-full justify-center">
 
                 {Object.entries(resultados).map( (value,index) => {
+                    const palabras = value[1].titulo.split(' ');
+                    const tituloIniciales = palabras
+                      .slice(0, 2) 
+                      .map(word => word[0].toUpperCase())
+                      .join('');
                     return ( 
                     
                         <div class="w-80 h-96 border-2 border-gray-400 rounded-lg" key={value[1].id}>
@@ -130,7 +135,7 @@ const Busqueda = () => {
                                 router.push('/libro/'+value[1].id)
                             }}>
                                 <div class="h-18 flex justify-between items-center">
-                                    <div class="w-10 h-10 inline-flex m-4 bg-purple-primary text-purple-bg justify-center items-center text-center rounded-full">PP</div>
+                                    <div class="w-10 h-10 inline-flex m-4 bg-purple-primary text-purple-bg justify-center items-center text-center rounded-full">{tituloIniciales}</div>
                                     <div class="w-60 h-18 line-clamp-3 text-purple-primary text-left items-center align-middle">{value[1].titulo}</div>
                                 </div>
                                 <div class="flex bg-purple-bg mx-auto justify-center items-center">

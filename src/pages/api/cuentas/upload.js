@@ -1,47 +1,38 @@
-import fs from 'fs'
-import multer from 'multer'
-import { join } from 'path'
-
-const uploadDir = join(process.cwd(), './public/uploads');
+import multer from 'multer';
+import path from 'path';
 
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        // Verificar si el directorio de carga existe y crearlo si no existe
-        if (!fs.existsSync(uploadDir)) {
-            fs.mkdirSync(uploadDir, { recursive: true });
-        }
-        cb(null, uploadDir);
-    },
-    filename: (req, file, cb) => {
-        const uniqueFileName = `${Date.now()}_${file.originalname}`;
-        cb(null, uniqueFileName);
-    },
+  destination: function (req, file, cb) {
+    const uploadDir = path.join(process.cwd(), 'public/uploads');
+    console.log('Destination:', uploadDir); // Add a debug statement
+    cb(null, uploadDir); // Set the destination folder
+  },
+  filename: function (req, file, cb) {
+    const ext = path.extname(file.originalname);
+    const filename = `${Date.now()}${ext}`;
+    console.log('Filename:', filename); // Add a debug statement
+    cb(null, filename); // Rename the file to avoid collisions
+  },
 });
 
-const upload = multer({ storage });
+const upload = multer({ storage: storage });
 
-export default async function uploadAPI(req, res) {
-    if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Método no permitido' });
-    }
-    const { image } = req.files;
+export default async function handler(req, res) {
+  if (req.method === 'POST') {
+    upload.single('myfile')(req, res, async (err) => {
+      if (err) {
+        console.error('Error:', err); // Add a debug statement
+        return res.status(500).json({ error: 'Error al subir la imagen.' });
+      }
 
-    if (!image) {
-        return res.status(400).json({ error: 'No se proporcionó una imagen' });
-    }
+      console.log('File uploaded:', req.file); // Add a debug statement
 
-    try {
-        upload.single('image')(req, res, async (err) => {
-        if (err) {
-            console.error('Error al subir la imagen:', err);
-            return res.status(500).json({ error: 'Error interno del servidor' });
-        }
+      const imageUrl = `/uploads/${req.file.filename}`;
+      console.log('Image URL:', imageUrl); // Add a debug statement
 
-        const imageUrl = `/uploads/${req.file.filename}`;
-        res.status(200).json({ imageUrl });
-        })
-    } catch (error) {
-        console.error('Error al subir la imagen:', error);
-        res.status(500).json({ error: 'Error interno del servidor' });
-    };
+      res.status(200).json({ imageUrl });
+    });
+  } else {
+    res.status(405).end(); // Método no permitido
+  }
 }

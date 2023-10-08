@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Layout from './components/Layout.js'
 import { useMiProvider } from './context/contexto'
-import { useState } from 'react'
+
 
 const Perfil = () => {
 
@@ -38,21 +38,23 @@ const Perfil = () => {
         }
   
     }
-
-    const [image, setImage] = useState(null);
-    const [createObjectURL, setCreateObjectURL] = useState(null);
-
-    function uploadToClient(event){
-        if (event.target.files && event.target.files[0]) {
-            const i = event.target.files[0];
-            const filename = i.name; // Get the filename
-            setImage(i);
-            setCreateObjectURL(URL.createObjectURL(i));
-            cuenta_modificada[event.target.name]= filename;
-            console.log(filename)
+    function handleImagenSeleccionada(e) {
+        const nuevaImagen = e.target.files[0];
+      
+        if (nuevaImagen) {
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            const nuevaURLImagen = event.target.result;
+            cuenta_modificada.foto = nuevaURLImagen;
+          };
+          reader.readAsDataURL(nuevaImagen);
         }
+      }
+    function handleGuardar() {
+        // Realiza cualquier validación o procesamiento adicional aquí si es necesario
+      
+        escribirJSON(); // Llama a tu función para enviar los datos al servidor
     }
-
     return (
 
 <Layout content={
@@ -63,7 +65,7 @@ const Perfil = () => {
     </Head>
     <div id="tituloP">
             <p>Mi Perfil</p>
-            <Image src="/divider.png" width={1088} height={1}></Image>
+            <Image src="/divider.png" width={1088} height={1} alt="dividerrr"></Image>
     </div>
     <div id="form_perfil">
         <div id="barra_perfil_usuario">
@@ -78,14 +80,17 @@ const Perfil = () => {
         <div class="grid grid-cols-2 gap-4">
             <div class="col-span-1">
                 <div id="imagen_perfil">
-                    <Image src={cuenta.foto} name="foto" alt="foto de perfil" width={279} height={253} />
-                        <input
+                    <form encType="multipart/form-data">
+                        <Image src={cuenta.foto} width={279} height={253} alt="foto" onChange={registrarCambio}/>
+                            <input
                             type="file"
                             id="myfile"
                             name="foto"
-                            onChange={uploadToClient}
                             accept="image/*" // Acepta solo archivos de imagen
-                        />
+                            onChange={handleImagenSeleccionada}
+                            />
+                        <button type="button" className="guardar" onClick={handleGuardar}>Guardar</button>
+                    </form>
                 </div>
             </div>
             <div class="col-span-1">
