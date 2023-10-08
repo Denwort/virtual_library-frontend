@@ -1,28 +1,106 @@
 [
-    {
-        "cuenta" : {
-            "id": "1",
-            "tipo": "user",
-            "nombres": "prueba_final",
-            "apellidos": "registrado",
-            "tipo_documento": "dni",
-            "nro_documento": "77777777",
-            "correo": "user@ulima.edu.pe",
-            "contrasenha": "user",
-            "foto": "/Juliana.png"
-        },
-        "libro" : {
-            "id": "0",
-            "titulo": "Saragossa Manuscript, The (Rekopis znaleziony w Saragossie)",
-            "autor": "Neel Kinge",
-            "isbn": "87-1",
-            "editorial": "Eadel",
-            "genero": "romance",
-            "tipo": "novela",
-            "descripcion": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
-            "imagen": "http://dummyimage.com/220x156.png/5fa2dd/ffffff"
-        },
-        "fecha_inicio" : "2023-10-07",
-        "fecha_final" : "2023-10-27"
-    }
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "prueba_final",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "0",
+			"titulo": "Saragossa Manuscript, The (Rekopis znaleziony w Saragossie)",
+			"autor": "Neel Kinge",
+			"isbn": "87-1",
+			"editorial": "Eadel",
+			"genero": "romance",
+			"tipo": "novela",
+			"descripcion": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+			"imagen": "http://dummyimage.com/220x156.png/5fa2dd/ffffff"
+		},
+		"fecha_inicio": "2023-10-07",
+		"fecha_final": "2023-10-27"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "prueba_final",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "36",
+			"titulo": "Vulgar",
+			"autor": "Jacqueline Grigorkin",
+			"isbn": "331785891-5",
+			"editorial": "Tanoodle",
+			"genero": "adventure",
+			"tipo": "novela",
+			"descripcion": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+			"imagen": "http://dummyimage.com/111x388.png/dddddd/000000"
+		},
+		"fecha_inicio": "2023-10-07",
+		"fecha_final": "2023-10-07"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "prueba_final",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "0",
+			"titulo": "Saragossa Manuscript, The (Rekopis znaleziony w Saragossie)",
+			"autor": "Neel Kinge",
+			"isbn": "87-1",
+			"editorial": "Eadel",
+			"genero": "romance",
+			"tipo": "novela",
+			"descripcion": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+			"imagen": "http://dummyimage.com/220x156.png/5fa2dd/ffffff"
+		},
+		"fecha_inicio": "2023-10-07",
+		"fecha_final": "2023-10-07"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "prueba_final",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "19",
+			"titulo": "Once Upon a Warrior (Anaganaga O Dheerudu)",
+			"autor": "Jenn Saphin",
+			"isbn": "106391191-5",
+			"editorial": "Jaxworks",
+			"genero": "mystery",
+			"tipo": "articulo",
+			"descripcion": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+			"imagen": "http://dummyimage.com/163x194.png/cc0000/ffffff"
+		},
+		"fecha_inicio": "2023-10-07",
+		"fecha_final": "2023-10-07"
+	}
 ]
