@@ -107,6 +107,15 @@
     max-width: 279px;
     max-height: 253px;
   }
+
+  .foto_perfil {
+    margin-left: 33px;
+    margin-top: 4%;
+    min-width: 150px;
+    max-width: 279px;
+    max-height: 253px;
+  }
+
   
   #cuadro_texto_nombre{
     display: flex;
@@ -399,4 +408,49 @@
 
 .guardar:hover {
   background-color: #ddceeb; /* Cambia el color de fondo al pasar el ratón */
+}
+
+.guardar_foto{
+  border-radius: 25px;
+  border: 1px #79747E solid;
+  color: #6750A4;
+  text-align: center;
+  /* M3/label/large */
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 20px; /* 142.857% */
+  background: var(--m-3-sys-light-secondary-container, #746d80);
+  display: flex;
+  gap: 8px;
+  padding: 10px 24px;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  flex-direction: column;
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: 6%;
+  margin-left: 44px;
+}
+
+.guardar_foto:hover {
+  background-color: #ddceeb; /* Cambia el color de fondo al pasar el ratón */
+}
+
+.text_foto{
+  background: var(--m-3-sys-light-surface, #FEF7FF);
+  color: var(--m-3-sys-light-primary, #6750A4);
+  /* M3/body/small */
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 25px; /* 133.333% */
+  width: auto;
+  height: auto;
+  margin-top: 15px;
+  margin-left: 33px;
+  cursor: pointer;
 }
