@@ -1,44 +1,20 @@
 [
 	{
-		"libro_id": "68",
-		"titulo": "Killing Auntie (Zabicie ciotki)",
-		"imagen": "http://dummyimage.com/105x116.png/5fa2dd/ffffff",
-		"fecha_final": "2023-10-12"
-	},
-	{
-		"libro_id": "53",
-		"titulo": "Angels Fall",
-		"imagen": "http://dummyimage.com/249x391.png/ff4444/ffffff",
-		"fecha_final": "2023-11-01"
-	},
-	{
 		"libro_id": "1",
-		"titulo": "Camilla",
+		"titulo": "dadsadsadasdsad",
 		"imagen": "https://images.cdn2.buscalibre.com/fit-in/180x180/1f/a6/1fa666e0f93fb0bc63c4c214188f3a46.jpg",
 		"fecha_final": "2023-11-07"
 	},
 	{
-		"libro_id": "75",
-		"titulo": "Chhoti Si Baat",
-		"imagen": "http://dummyimage.com/134x335.png/ff4444/ffffff",
+		"libro_id": "98",
+		"titulo": "Indian Runner, The",
+		"imagen": "http://dummyimage.com/127x275.png/ff4444/ffffff",
 		"fecha_final": "2023-11-08"
 	},
 	{
-		"libro_id": "77",
-		"titulo": "Revenge of the Electric Car",
-		"imagen": "http://dummyimage.com/140x130.png/5fa2dd/ffffff",
+		"libro_id": "98",
+		"titulo": "Indian Runner, The",
+		"imagen": "http://dummyimage.com/127x275.png/ff4444/ffffff",
 		"fecha_final": "2023-11-08"
-	},
-	{
-		"libro_id": "0",
-		"titulo": "Saragossa Manuscript, The (Rekopis znaleziony w Saragossie)",
-		"imagen": "https://images.cdn1.buscalibre.com/fit-in/180x180/20/82/2082a4e5a59dcf7e8531feb8e488c30b.jpg",
-		"fecha_final": "2023-12-07"
-	},
-	{
-		"libro_id": "8",
-		"titulo": "Zombie High",
-		"imagen": "http://dummyimage.com/124x124.png/cc0000/ffffff",
-		"fecha_final": "2023-12-07"
 	}
 ]
