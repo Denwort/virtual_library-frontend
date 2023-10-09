@@ -156,8 +156,8 @@ const detalleLibro = () => {
                             <p id="autor_libro_dl">{p.autor}</p>
                         </div>
                     </div>
-                    <div id="cont_libr_dl">
-                        <Image src={p.imagen} width={184} height={151} alt="imagenLib" id="imglibro" class="w-120 h-40"></Image>
+                    <div id="cont_libr_dl" class="">
+                        <Image src={p.imagen} width={184} height={151} alt="imagenLib"  id="imglibro" class="w-120 h-40"></Image>
                     </div>
                     <div id="contenedor_texto-dl">
                         <p id="texto-dl">{p.descripcion}</p>
@@ -226,7 +226,7 @@ const detalleLibro = () => {
                 {cuenta.tipo == 'admin' && (
                     <div>
                         <br/>
-                        <button onClick={handleEliminar}>Eliminar</button>
+                        <button id="boton_eliminar" onClick={handleEliminar}>Eliminar</button>
                     </div>
                 )}
 

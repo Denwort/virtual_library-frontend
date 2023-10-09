@@ -1,8 +1,6 @@
 @import "./cambio_color.css";
 
-#cont-masrecientes{
-    position: relative;
-}
+
 
 #cont2-masrecientes{
     position: absolute;
@@ -12,8 +10,8 @@
 
 #retro {
     background-color: var(--color-primario);
-    color: #fff;
     border-color: var(--color-primario);
+    color: #fff;
     border-width: 1px;
     border-radius: 5px;
     padding: 6px 20px;
@@ -89,3 +87,16 @@
     top: 20px;
 }
 
+#boton_eliminar{
+    background-color: #6750A4;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    transition-duration: 0.3s;
+}
+
+#boton_eliminar:hover {
+    background-color: #7D68B4;
+    transform: scale(1.05);
+  }

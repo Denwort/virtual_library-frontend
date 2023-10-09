@@ -259,9 +259,9 @@ const Index = () => {
                                 })
                                 }
                             </div>
-                            <div id="cont-masrecientes">
+                            <div id="cont-masrecientes" class="relative">
                                 <div id="cont2-masrecientes">
-                                    <button onClick={retrocederLosMasRecientes} disabled={pageMasRecientes === 1} id="retro">Anterior</button>
+                                    <button onClick={retrocederLosMasRecientes} disabled={pageMasRecientes === 1} id="retro" class="text-white border border-white rounded-md px-4 py-2 text-base cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:text-black">Anterior</button>
                                     <button onClick={avanzarLosMasRecientes} disabled={pageMasRecientes === totalPages} id="avanzar">Siguiente</button>
                                 </div>
                                 <div id="cont2-1-masrecientes">
@@ -375,7 +375,7 @@ const Index = () => {
                                         <div id="cont2-maspedidos">
                                             <p id="total1">Total {pageMasPedidos} de {totalPages1}</p>
                                         </div>
-                                    </div>
+                                </div>
                             </div>)}
 
                     </div>
