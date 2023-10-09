@@ -55,6 +55,7 @@ const Busqueda = () => {
 
     }
 
+    const [dispo,setDispo] = useState(false)
 
     async function escribir(libro) {
         let data = await leer_reserva()
@@ -83,6 +84,7 @@ const Busqueda = () => {
         const request = await fetch( 'api/reservas/escribir', opciones)
         data = await request.json()
         console.log( data)
+        setDispo(true)
     }
 
     // Revisar disponibilidad
@@ -160,6 +162,7 @@ const Busqueda = () => {
             <div class="flex flex-wrap shrink-0 gap-3 bg-white p-6 rounded-md shadow-md w-12/12 h-full justify-center">
 
                 {Object.entries(resultados).map( (value,index) => {
+
                     const palabras = value[1].titulo.split(' ');
                     const tituloIniciales = palabras
                       .slice(0, 2) 
@@ -186,7 +189,7 @@ const Busqueda = () => {
                             </div>
                             {cuenta.tipo != 'guest' && (
                             <div class="h-16 flex justify-center items-center">
-                            <button type="button" disabled={cuenta.tipo=='admin'? false : !disponibilidades[index]}
+                            {disponibilidades[index]&&<button type="button" disabled={cuenta.tipo=='admin'? false : !disponibilidades[index]}
                             class="bg-purple-primary text-purple-bg border px-4 py-2 hover:bg-blue-600 rounded-full color_fondo_primario color_letra_blanco"
                             onClick={()=>{
                                 setlibroselec(value[1])
@@ -195,7 +198,10 @@ const Busqueda = () => {
                                     }
                                 }
                                 
-                            >{boton_texto}</button>
+                            >{boton_texto}</button>}
+                            {!disponibilidades[index]&&<h1>No disponible</h1>}
+                            
+                            
 
                             
                                 
@@ -258,15 +264,11 @@ const Busqueda = () => {
         overlay.addEventListener("click", closeModalOutside);
     });
 
-    //xd
-    
     
 }
 
     export default Busqueda
-    //xd
-
-    
+ 
 
     function obtenerFechaActual() {
         const hoy = new Date();
