@@ -1,3 +1,5 @@
+@import "./cambio_color.css";
+
 #cont-masrecientes{
     position: relative;
 }
@@ -9,9 +11,10 @@
 }
 
 #retro {
-    background-color: #192a56;
+    background-color: var(--color-primario);
     color: #fff;
-    border: none;
+    border-color: var(--color-primario);
+    border-width: 1px;
     border-radius: 5px;
     padding: 6px 20px;
     font-size: 16px;
@@ -21,13 +24,15 @@
   
   /* Estilo al pasar el cursor para el botón con ID retroMasReciente */
   #retro:hover {
-    background-color: #912519;
+      background-color: var(--color-secundario);
+      color:black;
   }
 
   #avanzar {
-    background-color: #879e33;
+    background-color: var(--color-primario);
     color: #fff;
-    border: none;
+    border-color: var(--color-primario);
+    border-width: 1px;
     border-radius: 5px;
     padding: 6px 20px;
     font-size: 16px;
@@ -37,7 +42,8 @@
   
   /* Estilo al pasar el cursor para el botón con ID retroMasReciente */
   #avanzar:hover {
-    background-color: #912519;
+    background-color: var(--color-secundario);
+    color:black;
   }
 
   #total1{

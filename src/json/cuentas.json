@@ -16,7 +16,7 @@
 	{
 		"id": "1",
 		"tipo": "user",
-		"nombres": "prueba_final",
+		"nombres": "yo",
 		"apellidos": "registrado",
 		"tipo_documento": "dni",
 		"nro_documento": "77777777",

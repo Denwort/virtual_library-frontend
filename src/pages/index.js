@@ -202,7 +202,9 @@ const Index = () => {
         await escribirJSON();
         await escribirJSONMasPedidos();
         await escribirJSONRecientes();
-
+        await leerProximos();
+        await leerMasPedidos();
+        await leerRecientes();
     }
     useEffect(() => {
         todo();
@@ -239,7 +241,7 @@ const Index = () => {
                                 {Object.entries(verTodo? datosMasRecientes:datosMasRecientes.slice(0,2)).map((value, index) => {
                                     return (
                                         <div>
-                                            <Link href="/libros/[id]" as={"/libros/"}>
+                                            <Link href="/libro/[id]" as={"/libro/"+ value[1].libro_id}>
                                                 <div class="libro">
                                                     <div class="grid grid-cols-6 col-span-1">
                                                         <div class="col-start-1 col-span-1">
@@ -293,7 +295,7 @@ const Index = () => {
                                     {Object.entries(datosProximo).map((value, index) => {
                                         return (
                                             <div>
-                                                <Link href="/libros/[id]" as={"/libros/" + value[1].libro_id}>
+                                                <Link href="/libro/[id]" as={"/libro/" + value[1].libro_id}>
                                                     <div class="libro">
                                                         <div class="grid grid-cols-6 col-span-1">
                                                             <div class="col-start-1 col-span-1">
@@ -347,7 +349,7 @@ const Index = () => {
                                     {Object.entries(datosMasPedidos).map((value, index) => {
                                         return (
                                             <div>
-                                                <Link href="/libros/[id]" as={"/libros/" + value[1].libro.id}>
+                                                <Link href="/libro/[id]" as={"/libro/" + value[1].libro.id}>
                                                     <div class="libro">
                                                         <div class="grid grid-cols-6 col-span-1">
                                                             <div class="col-start-1 col-span-1">
