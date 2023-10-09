@@ -1,4 +1,4 @@
-
+@import "./cambio_color.css";
 
 
 #contenedor_cita{
@@ -37,7 +37,7 @@
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
-    background: var(--m-3-sys-light-surface, #FEF7FF);
+    background: var(--color-secundario);
     top: 4%;
     left: -1%;
 }
@@ -54,7 +54,7 @@
 }
 
 #nombre-dl{
-    color: var(--m-3-sys-light-on-primary-container, #21005D);
+    color: white;
     text-align: center;
     /* M3/title/medium */
     font-family: "Roboto", sans-serif;
@@ -78,7 +78,7 @@
     align-items: center;
     flex-shrink: 0;
     border-radius: 100px;
-    background: var(--m-3-sys-light-primary-container, #EADDFF);
+    background: var(--color-primario);
 }
 
 #circuloConInicial
@@ -109,7 +109,7 @@
     line-height: 24px; /* 150% */
 }
 #autor_libro_dl{
-    color: var(--m-3-sys-light-on-surface-variant, #49454F);
+    color: var(--color-primario);
 
     /* M3/body/medium */
     font-family: "Roboto", sans-serif;
@@ -362,7 +362,7 @@
     align-items: center;
     flex-shrink: 0;
     border-radius: 8px;
-    background: var(--m-3-sys-light-secondary-container, #E8DEF8);
+    background: var(--color-primario);
     position: absolute;
     left: 90%;
     top:6%;

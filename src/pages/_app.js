@@ -7,6 +7,8 @@ import '../styles/globals.css'
 import '../styles/style_detalleLibro.css'
 import '../styles/modal.css'
 import '../styles/style_agregarLibroadm.css'
+import '../styles/style_colores_adicionales.css'
+
 
 import { AppProps } from 'next/app'
 import { MiProvider } from './context/contexto'

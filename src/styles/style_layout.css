@@ -1,3 +1,4 @@
+@import "./cambio_color.css";
 
 body {
     margin: 0;
@@ -21,7 +22,7 @@ header {
     gap: 6px;
     padding: 8px 0px;
     align-items: center;
-    background: var(--m-3-sys-light-surface-container, #F3EDF7);
+    background-color: var(--color-secundario);
     margin: 0;
     z-index: 3;
 }
@@ -94,7 +95,7 @@ nav > ul > li {
 
 nav > ul > li > a {
     text-decoration: none;
-    color: var(--m-3-sys-light-primary, #6750A4);
+    color: var(--color-primario);
     text-align: center;
     /* M3/label/large */
     font-family: 'Times New Roman', Times, serif;

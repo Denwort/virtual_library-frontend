@@ -1,3 +1,5 @@
+@import "./cambio_color.css";
+
 #bienvenida{
     color:black;
     font-size: 22px;
@@ -11,7 +13,7 @@
 .rectangulo{
     width: 1084px;
     height: 264px;
-    background: #F3EDF7;
+    background: var(--color-secundario);
     margin-bottom: 11px;
 }
 .libro{
@@ -21,7 +23,7 @@
     border-color: rgb(165, 165, 165);
     border-width: 1px;
     border-style: solid;
-    background: #F3EDF7;
+    background: #ffffff;
     margin-left: 22px;
     margin-bottom: 1%;
 }
@@ -44,7 +46,7 @@
     border-radius: 50%;
     justify-content: center;
     align-items: center;
-    background-color: #6750A4;
+    background-color: var(--color-primario);
     margin-top: 37%;
     margin-left: 20%;
 }

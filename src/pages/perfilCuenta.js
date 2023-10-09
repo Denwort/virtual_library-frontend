@@ -98,7 +98,7 @@ const Perfil = () => {
                     </div>
                     <form class="col-span-1" onSubmit={(e)=>e.preventDefault()}>
                     <div id="cuadro_texto_correo">
-                        <div class="text_field">
+                        <div class="borde_text_field">
                             <div class="state_layer">
                                 <div class="content_perfil">
                                     <div id="text_perfil">
@@ -116,7 +116,7 @@ const Perfil = () => {
                     </div>
                     
                     <div id="cuadro_texto_contra">
-                        <div class="text_field">
+                        <div class="borde_text_field">
                             <div class="state_layer">
                                 <div class="content_perfil">
                                     <div id="text_perfil">

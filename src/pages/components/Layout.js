@@ -44,7 +44,7 @@ export default props => {
     return (
     <>
         <div id='todo'>
-            <header class="bg-purple-header">
+            <header>
                 <div class="flex p-8">
                     <button class="" onClick={toggleNav}>
                         <div class="w-48px h-48px items-center justify-center gap-10">
