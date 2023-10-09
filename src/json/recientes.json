@@ -1,5 +1,29 @@
 [
 	{
+		"libro_id": "77",
+		"titulo": "Revenge of the Electric Car",
+		"imagen": "http://dummyimage.com/140x130.png/5fa2dd/ffffff",
+		"fecha_inicio": "2023-10-09"
+	},
+	{
+		"libro_id": "75",
+		"titulo": "Chhoti Si Baat",
+		"imagen": "http://dummyimage.com/134x335.png/ff4444/ffffff",
+		"fecha_inicio": "2023-10-09"
+	},
+	{
+		"libro_id": "68",
+		"titulo": "Killing Auntie (Zabicie ciotki)",
+		"imagen": "http://dummyimage.com/105x116.png/5fa2dd/ffffff",
+		"fecha_inicio": "2023-10-09"
+	},
+	{
+		"libro_id": "53",
+		"titulo": "Angels Fall",
+		"imagen": "http://dummyimage.com/249x391.png/ff4444/ffffff",
+		"fecha_inicio": "2023-10-09"
+	},
+	{
 		"libro_id": "8",
 		"titulo": "Zombie High",
 		"imagen": "http://dummyimage.com/124x124.png/cc0000/ffffff",
