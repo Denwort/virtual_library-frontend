@@ -175,7 +175,7 @@ const Busqueda = () => {
                                     <div class="w-10 h-10 inline-flex m-4 bg-purple-primary text-purple-bg justify-center items-center text-center rounded-full color_letra_blanco color_fondo_primario">{tituloIniciales}</div>
                                     <div class="w-60 h-18 line-clamp-3 text-purple-primary text-left items-center align-middle color_letra_primario">{value[1].titulo}</div>
                                 </div>
-                                <div class="flex bg-purple-bg mx-auto justify-center items-center">
+                                <div class="flex bg-purple-bg mx-auto justify-center items-center color_fondo_secundario">
                                     <Image src={value[1].imagen} height={10000} width={10000} alt="libro_imagen" class="h-36 w-auto" ></Image>
                                 </div>
                                 <div class="py-2 px-4 text-purple-primary color_letra_primario">
