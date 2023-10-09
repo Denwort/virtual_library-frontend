@@ -189,7 +189,7 @@ const Busqueda = () => {
                             <button type="button" disabled={cuenta.tipo=='admin'? false : !disponibilidades[index]}
                             class="bg-purple-primary text-purple-bg border px-4 py-2 hover:bg-blue-600 rounded-full color_fondo_primario color_letra_blanco"
                             onClick={()=>{
-                                setlibroselec(value)
+                                setlibroselec(value[1])
                                 if(cuenta.tipo=='admin'){router.push('/modificar/'+value[1].id)}
                                 else if(cuenta.tipo=='user'){openModal1()}
                                     }
