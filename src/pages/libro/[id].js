@@ -156,7 +156,7 @@ const detalleLibro = () => {
                         </div>
                     </div>
                     <div id="cont_libr_dl">
-                        <Image src={p.imagen} width={184} height={151} alt="imagenLib" id="imglibro" class="w-auto h-40"></Image>
+                        <Image src={p.imagen} width={184} height={151} alt="imagenLib" id="imglibro" class="w-120 h-40"></Image>
                     </div>
                     <div id="contenedor_texto-dl">
                         <p id="texto-dl">{p.descripcion}</p>
