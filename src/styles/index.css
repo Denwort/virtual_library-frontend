@@ -25,6 +25,10 @@
       background-color: var(--color-secundario);
       color:black;
   }
+  #retro:disabled {
+    background-color: #fff;
+    color: var(--color-primario);
+}
 
   #avanzar {
     background-color: var(--color-primario);
@@ -43,6 +47,11 @@
     background-color: var(--color-secundario);
     color:black;
   }
+
+  #avanzar:disabled {
+    background-color: #fff;
+    color: var(--color-primario);
+}
 
   #total1{
     font-weight: bold;
