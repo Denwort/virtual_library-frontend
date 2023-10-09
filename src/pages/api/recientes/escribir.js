@@ -42,8 +42,8 @@ export default async function leer(req, res) {
             }
         }
     });
-    resultado.sort((a,b) => new Date(a.fecha_final).getTime() - new Date(b.fecha_final).getTime())
     resultado.reverse()
+    resultado.sort((a,b) => new Date(b.fecha_inicio).getTime() - new Date(a.fecha_inicio).getTime())
         
     // Escritura
     try {

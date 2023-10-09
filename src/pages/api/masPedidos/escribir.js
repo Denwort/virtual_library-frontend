@@ -42,6 +42,7 @@ export default async function leer(req, res) {
             }
         } 
     });
+    resultado.sort((a,b) => b.cantidad - a.cantidad)
     console.log(resultado)
         
     // Escritura
