@@ -173,11 +173,15 @@ const detalleLibro = () => {
                     </div>
 
                     <div id="todosTopicos">
-                        <div id="contenedor_topi1">
-                            <div class="topi-stateLayer">
-                                <p id="top1">{p.genero}</p>
+                        {Object.entries(p.genero.split(',')).map( (value,index) => {
+                            return (
+                            <div id="contenedor_topi1" key={index}>
+                                <div class="topi-stateLayer">
+                                    <p id="top1">{value[1]}</p>
+                                </div>
                             </div>
-                        </div>
+                            )
+                        })}
                     </div>
 
                     <div id="dispo-nodispo">

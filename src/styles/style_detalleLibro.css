@@ -192,7 +192,12 @@
 }
 
 #todosTopicos{
-    position: relative;
+    position: absolute;
+    display: flex;
+    top: 280px;
+    left: 27px;
+    width: max-content;
+    gap: 6px;
 }
 
 #top1{
@@ -242,14 +247,8 @@
 }
 
 #contenedor_topi1{
-    position: absolute;
-    top: 210px;
-    left: 27px
-}
-#contenedor_topi2{
-    position: absolute;
-    top: 210px;
-    left: 205px
+    display: flex;
+    float: left;
 }
 
 #total-reserva{

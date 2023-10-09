@@ -168,8 +168,8 @@ export default function busqueda() {
                                                 <span class="ml-2 text-purple-primary font-bold color_letra_primario">Autor, Autores</span>
                                             </label>
                                             <label class="flex items-center">
-                                                <input type="checkbox" name="filter3" value="serie" class="form-checkbox text-purple-primary border-purple-primary" onChange={handleCheckboxChange}></input>
-                                                <span class="ml-2 text-purple-primary font-bold color_letra_primario">Serie</span>
+                                                <input type="checkbox" name="filter3" value="genero" class="form-checkbox text-purple-primary border-purple-primary" onChange={handleCheckboxChange}></input>
+                                                <span class="ml-2 text-purple-primary font-bold color_letra_primario">Topico</span>
                                             </label>
                                             <label class="flex items-center">
                                                 <input type="checkbox" name="filter4" value="isbn" class="form-checkbox text-purple-primary border-purple-primary" onChange={handleCheckboxChange}></input>
