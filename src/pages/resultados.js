@@ -14,6 +14,8 @@ const Busqueda = () => {
     // Define un estado para almacenar los resultados de la API
     const [resultados, setResultados] = useState([]);
     const [reservas, setReservas] = useState([]);
+    //obtener libro
+    const [libroselec, setlibroselec] = useState([]);
 
     async function leer() {
         const opciones = {
@@ -52,7 +54,6 @@ const Busqueda = () => {
         return data
 
     }
-
 
 
     async function escribir(libro) {
@@ -134,6 +135,7 @@ const Busqueda = () => {
         setIsModalOpen(false);
     };
 
+
     return (
         <Layout content={
         <>
@@ -184,33 +186,41 @@ const Busqueda = () => {
                             </div>
                             {cuenta.tipo != 'guest' && (
                             <div class="h-16 flex justify-center items-center">
-                                <button type="button" disabled={cuenta.tipo=='admin'? false : !disponibilidades[index]}
-                                class="bg-purple-primary text-purple-bg border px-4 py-2 hover:bg-blue-600 rounded-full color_fondo_primario color_letra_blanco"
-                                onClick={()=>{if(cuenta.tipo=='admin'){router.push('/modificar/'+value[1].id)}else if(cuenta.tipo=='user'){openModal1()}}}
-                                    
-                                >{boton_texto}</button>
+                            <button type="button" disabled={cuenta.tipo=='admin'? false : !disponibilidades[index]}
+                            class="bg-purple-primary text-purple-bg border px-4 py-2 hover:bg-blue-600 rounded-full color_fondo_primario color_letra_blanco"
+                            onClick={()=>{
+                                setlibroselec(value)
+                                if(cuenta.tipo=='admin'){router.push('/modificar/'+value[1].id)}
+                                else if(cuenta.tipo=='user'){openModal1()}
+                                    }
+                                }
+                                
+                            >{boton_texto}</button>
 
-                                <Modal isOpen={isModalOpen} onClose={closeModal1} id="modal">
-                                    <p>Ingrese la Fecha de devolucion:</p>
-                                    <br></br>
-                                    <input type='date' id="inputDate" defaultValue={obtenerFechaFutura()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={(e)=> handleChange(e,value[1])} />
-                                    <br></br>
-                                    <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={closeModal1}>Confirmar</button>
-                                </Modal>
-                            </div>
+                            
+                                
+                            
+                        </div>
                             )}
                         </div>
                     )}
                 )}
 
+                <Modal isOpen={isModalOpen} onClose={closeModal1} id="modal">
+                    <p>Ingrese la Fecha de devolucion:</p>
+                    <br></br>
+                    <input type='date' id="inputDate" defaultValue={obtenerFechaFutura()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={handleChange} />
+                    <br></br>
+                    <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={escribir(libroselec)}>Confirmar</button>
+                    <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={closeModal1}>Cerrar</button>
+                </Modal>
+            
             </div>
 
         </>
         }
         ></Layout>
     )
-
-    //xd
 
     const openModalButtons = document.querySelectorAll(".open-modal-button");
     const closeModalButtons = document.querySelectorAll(".close-modal-button");
@@ -235,45 +245,6 @@ const Busqueda = () => {
         closeModal(e);
         }
     }
-
-    function obtenerFechaActual() {
-        const hoy = new Date();
-        const year = hoy.getFullYear();
-        const mes = String(hoy.getMonth() + 1).padStart(2, '0');
-        const dia = String(hoy.getDate()).padStart(2, '0');
-        return `${year}-${mes}-${dia}`;
-    }
-    function obtenerFechaFutura() {
-        let treintaDias = new Date();
-        treintaDias.setDate(treintaDias.getDate() + 30)
-        const year = treintaDias.getFullYear();
-        const mes = String(treintaDias.getMonth() + 1).padStart(2, '0');
-        const dia = String(treintaDias.getDate()).padStart(2, '0');
-        return `${year}-${mes}-${dia}`;
-    }
-    
-    function obtenerFechaFutura_us(){
-        const fecha = document.getElementById("inputDate").value
-        return fecha
-    }
-    
-    function handleChange(event,val) {
-        const fechaSeleccionada = event.target.value;
-        
-        if(cuenta.tipo == 'admin') {
-             const ruta = '/modificar/' + val.id.toString()
-             router.push(ruta)
-        }
-        else if(cuenta.tipo == 'user' ){
-      
-        escribir(val)
-        }
-
-        
-        
-        // Realiza acciones con la fecha seleccionada si es necesario
-    }
-
     // Asignar eventos a los botones
     openModalButtons.forEach((button) => {
         button.addEventListener("click", openModal);
@@ -288,5 +259,40 @@ const Busqueda = () => {
     });
 
     //xd
+
 }
-export default Busqueda
+
+    export default Busqueda
+    //xd
+
+    
+
+    function obtenerFechaActual() {
+        const hoy = new Date();
+        const year = hoy.getFullYear();
+        const mes = String(hoy.getMonth() + 1).padStart(2, '0');
+        const dia = String(hoy.getDate()).padStart(2, '0');
+        console.log(`${year}-${mes}-${dia}`)
+        return `${year}-${mes}-${dia}`;
+    }
+    function obtenerFechaFutura() {
+        let treintaDias = new Date();
+        treintaDias.setDate(treintaDias.getDate() + 30)
+        const year = treintaDias.getFullYear();
+        const mes = String(treintaDias.getMonth() + 1).padStart(2, '0');
+        const dia = String(treintaDias.getDate()).padStart(2, '0');
+        console.log(`${year}-${mes}-${dia}`)
+        return `${year}-${mes}-${dia}`;
+    }
+    
+    function obtenerFechaFutura_us(){
+        const fecha = document.getElementById("inputDate").value
+        return fecha
+    }
+    
+    function handleChange(event) {
+        const fechaSeleccionada = event.target.value;
+        // Realiza acciones con la fecha seleccionada si es necesario
+    }
+
+
