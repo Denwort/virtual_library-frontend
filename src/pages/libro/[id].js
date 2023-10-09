@@ -129,6 +129,7 @@ const detalleLibro = () => {
 
         const request = await fetch( '../api/reservas/escribir', opciones)
         data = await request.json()
+        alert("Libro reservado")
         console.log( data)
     }
 
@@ -214,7 +215,7 @@ const detalleLibro = () => {
                             </div>
                         </div>
                         <div id="contenedor_breservar">
-                            <button id="bReserv" onClick={()=>{escribir_reserva()}} disabled={disponibilidad!='Disponible'}>Reservar</button>
+                            <button id="bReserv" onClick={()=>{escribir_reserva(); disponibilidad='No disponible'}} disabled={disponibilidad!='Disponible'}>Reservar</button>
 
                         </div>
 

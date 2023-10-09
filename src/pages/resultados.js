@@ -211,7 +211,7 @@ const Busqueda = () => {
                     <br></br>
                     <input type='date' id="inputDate" defaultValue={obtenerFechaFutura()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={handleChange} />
                     <br></br>
-                    <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={escribir(libroselec)}>Confirmar</button>
+                    <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={()=>escribir(libroselec)}>Confirmar</button>
                     <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={closeModal1}>Cerrar</button>
                 </Modal>
             
@@ -259,7 +259,8 @@ const Busqueda = () => {
     });
 
     //xd
-
+    
+    
 }
 
     export default Busqueda
@@ -284,15 +285,17 @@ const Busqueda = () => {
         console.log(`${year}-${mes}-${dia}`)
         return `${year}-${mes}-${dia}`;
     }
-    
+
     function obtenerFechaFutura_us(){
         const fecha = document.getElementById("inputDate").value
         return fecha
     }
+    
     
     function handleChange(event) {
         const fechaSeleccionada = event.target.value;
         // Realiza acciones con la fecha seleccionada si es necesario
     }
 
+    
 

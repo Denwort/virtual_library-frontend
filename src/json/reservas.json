@@ -11,102 +11,21 @@
 			"contrasenha": "pruebita",
 			"foto": "/boton_perfil.png"
 		},
-		"libro": {
-			"id": "97",
-			"titulo": "Liberal Arts",
-			"autor": "Morie Lamport",
-			"isbn": "551941178-6",
-			"editorial": "Eazzy",
-			"genero": "fiction",
-			"tipo": "novela",
-			"descripcion": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
-			"imagen": "http://dummyimage.com/128x386.png/5fa2dd/ffffff"
-		},
-		"fecha_inicio": "2023-10-09",
-		"fecha_final": "2023-11-08"
-	},
-	{
-		"cuenta": {
-			"id": "2",
-			"tipo": "user",
-			"nombres": "pruebita3",
-			"apellidos": "b",
-			"tipo_documento": "c",
-			"nro_documento": "d",
-			"correo": "pruebita@ulima.edu.pe",
-			"contrasenha": "pruebita",
-			"foto": "/boton_perfil.png"
-		},
-		"libro": {
-			"id": "97",
-			"titulo": "Liberal Arts",
-			"autor": "Morie Lamport",
-			"isbn": "551941178-6",
-			"editorial": "Eazzy",
-			"genero": "fiction",
-			"tipo": "novela",
-			"descripcion": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
-			"imagen": "http://dummyimage.com/128x386.png/5fa2dd/ffffff"
-		},
-		"fecha_inicio": "2023-10-09",
-		"fecha_final": "2023-11-08"
-	},
-	{
-		"cuenta": {
-			"id": "2",
-			"tipo": "user",
-			"nombres": "pruebita3",
-			"apellidos": "b",
-			"tipo_documento": "c",
-			"nro_documento": "d",
-			"correo": "pruebita@ulima.edu.pe",
-			"contrasenha": "pruebita",
-			"foto": "/boton_perfil.png"
-		},
 		"libro": [
-			"8",
+			"3",
 			{
-				"id": "47",
-				"titulo": "Emergo (Apartment 143)",
-				"autor": "Catlee Ottiwill",
-				"isbn": "176493339-7",
-				"editorial": "Brainbox",
-				"genero": "fiction",
-				"tipo": "articulo",
-				"descripcion": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
-				"imagen": "http://dummyimage.com/201x183.png/dddddd/000000"
+				"id": "4",
+				"titulo": "Losers' Club (Kaybedenler kulübü)",
+				"autor": "Kevyn Cuthill",
+				"isbn": "261902795-0",
+				"editorial": "Fivebridge",
+				"genero": "mystery",
+				"tipo": "novela",
+				"descripcion": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+				"imagen": "http://dummyimage.com/175x325.png/5fa2dd/ffffff"
 			}
 		],
 		"fecha_inicio": "2023-10-09",
-		"fecha_final": "2023-10-09"
-	},
-	{
-		"cuenta": {
-			"id": "2",
-			"tipo": "user",
-			"nombres": "pruebita3",
-			"apellidos": "b",
-			"tipo_documento": "c",
-			"nro_documento": "d",
-			"correo": "pruebita@ulima.edu.pe",
-			"contrasenha": "pruebita",
-			"foto": "/boton_perfil.png"
-		},
-		"libro": [
-			"8",
-			{
-				"id": "47",
-				"titulo": "Emergo (Apartment 143)",
-				"autor": "Catlee Ottiwill",
-				"isbn": "176493339-7",
-				"editorial": "Brainbox",
-				"genero": "fiction",
-				"tipo": "articulo",
-				"descripcion": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
-				"imagen": "http://dummyimage.com/201x183.png/dddddd/000000"
-			}
-		],
-		"fecha_inicio": "2023-10-09",
-		"fecha_final": "2023-10-25"
+		"fecha_final": "2023-10-26"
 	}
 ]
