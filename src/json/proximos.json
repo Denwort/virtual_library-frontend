@@ -1,1 +1,20 @@
-[]
+[
+	{
+		"libro_id": "1",
+		"titulo": "Camilla",
+		"imagen": "https://images.cdn2.buscalibre.com/fit-in/180x180/1f/a6/1fa666e0f93fb0bc63c4c214188f3a46.jpg",
+		"fecha_final": "2023-11-07"
+	},
+	{
+		"libro_id": "0",
+		"titulo": "Saragossa Manuscript, The (Rekopis znaleziony w Saragossie)",
+		"imagen": "https://images.cdn1.buscalibre.com/fit-in/180x180/20/82/2082a4e5a59dcf7e8531feb8e488c30b.jpg",
+		"fecha_final": "2023-12-07"
+	},
+	{
+		"libro_id": "8",
+		"titulo": "Zombie High",
+		"imagen": "http://dummyimage.com/124x124.png/cc0000/ffffff",
+		"fecha_final": "2023-12-07"
+	}
+]
