@@ -71,7 +71,7 @@ const Perfil = () => {
             </div>
             <div class="col-span-1">
             <div id="cuadro_texto_nombre">
-                <div class="text_field">
+                <div class="borde_text_field">
                     <div class="state_layer">
                         <div class="content_perfil">
                             <div id="text_perfil">
@@ -89,7 +89,7 @@ const Perfil = () => {
             </div>
             
             <div id="cuadro_texto_tipo">
-                <div class="text_field">
+                <div class="borde_text_field">
                     <div class="state_layer">
                         <div class="content_perfil">
                             <div id="text_perfil">
@@ -108,7 +108,7 @@ const Perfil = () => {
 
 
             <div id="cuadro_texto_ape">
-                <div class="text_field">
+                <div class="borde_text_field">
                     <div class="state_layer">
                         <div class="content_perfil">
                             <div id="text_perfil">
@@ -126,7 +126,7 @@ const Perfil = () => {
                 </div>
 
                         <div id="cuadro_texto_nro">
-                            <div class="text_field">
+                            <div class="borde_text_field">
                                 <div class="state_layer">
                                     <div class="content_perfil">
                                         <div id="text_perfil">

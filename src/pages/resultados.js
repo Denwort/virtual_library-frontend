@@ -102,7 +102,8 @@ const Busqueda = () => {
         disponibilidades.push(true)
         reservas.forEach((item, index) => {
             let fecha_final = Date.parse(item["fecha_final"])
-            if (item.libro.id == libroActual.id && fecha_final >= new Date()) {
+            let fecha_actual = Date.parse(obtenerFechaActual())
+            if (item.libro.id == libroActual.id && fecha_final >= fecha_actual) {
                 disponibilidades[idx] = false
             }
         })
@@ -142,14 +143,16 @@ const Busqueda = () => {
 
             <div class="flex justify-between">
                 <h1 class="text-2xl font-semibold mb-4">Búsqueda</h1>
-                <button type="button" class="bg-purple-primary text-purple-bg px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full">Volver a buscar</button>
+                <button type="button" class="bg-purple-primary text-purple-bg px-4 py-2 hover:bg-blue-600 border rounded-full color_fondo_primario color_letra_blanco"
+                onClick={()=>{router.push('/busqueda')}}>Volver a buscar</button>
             </div>
 
             <Image src="/divider.png" width={1088} height={1} class="py-4" alt="imagenDefault"></Image>
 
             <div class="flex justify-between">
                 <h1 class="text-1xl font-semibold mb-4">Resultados de la busqueda</h1>
-                <button type="button" class="bg-purple-bg text-purple-primary px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full">Ver mis reservas</button>
+                <button type="button" class="bg-purple-bg text-purple-primary px-4 py-2 hover:bg-blue-600 border rounded-full color_letra_primario color_fondo_secundario"
+                onClick={()=>{router.push('/')}}>Ver mis reservas</button>
             </div>
             
             <div class="flex flex-wrap shrink-0 gap-3 bg-white p-6 rounded-md shadow-md w-12/12 h-full justify-center">
@@ -162,38 +165,40 @@ const Busqueda = () => {
                       .join('');
                     return ( 
                     
-                        <div class="w-80 h-96 border-2 border-gray-400 rounded-lg" key={value[1].id}>
+                        <div class="w-80 h-96 border-2 rounded-lg color_borde_primario" key={value[1].id}>
                             <div class="cursor-pointer" onClick={()=>{
                                 router.push('/libro/'+value[1].id)
                             }}>
                                 <div class="h-18 flex justify-between items-center">
-                                    <div class="w-10 h-10 inline-flex m-4 bg-purple-primary text-purple-bg justify-center items-center text-center rounded-full">{tituloIniciales}</div>
-                                    <div class="w-60 h-18 line-clamp-3 text-purple-primary text-left items-center align-middle">{value[1].titulo}</div>
+                                    <div class="w-10 h-10 inline-flex m-4 bg-purple-primary text-purple-bg justify-center items-center text-center rounded-full color_letra_blanco color_fondo_primario">{tituloIniciales}</div>
+                                    <div class="w-60 h-18 line-clamp-3 text-purple-primary text-left items-center align-middle color_letra_primario">{value[1].titulo}</div>
                                 </div>
                                 <div class="flex bg-purple-bg mx-auto justify-center items-center">
                                     <Image src={value[1].imagen} height={10000} width={10000} alt="libro_imagen" class="h-36 w-auto" ></Image>
                                 </div>
-                                <div class="py-2 px-4 text-purple-primary">
+                                <div class="py-2 px-4 text-purple-primary color_letra_primario">
                                     <div class="font-bold">ISBN: {value[1].isbn}</div>
                                     <div>Autor: {value[1].autor}</div>
                                     <div>Editorial: {value[1].editorial}</div>
                                 </div>
                             </div>
+                            {cuenta.tipo != 'guest' && (
                             <div class="h-16 flex justify-center items-center">
-                                <button type="button" disabled={boton_disabled}
-                                class="bg-purple-primary text-purple-bg border-2 border-purple-primary px-4 py-2 hover:bg-blue-600  rounded-full"
-                                onClick={openModal1}
+                                <button type="button" disabled={cuenta.tipo=='admin'? false : !disponibilidades[index]}
+                                class="bg-purple-primary text-purple-bg border px-4 py-2 hover:bg-blue-600 rounded-full color_fondo_primario color_letra_blanco"
+                                onClick={()=>{if(cuenta.tipo=='admin'){router.push('/modificar/'+value[1].id)}else if(cuenta.tipo=='user'){openModal1()}}}
                                     
                                 >{boton_texto}</button>
 
-                                <Modal isOpen={isModalOpen} onClose={closeModal1}>
+                                <Modal isOpen={isModalOpen} onClose={closeModal1} id="modal">
                                     <p>Ingrese la Fecha de devolucion:</p>
                                     <br></br>
-                                    <input type='date' id="inputDate" defaultValue={obtenerFechaActual()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={(e)=> handleChange(e,value[1])} />
+                                    <input type='date' id="inputDate" defaultValue={obtenerFechaFutura()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={(e)=> handleChange(e,value[1])} />
                                     <br></br>
                                     <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={closeModal1}>Confirmar</button>
                                 </Modal>
                             </div>
+                            )}
                         </div>
                     )}
                 )}
@@ -214,7 +219,7 @@ const Busqueda = () => {
 
     // Función para abrir el modal
     function openModal(e) {
-        const modal = e.target.nextElementSibling;
+        const modal = document.getElementById("modal");
         modal.classList.remove("hidden");
     }
 
@@ -236,7 +241,6 @@ const Busqueda = () => {
         const year = hoy.getFullYear();
         const mes = String(hoy.getMonth() + 1).padStart(2, '0');
         const dia = String(hoy.getDate()).padStart(2, '0');
-        console.log(`${year}-${mes}-${dia}`)
         return `${year}-${mes}-${dia}`;
     }
     function obtenerFechaFutura() {
@@ -245,7 +249,6 @@ const Busqueda = () => {
         const year = treintaDias.getFullYear();
         const mes = String(treintaDias.getMonth() + 1).padStart(2, '0');
         const dia = String(treintaDias.getDate()).padStart(2, '0');
-        console.log(`${year}-${mes}-${dia}`)
         return `${year}-${mes}-${dia}`;
     }
     

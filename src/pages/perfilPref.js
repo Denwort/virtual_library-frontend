@@ -29,6 +29,8 @@ const Perfil = () => {
             )
             const data = await peticion.json()
             setCuenta(cuenta_modificada)
+            document.querySelector(':root').style.setProperty('--color-primario', cuenta_modificada.color)
+            document.querySelector(':root').style.setProperty('--color-secundario', hexToRgbA(cuenta_modificada.color))
             alert("Datos actualizados")
 
         } catch (err) {
@@ -69,7 +71,7 @@ const Perfil = () => {
             </div>
             <div class="col-span-1">
             <div id="cuadro_texto_idioma">
-                <div class="text_field">
+                <div class="borde_text_field">
                     <div class="state_layer">
                         <div class="content_perfil">
                             <div id="text_perfil">
@@ -87,7 +89,7 @@ const Perfil = () => {
             </div>
             
             <div id="cuadro_texto_prefijo">
-                <div class="text_field">
+                <div class="borde_text_field">
                     <div class="state_layer">
                         <div class="content_perfil">
                             <div id="text_perfil">
@@ -105,7 +107,7 @@ const Perfil = () => {
             </div>
 
             <div id="cuadro_texto_color">
-                <div class="text_field">
+                <div class="borde_text_field">
                     <div class="state_layer">
                         <div class="content_perfil">
                             <div id="text_perfil">
@@ -137,3 +139,16 @@ const Perfil = () => {
     )
 }
 export default Perfil
+
+function hexToRgbA(hex){
+    var c;
+    if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
+        c= hex.substring(1).split('');
+        if(c.length== 3){
+            c= [c[0], c[0], c[1], c[1], c[2], c[2]];
+        }
+        c= '0x'+c.join('');
+        return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+',.15)';
+    }
+    throw new Error('Bad Hex');
+}

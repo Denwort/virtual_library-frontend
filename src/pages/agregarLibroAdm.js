@@ -74,7 +74,7 @@ const Perfil = () => {
                     <form action="registrarLibro" onSubmit={hacernada}>
                         <div class="col-span-1">
                             <div id="cuadro_texto_idioma">
-                                <div class="text_field">
+                                <div class="borde_text_field">
                                     <div class="state_layer">
                                         <div class="content_perfil">
                                             <div id="text_perfil">
@@ -92,7 +92,7 @@ const Perfil = () => {
                             </div>
 
                             <div id="cuadro_texto_prefijo">
-                                <div class="text_field">
+                                <div class="borde_text_field">
                                     <div class="state_layer">
                                         <div class="content_perfil">
                                             <div id="text_perfil">
@@ -110,7 +110,7 @@ const Perfil = () => {
                             </div>
 
                             <div id="cuadro_texto_color">
-                                <div class="text_field">
+                                <div class="borde_text_field">
                                     <div class="state_layer">
                                         <div class="content_perfil">
                                             <div id="text_perfil">
@@ -127,7 +127,7 @@ const Perfil = () => {
                                 </div>
                             </div>
                             <div id="cuadro_texto_color">
-                                <div class="text_field">
+                                <div class="borde_text_field">
                                     <div class="state_layer">
                                         <div class="content_perfil">
                                             <div id="text_perfil">
@@ -144,7 +144,7 @@ const Perfil = () => {
                                 </div>
                             </div>
                             <div id="cuadro_texto_color">
-                                <div class="text_field">
+                                <div class="borde_text_field">
                                     <div class="state_layer">
                                         <div class="content_perfil">
                                             <div id="text_perfil">
@@ -162,7 +162,7 @@ const Perfil = () => {
                             </div>
 
                             <div id="cuadro_texto_color">
-                                <div class="text_field">
+                                <div class="borde_text_field">
                                     <div class="state_layer">
                                         <div class="content_perfil">
                                             <div id="text_perfil">

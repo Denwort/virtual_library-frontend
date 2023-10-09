@@ -103,20 +103,20 @@ export default function busqueda() {
                         <div class="flex justify-between gap-4 mb-4">
                             <h1 class="text-2xl font-semibold">Búsqueda</h1>
                             { agrega_recurso && (
-                            <Link type="button" href="/agregarLibroAdm" class="bg-purple-primary text-purple-bg px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full">Agregar un nuevo recurso</Link>
+                            <Link type="button" href="/agregarLibroAdm" class="px-4 py-2 hover:bg-blue-600 border rounded-full color_fondo_primario color_letra_blanco">Agregar un nuevo recurso</Link>
                             )}
                             </div>
-                        <div class="bg-purple-bg py-4 px-4">
+                        <div class=" py-4 px-4 color_fondo_secundario">
                             <form class="flex" onSubmit={handleSearch}>
 
                                 <div class="w-1/2 mr-4 space-y-4 m-3 ">
 
                                     <div id="text_field_b1 relative">
-                                        <div class="text_field">
+                                        <div class="borde_text_field">
                                             <div class="state_layer">
                                                 <div class="content">
-                                                    <div id="text_usuario">
-                                                        <p>ingresa la palabra clave</p>
+                                                    <div id="text_perfil">
+                                                        <p>Ingresa la palabra clave</p>
                                                     </div>
                                                     <div id="input_text_usuario">
                                                         <input type='text' placeholder='' id="inputUsu" value={palabraclave} onChange={(e) => setPalabraclave(e.target.value)}/>
@@ -132,10 +132,10 @@ export default function busqueda() {
                                     </div>
 
                                     <div id="text_field_b2">
-                                        <div class="text_field">
+                                        <div class="borde_text_field">
                                             <div class="state_layer">
                                                 <div class="content">
-                                                    <div id="text_usuario">
+                                                    <div id="text_perfil">
                                                         <p>Tipo de Recurso</p>
                                                     </div>
                                                     <div id="input_text_usuario">
@@ -157,30 +157,30 @@ export default function busqueda() {
 
                                 <div class="w-1/2">
                                     <div class="mb-4">
-                                        <p class="text-gray-700 text-sm text-purple-primary font-bold">Incluir en busqueda:</p>
+                                        <p class="text-gray-700 text-sm text-purple-primary font-bold color_letra_primario">Incluir en busqueda:</p>
                                         <div class="space-y-2">
                                             <label class="flex items-center">
                                                 <input type="checkbox" name="filter1" value="titulo" class="form-checkbox text-purple-primary border-purple-primary" onChange={handleCheckboxChange}></input>
-                                                <span class="ml-2 text-purple-primary font-bold">Titulo</span>
+                                                <span class="ml-2 text-purple-primary font-bold color_letra_primario">Titulo</span>
                                             </label>
                                             <label class="flex items-center">
                                                 <input type="checkbox" name="filter2" value="autor" class="form-checkbox text-purple-primary border-purple-primary" onChange={handleCheckboxChange}></input>
-                                                <span class="ml-2 text-purple-primary font-bold">Autor, Autores</span>
+                                                <span class="ml-2 text-purple-primary font-bold color_letra_primario">Autor, Autores</span>
                                             </label>
                                             <label class="flex items-center">
                                                 <input type="checkbox" name="filter3" value="serie" class="form-checkbox text-purple-primary border-purple-primary" onChange={handleCheckboxChange}></input>
-                                                <span class="ml-2 text-purple-primary font-bold">Serie</span>
+                                                <span class="ml-2 text-purple-primary font-bold color_letra_primario">Serie</span>
                                             </label>
                                             <label class="flex items-center">
                                                 <input type="checkbox" name="filter4" value="isbn" class="form-checkbox text-purple-primary border-purple-primary" onChange={handleCheckboxChange}></input>
-                                                <span class="ml-2 text-purple-primary font-bold">ISBN</span>
+                                                <span class="ml-2 text-purple-primary font-bold color_letra_primario">ISBN</span>
                                             </label>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="text-right space-x-2 ">
-                                    <button type="reset" class="bg-purple-bg text-purple-primary px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full">Limpiar</button>
-                                    <button type="submit" onClick={handleSearch} class="bg-purple-primary text-purple-bg px-4 py-2 hover:bg-blue-600 border-2 border-purple-primary rounded-full" >Buscar</button>
+                                    <button type="reset" class="bg-purple-bg text-purple-primary px-4 py-2 hover:bg-blue-600 border rounded-full color_letra_primario">Limpiar</button>
+                                    <button type="submit" onClick={handleSearch} class="bg-purple-primary text-purple-bg px-4 py-2 hover:bg-blue-600 border rounded-full color_fondo_primario color_letra_blanco" >Buscar</button>
                                 </div>
 
                             </form>

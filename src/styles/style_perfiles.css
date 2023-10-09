@@ -1,3 +1,5 @@
+@import "./cambio_color.css";
+
 #tituloP {
     width: 100%; 
     color: black; 
@@ -15,14 +17,14 @@
     width: 1088px;
     height: 510px;
     flex-shrink: 0;
-    background: #F3EDF7;
+    background: var(--color-secundario);
     margin-top: 20px;
 }
   
   #barra_perfil {
     width: 747px;
     height: 40px;
-    background: #FEF7FF;
+    background: white;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
@@ -37,7 +39,7 @@
   #barra_perfil_usuario {
     width: 747px;
     height: 40px;
-    background: #FEF7FF;
+    background: white;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
@@ -50,7 +52,7 @@
   }
   
   #barra_texto_selected {
-    color: #6750A4;
+    color: var(--color-primario);
     font-size: 12px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 1000;
@@ -61,7 +63,7 @@
   }
 
   #barra_texto_selected_usuario {
-    color: #6750A4;
+    color: var(--color-primario);
     font-size: 12px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 1000;
@@ -97,7 +99,7 @@
   }
 
   .selected {
-    border-bottom: 5px #6750A4 solid;
+    border-bottom: 5px var(--color-primario) solid;
   }
 
   #imagen_perfil {
@@ -218,12 +220,13 @@
   }
 
 #text_perfil{
+  border-radius: 5px;
   display: flex;
   padding: 0px 4px;
   align-items: center;
   position: absolute;
-  background: var(--m-3-sys-light-surface, #FEF7FF);
-  color: var(--m-3-sys-light-primary, #6750A4);
+  background: white;
+  color: var(--color-primario);
   /* M3/body/small */
   font-family: "Roboto", sans-serif;
   font-size: 12px;
@@ -384,7 +387,7 @@
 .guardar{
   border-radius: 25px;
   border: 1px #79747E solid;
-  color: #6750A4;
+  color: var(--color-primario);
   text-align: center;
   /* M3/label/large */
   font-family: "Roboto", sans-serif;
@@ -407,13 +410,13 @@
 }
 
 .guardar:hover {
-  background-color: #ddceeb; /* Cambia el color de fondo al pasar el ratón */
+  background-color: var(--color-secundario); /* Cambia el color de fondo al pasar el ratón */
 }
 
 .guardar_foto{
   border-radius: 25px;
   border: 1px #79747E solid;
-  color: #6750A4;
+  color: var(--color-primario);
   text-align: center;
   /* M3/label/large */
   font-family: "Roboto", sans-serif;
@@ -436,12 +439,11 @@
 }
 
 .guardar_foto:hover {
-  background-color: #ddceeb; /* Cambia el color de fondo al pasar el ratón */
+  background-color: var(--color-secundario); /* Cambia el color de fondo al pasar el ratón */
 }
 
 .text_foto{
-  background: var(--m-3-sys-light-surface, #FEF7FF);
-  color: var(--m-3-sys-light-primary, #6750A4);
+  color: var(--color-primario);
   /* M3/body/small */
   font-family: "Roboto", sans-serif;
   font-size: 13px;
@@ -452,4 +454,15 @@
   height: auto;
   margin-top: 15px;
   margin-left: 33px;
+}
+
+.borde_text_field{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 4px;
+  border: 2px solid var(--color-primario);
+
 }

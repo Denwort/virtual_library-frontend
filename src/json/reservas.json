@@ -1,107 +1,106 @@
 [
-    {
-        "cuenta" : {
-            "id": "1",
-            "tipo": "user",
-            "nombres": "prueba_final",
-            "apellidos": "registrado",
-            "tipo_documento": "dni",
-            "nro_documento": "77777777",
-            "correo": "user@ulima.edu.pe",
-            "contrasenha": "user",
-            "foto": "/Juliana.png"
-        },
-        "libro" : {
-            "id": "0",
-            "titulo": "Saragossa Manuscript, The (Rekopis znaleziony w Saragossie)",
-            "autor": "Neel Kinge",
-            "isbn": "87-1",
-            "editorial": "Eadel",
-            "genero": "romance",
-            "tipo": "novela",
-            "descripcion": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in fauc",
-            "imagen":"https://images.cdn1.buscalibre.com/fit-in/180x180/20/82/2082a4e5a59dcf7e8531feb8e488c30b.jpg"
-        },
-        "fecha_inicio":"2023-11-07",
-        "fecha_final":"2023-12-07"
-    },
-    {
-        "cuenta" : {
-            "id" : "1",
-            "tipo": "user'",
-            "nombres": "prueba _final",
-            "apellidos": "registrado",
-            "tipo_documento": "dni",
-            "nro_documento": "77777777",
-            "correo": "user@ulima.edu.pe",
-            "contrasenha": "user",
-            "foto":"/Juliana.png"
-        },
-        "libro": {
-            "id": "1",
-            "titulo": "Camilla",
-            "autor": "Blake Stobart",
-            "isbn": "795994569-1",
-            "editorial": "Mynte",
-            "genero": "adventure",
-            "tipo": "novela",
-            "descripcion": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-            "imagen": "https://images.cdn2.buscalibre.com/fit-in/180x180/1f/a6/1fa666e0f93fb0bc63c4c214188f3a46.jpg"
-        },
-        "fecha_inicio":"2023-10-07",
-        "fecha_final":"2023-11-07"
-    },
-    {
-        "cuenta" : {
-            "id": "2",
-            "tipo": "user",
-            "nombres": "pruebita3",
-            "apellidos": "b",
-            "tipo_documento": "c",
-            "nro_documento": "d",
-            "correo": "pruebita@ulima.edu.pe",
-            "contrasenha": "pruebita",
-            "foto": "/boton_perfil.png"
-        },
-        "libro": {
-            "id": "1",
-            "titulo": "dadsadsadasdsad",
-            "autor": "Blake Stobart",
-            "isbn": "795994569-1",
-            "editorial": "Mynte",
-            "genero": "adventure",
-            "tipo": "novela",
-            "descripcion": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
-            "imagen": "https://images.cdn2.buscalibre.com/fit-in/180x180/1f/a6/1fa666e0f93fb0bc63c4c214188f3a46.jpg"
-        },
-        "fecha_inicio":"2023-10-07",
-        "fecha_final":"2023-11-07"
-    },
-    {
-        "cuenta" : {
-            "id": "1",
-            "tipo": "user",
-            "nombres": "prueba_final",
-            "apellidos": "registrado",
-            "tipo_documento": "dni",
-            "nro_documento": "77777777",
-            "correo": "user@ulima.edu.pe",
-            "contrasenha": "user",
-            "foto": "/Juliana.png"
-        },
-        "libro" : {
-            "id": "8",
-            "titulo": "Zombie High",
-            "autor": "Deina Holson",
-            "isbn": "509015144-X",
-            "editorial": "Abata",
-            "genero": "romance",
-            "tipo": "libro",
-            "descripcion": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
-            "imagen": "http://dummyimage.com/124x124.png/cc0000/ffffff"
-        },
-        "fecha_inicio":"2023-11-07",
-        "fecha_final":"2023-12-07"
-    }
-
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "prueba_final",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "0",
+			"titulo": "Saragossa Manuscript, The (Rekopis znaleziony w Saragossie)",
+			"autor": "Neel Kinge",
+			"isbn": "87-1",
+			"editorial": "Eadel",
+			"genero": "romance",
+			"tipo": "novela",
+			"descripcion": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in fauc",
+			"imagen": "https://images.cdn1.buscalibre.com/fit-in/180x180/20/82/2082a4e5a59dcf7e8531feb8e488c30b.jpg"
+		},
+		"fecha_inicio": "2023-11-07",
+		"fecha_final": "2023-12-07"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user'",
+			"nombres": "prueba _final",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "1",
+			"titulo": "Camilla",
+			"autor": "Blake Stobart",
+			"isbn": "795994569-1",
+			"editorial": "Mynte",
+			"genero": "adventure",
+			"tipo": "novela",
+			"descripcion": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+			"imagen": "https://images.cdn2.buscalibre.com/fit-in/180x180/1f/a6/1fa666e0f93fb0bc63c4c214188f3a46.jpg"
+		},
+		"fecha_inicio": "2023-10-07",
+		"fecha_final": "2023-11-07"
+	},
+	{
+		"cuenta": {
+			"id": "2",
+			"tipo": "user",
+			"nombres": "pruebita3",
+			"apellidos": "b",
+			"tipo_documento": "c",
+			"nro_documento": "d",
+			"correo": "pruebita@ulima.edu.pe",
+			"contrasenha": "pruebita",
+			"foto": "/boton_perfil.png"
+		},
+		"libro": {
+			"id": "1",
+			"titulo": "dadsadsadasdsad",
+			"autor": "Blake Stobart",
+			"isbn": "795994569-1",
+			"editorial": "Mynte",
+			"genero": "adventure",
+			"tipo": "novela",
+			"descripcion": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.\n\nPraesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+			"imagen": "https://images.cdn2.buscalibre.com/fit-in/180x180/1f/a6/1fa666e0f93fb0bc63c4c214188f3a46.jpg"
+		},
+		"fecha_inicio": "2023-10-07",
+		"fecha_final": "2023-11-07"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "prueba_final",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "8",
+			"titulo": "Zombie High",
+			"autor": "Deina Holson",
+			"isbn": "509015144-X",
+			"editorial": "Abata",
+			"genero": "romance",
+			"tipo": "libro",
+			"descripcion": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.\n\nInteger tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+			"imagen": "http://dummyimage.com/124x124.png/cc0000/ffffff"
+		},
+		"fecha_inicio": "2023-11-07",
+		"fecha_final": "2023-12-07"
+	}
 ]

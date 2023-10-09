@@ -54,7 +54,8 @@ const detalleLibro = () => {
     let disponibilidad = 'Disponible'
     reservas.forEach((item, index) => {
         let fecha_final = Date.parse(item["fecha_final"])
-        if (item.libro.id == id && fecha_final >= new Date()) {
+        let fecha_actual = Date.parse(obtenerFechaActual())
+        if (item.libro.id == id && fecha_final >= fecha_actual) {
             disponibilidad = 'No disponible'
             if(cuenta.tipo == 'admin') disponibilidad = 'Reservado por: ' + item.cuenta.nombres
         }
@@ -177,11 +178,6 @@ const detalleLibro = () => {
                                 <p id="top1">{p.genero}</p>
                             </div>
                         </div>
-                        <div id="contenedor_topi2">
-                            <div class="topi-stateLayer">
-                                <p id="top2">{p.genero}</p>
-                            </div>
-                        </div>
                     </div>
 
                     <div id="dispo-nodispo">
@@ -204,7 +200,7 @@ const detalleLibro = () => {
                                             <p>Ingrese una Fecha limite</p>
                                         </div>
                                         <div id="input_text_usuario">
-                                            <input type='date' id="inputDate" defaultValue={obtenerFechaActual()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={handleChange} />
+                                            <input type='date' id="inputDate" defaultValue={obtenerFechaFutura()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={handleChange} />
                                         </div>
                                     </div>
                                 </div>
@@ -214,7 +210,7 @@ const detalleLibro = () => {
                             </div>
                         </div>
                         <div id="contenedor_breservar">
-                            <button id="bReserv" onClick={escribir_reserva()} disabled={disponibilidad!='Disponible'}>Reservar</button>
+                            <button id="bReserv" onClick={()=>{escribir_reserva()}} disabled={disponibilidad!='Disponible'}>Reservar</button>
 
                         </div>
 
