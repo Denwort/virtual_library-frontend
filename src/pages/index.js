@@ -10,11 +10,10 @@ const Index = () => {
 
     const [cuenta, setCuenta] = useMiProvider()
 
-    const [datosMasRecientes, setdatosMasRecientes] = useState([]) // arreglo vacio porque no voy a tener datosMasRecientes en primera instancia
+    const [datosMasRecientes, setdatosMasRecientes] = useState([]) 
     const [pageMasRecientes, setPage] = useState(1)
     const [totalPages, setTotalPages] = useState(1)
 
-    // Esta es la funcion de la clase anterior del dia Martes.
     async function leerRecientes() {
         const opciones = {
             method: 'GET',
@@ -22,12 +21,10 @@ const Index = () => {
                 "Content-Type": "application/json"
             }
         }
-        // sin "/" => api/archivos1/leeArchivo porque era una ruta relativa
         const request = await fetch(`/api/ordenarIndex/ordenarRecientes?page=${pageMasRecientes}`, opciones)
         let data = await request.json()
         console.log(data)
 
-        // Manejar el estado
         setdatosMasRecientes(data.items)
         setTotalPages(data.totalPages)
     }
@@ -44,17 +41,15 @@ const Index = () => {
         }
 
     }
-    // Usar efectos
     useEffect(() => {
         leerRecientes()
-    }, [pageMasRecientes]) // cuando cambie las paginas
+    }, [pageMasRecientes]) 
 
 
-    const [datosMasPedidos, setDatos1] = useState([]) // arreglo vacio porque no voy a tener datosMasPedidos en primera instancia
+    const [datosMasPedidos, setDatos1] = useState([]) 
     const [pageMasPedidos, setpageMasPedidos] = useState(1)
     const [totalPages1, setTotalpageMasPedidos] = useState(1)
 
-    // Esta es la funcion de la clase anterior del dia Martes.
     async function leerMasPedidos() {
         const opciones = {
             method: 'GET',
@@ -62,12 +57,9 @@ const Index = () => {
                 "Content-Type": "application/json"
             }
         }
-        // sin "/" => api/archivos1/leeArchivo porque era una ruta relativa
         const request = await fetch(`/api/ordenarIndex/ordenarMasPedidos?page=${pageMasPedidos}`, opciones)
         let data = await request.json()
         console.log(data)
-
-        // Manejar el estado
         setDatos1(data.items)
         setTotalpageMasPedidos(data.totalPages1)
     }
@@ -84,20 +76,17 @@ const Index = () => {
         }
 
     }
-
-    // Usar efectos
     useEffect(() => {
         leerMasPedidos()
-    }, [pageMasPedidos]) // cuando cambie las paginas
+    }, [pageMasPedidos]) 
 
 
 
 
-    const [datosProximo, setDatos2] = useState([]) // arreglo vacio porque no voy a tener datosProximo en primera instancia
+    const [datosProximo, setDatos2] = useState([]) 
     const [pageProximo, setpageProximo] = useState(1)
     const [totalPages2, setTotalpageProximo] = useState(1)
 
-    // Esta es la funcion de la clase anterior del dia Martes.
     async function leerProximos() {
         const opciones = {
             method: 'GET',
@@ -105,12 +94,10 @@ const Index = () => {
                 "Content-Type": "application/json"
             }
         }
-        // sin "/" => api/archivos1/leeArchivo porque era una ruta relativa
         const request = await fetch(`/api/ordenarIndex/ordenarProximos?page=${pageProximo}`, opciones)
         let data = await request.json()
         console.log(data)
 
-        // Manejar el estado
         setDatos2(data.items)
         setTotalpageProximo(data.totalPages2)
     }
@@ -128,11 +115,9 @@ const Index = () => {
 
     }
 
-
-    // Usar efectos
     useEffect(() => {
         leerProximos()
-    }, [pageProximo]) // cuando cambie las paginas
+    }, [pageProximo]) 
 
 
 
