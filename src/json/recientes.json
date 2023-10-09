@@ -1,5 +1,65 @@
 [
 	{
+		"libro_id": "97",
+		"titulo": "Liberal Arts",
+		"imagen": "http://dummyimage.com/128x386.png/5fa2dd/ffffff",
+		"fecha_inicio": "2023-10-09"
+	},
+	{
+		"libro_id": "97",
+		"titulo": "Liberal Arts",
+		"imagen": "http://dummyimage.com/128x386.png/5fa2dd/ffffff",
+		"fecha_inicio": "2023-10-09"
+	},
+	{
+		"libro_id": "98",
+		"titulo": "Indian Runner, The",
+		"imagen": "http://dummyimage.com/127x275.png/ff4444/ffffff",
+		"fecha_inicio": "2023-10-09"
+	},
+	{
+		"libro_id": "98",
+		"titulo": "Indian Runner, The",
+		"imagen": "http://dummyimage.com/127x275.png/ff4444/ffffff",
+		"fecha_inicio": "2023-10-09"
+	},
+	{
+		"libro_id": "97",
+		"titulo": "Liberal Arts",
+		"imagen": "http://dummyimage.com/128x386.png/5fa2dd/ffffff",
+		"fecha_inicio": "2023-10-09"
+	},
+	{
+		"libro_id": "80",
+		"titulo": "Boys of Baraka, The",
+		"imagen": "http://dummyimage.com/245x329.png/5fa2dd/ffffff",
+		"fecha_inicio": "2023-10-09"
+	},
+	{
+		"libro_id": "97",
+		"titulo": "Liberal Arts",
+		"imagen": "http://dummyimage.com/128x386.png/5fa2dd/ffffff",
+		"fecha_inicio": "2023-10-09"
+	},
+	{
+		"libro_id": "97",
+		"titulo": "Liberal Arts",
+		"imagen": "http://dummyimage.com/128x386.png/5fa2dd/ffffff",
+		"fecha_inicio": "2023-10-09"
+	},
+	{
+		"libro_id": "49",
+		"titulo": "Carpetbaggers, The",
+		"imagen": "http://dummyimage.com/100x293.png/dddddd/000000",
+		"fecha_inicio": "2023-10-09"
+	},
+	{
+		"libro_id": "49",
+		"titulo": "Carpetbaggers, The",
+		"imagen": "http://dummyimage.com/100x293.png/dddddd/000000",
+		"fecha_inicio": "2023-10-09"
+	},
+	{
 		"libro_id": "77",
 		"titulo": "Revenge of the Electric Car",
 		"imagen": "http://dummyimage.com/140x130.png/5fa2dd/ffffff",
@@ -28,6 +88,12 @@
 		"titulo": "Zombie High",
 		"imagen": "http://dummyimage.com/124x124.png/cc0000/ffffff",
 		"fecha_inicio": "2023-11-07"
+	},
+	{
+		"libro_id": "1",
+		"titulo": "dadsadsadasdsad",
+		"imagen": "https://images.cdn2.buscalibre.com/fit-in/180x180/1f/a6/1fa666e0f93fb0bc63c4c214188f3a46.jpg",
+		"fecha_inicio": "2023-10-07"
 	},
 	{
 		"libro_id": "1",

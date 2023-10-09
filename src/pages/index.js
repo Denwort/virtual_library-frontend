@@ -404,6 +404,7 @@ const Index = () => {
 export default Index
 
 function obtenerInicialesEnMayuscula(texto) {
+    if (texto === undefined) return '';
     const palabras = texto.split(" ");
     let iniciales = "";
 

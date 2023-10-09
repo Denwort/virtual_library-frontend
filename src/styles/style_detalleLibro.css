@@ -341,7 +341,7 @@
 
 
 #dispoNodispo{
-    color: var(--m-3-sys-light-on-secondary-container, #1D192B);
+    color: var(--color-secundario);
     text-align: center;
 
     /* M3/label/large */

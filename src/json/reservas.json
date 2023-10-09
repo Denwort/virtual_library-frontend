@@ -180,31 +180,5 @@
 		},
 		"fecha_inicio": "2023-10-09",
 		"fecha_final": "2023-11-08"
-	},
-	{
-		"cuenta": {
-			"id": "1",
-			"tipo": "user",
-			"nombres": "prueba_final",
-			"apellidos": "registrado",
-			"tipo_documento": "dni",
-			"nro_documento": "77777777",
-			"correo": "user@ulima.edu.pe",
-			"contrasenha": "user",
-			"foto": "/Juliana.png"
-		},
-		"libro": {
-			"id": "77",
-			"titulo": "Revenge of the Electric Car",
-			"autor": "Kissee Stiegers",
-			"isbn": "396380415-7",
-			"editorial": "Brightbean",
-			"genero": "fiction",
-			"tipo": "libro",
-			"descripcion": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-			"imagen": "http://dummyimage.com/140x130.png/5fa2dd/ffffff"
-		},
-		"fecha_inicio": "2023-10-09",
-		"fecha_final": "2023-11-08"
 	}
 ]

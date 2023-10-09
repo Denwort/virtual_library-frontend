@@ -195,7 +195,7 @@ const Busqueda = () => {
                                     <br></br>
                                     <input type='date' id="inputDate" defaultValue={obtenerFechaFutura()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={(e)=> handleChange(e,value[1])} />
                                     <br></br>
-                                    <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={closeModal1}>Confirmar</button>
+                                    <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={()=>{closeModal1(); disponibilidades[index] = false}}>Confirmar</button>
                                 </Modal>
                             </div>
                             )}
