@@ -30,7 +30,7 @@ const Perfil = () => {
             const data = await peticion.json()
             setCuenta(cuenta_modificada)
             document.querySelector(':root').style.setProperty('--color-primario', cuenta_modificada.color)
-            document.querySelector(':root').style.setProperty('--color-secundario', hexToRgbA(cuenta_modificada.color))
+            document.querySelector(':root').style.setProperty('--color-secundario', newShade(cuenta_modificada.color, 235))
             alert("Datos actualizados")
 
         } catch (err) {
@@ -140,15 +140,21 @@ const Perfil = () => {
 }
 export default Perfil
 
-function hexToRgbA(hex){
-    var c;
-    if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
-        c= hex.substring(1).split('');
-        if(c.length== 3){
-            c= [c[0], c[0], c[1], c[1], c[2], c[2]];
-        }
-        c= '0x'+c.join('');
-        return 'rgba('+[(c>>16)&255, (c>>8)&255, c&255].join(',')+',.15)';
+const newShade = (hexColor, magnitude) => {
+    hexColor = hexColor.replace(`#`, ``);
+    if (hexColor.length === 6) {
+        const decimalColor = parseInt(hexColor, 16);
+        let r = (decimalColor >> 16) + magnitude;
+        r > 255 && (r = 255);
+        r < 0 && (r = 0);
+        let g = (decimalColor & 0x0000ff) + magnitude;
+        g > 255 && (g = 255);
+        g < 0 && (g = 0);
+        let b = ((decimalColor >> 8) & 0x00ff) + magnitude;
+        b > 255 && (b = 255);
+        b < 0 && (b = 0);
+        return `#${(g | (b << 8) | (r << 16)).toString(16)}`;
+    } else {
+        return hexColor;
     }
-    throw new Error('Bad Hex');
-}
+};
