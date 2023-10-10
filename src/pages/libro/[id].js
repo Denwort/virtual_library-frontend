@@ -8,6 +8,10 @@ import {useState, useEffect} from 'react'
 import Script from "next/script.js"
 
 const detalleLibro = () => {
+
+    // para deshabilitar el boton "recargar al reservar"
+    const [recargarDatos, setRecargarDatos] = useState(true);
+
     const router = useRouter()
     const [cuenta, setCuenta] = useMiProvider()
 
@@ -43,7 +47,8 @@ const detalleLibro = () => {
     useEffect(() => {
         leer();
         leerReservas();
-    }, []);
+        setRecargarDatos(false);
+    }, [recargarDatos]);
 
     const id = router.query.id
     const p = libros.filter((item) => { return item["id"] == id.toString() })[0]
@@ -131,6 +136,7 @@ const detalleLibro = () => {
         data = await request.json()
         alert("Libro reservado")
         console.log( data)
+        setRecargarDatos(true);
     }
 
     return <Layout content={
@@ -215,7 +221,7 @@ const detalleLibro = () => {
                             </div>
                         </div>
                         <div id="contenedor_breservar">
-                            <button id="bReserv" onClick={()=>{escribir_reserva(); disponibilidad='No disponible'}} disabled={disponibilidad!='Disponible'}>Reservar</button>
+                            <button id="bReserv" onClick={()=>{escribir_reserva(); disponibilidad='No disponible'}} disabled={disponibilidad!='Disponible'} >Reservar</button>
 
                         </div>
 

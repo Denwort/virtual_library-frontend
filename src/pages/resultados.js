@@ -11,6 +11,13 @@ const Busqueda = () => {
     const [cuenta, setCuenta] = useMiProvider();
     const router = useRouter();
 
+    // Variable de estado para indicar cambios
+    const [recargarDatos, setRecargarDatos] = useState(true);
+
+    // Para el boton "confirmar"
+    const [botonHabilitado, setBotonHabilitado] = useState(true);
+
+
     // Define un estado para almacenar los resultados de la API
     const [resultados, setResultados] = useState([]);
     const [reservas, setReservas] = useState([]);
@@ -31,13 +38,17 @@ const Busqueda = () => {
 
         // Actualiza el estado con los resultados de la API
         setResultados(data);
+       
+
+        
     }
 
     // Llama a la función de leer cuando el componente se monta
     useEffect(() => {
         leer();
         leerReservas();
-    }, []); // El segundo argumento [] asegura que useEffect se ejecute solo una vez
+        setRecargarDatos(false);
+    }, [recargarDatos]); // El segundo argumento [] asegura que useEffect se ejecute solo una vez
 
     async function leer_reserva() {
         const opciones = {
@@ -85,6 +96,8 @@ const Busqueda = () => {
         data = await request.json()
         console.log( data)
         setDispo(true)
+        setBotonHabilitado(false);
+        setRecargarDatos(true);
     }
 
     // Revisar disponibilidad
@@ -217,7 +230,7 @@ const Busqueda = () => {
                     <br></br>
                     <input type='date' id="inputDate" defaultValue={obtenerFechaFutura()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={handleChange} />
                     <br></br>
-                    <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={()=>escribir(libroselec)}>Confirmar</button>
+                    <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={()=>escribir(libroselec)} disabled={!botonHabilitado}>Confirmar</button>
                     <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={closeModal1}>Cerrar</button>
                 </Modal>
             

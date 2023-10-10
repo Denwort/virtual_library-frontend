@@ -1,3 +1,340 @@
 [
-	
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "yo",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "43",
+			"titulo": "Svampe",
+			"autor": "Bennie Rounsivall",
+			"isbn": "045189848-6",
+			"editorial": "Devify",
+			"genero": "romance",
+			"tipo": "novela",
+			"descripcion": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.\n\nNam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.",
+			"imagen": "http://dummyimage.com/214x299.png/dddddd/000000"
+		},
+		"fecha_inicio": "2023-10-09",
+		"fecha_final": "2023-11-03"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "yo",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "45",
+			"titulo": "Tremors II: Aftershocks",
+			"autor": "Leah Stiebler",
+			"isbn": "082172383-9",
+			"editorial": "Gigabox",
+			"genero": "mystery",
+			"tipo": "revista",
+			"descripcion": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+			"imagen": "http://dummyimage.com/164x129.png/cc0000/ffffff"
+		},
+		"fecha_inicio": "2023-10-09",
+		"fecha_final": "2023-10-18"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "yo",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "42",
+			"titulo": "It's Impossible to Learn to Plow by Reading Books",
+			"autor": "Sue Nuttey",
+			"isbn": "814456397-2",
+			"editorial": "Tavu",
+			"genero": "fiction",
+			"tipo": "libro",
+			"descripcion": "Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.",
+			"imagen": "http://dummyimage.com/153x170.png/5fa2dd/ffffff"
+		},
+		"fecha_inicio": "2023-10-09",
+		"fecha_final": "2023-11-06"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "yo",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "23",
+			"titulo": "Giant of Marathon, The (Battaglia di Maratona, La)",
+			"autor": "Angus Jervois",
+			"isbn": "727118553-4",
+			"editorial": "Skiptube",
+			"genero": "mystery",
+			"tipo": "revista",
+			"descripcion": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.\n\nPhasellus in felis. Donec semper sapien a libero. Nam dui.\n\nProin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+			"imagen": "http://dummyimage.com/104x327.png/ff4444/ffffff"
+		},
+		"fecha_inicio": "2023-10-09",
+		"fecha_final": "2023-11-05"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "yo",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "81",
+			"titulo": "Trekkies 2",
+			"autor": "Wit Delgado",
+			"isbn": "029224904-7",
+			"editorial": "Abata",
+			"genero": "mystery",
+			"tipo": "revista",
+			"descripcion": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.",
+			"imagen": "http://dummyimage.com/187x135.png/5fa2dd/ffffff"
+		},
+		"fecha_inicio": "2023-10-09",
+		"fecha_final": "2023-11-01"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "yo",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "46",
+			"titulo": "Asterix & Obelix: Mission Cleopatra (Astérix & Obélix: Mission Cléopâtre)",
+			"autor": "Annetta Peachman",
+			"isbn": "364099299-7",
+			"editorial": "Ooba",
+			"genero": "romance",
+			"tipo": "articulo",
+			"descripcion": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+			"imagen": "http://dummyimage.com/242x376.png/ff4444/ffffff"
+		},
+		"fecha_inicio": "2023-10-09",
+		"fecha_final": "2023-10-19"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "yo",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "14",
+			"titulo": "The Shooting",
+			"autor": "Mureil Ruggen",
+			"isbn": "508733304-4",
+			"editorial": "Bubblebox",
+			"genero": "romance",
+			"tipo": "revista",
+			"descripcion": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+			"imagen": "http://dummyimage.com/225x170.png/cc0000/ffffff"
+		},
+		"fecha_inicio": "2023-10-09",
+		"fecha_final": "2023-10-21"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "yo",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "14",
+			"titulo": "The Shooting",
+			"autor": "Mureil Ruggen",
+			"isbn": "508733304-4",
+			"editorial": "Bubblebox",
+			"genero": "romance",
+			"tipo": "revista",
+			"descripcion": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
+			"imagen": "http://dummyimage.com/225x170.png/cc0000/ffffff"
+		},
+		"fecha_inicio": "2023-10-09",
+		"fecha_final": "2023-10-21"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "yo",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "3",
+			"titulo": "Trapped in the Closet: Chapters 1-12",
+			"autor": "Jordan Filkov",
+			"isbn": "001946320-0",
+			"editorial": "Flashpoint",
+			"genero": "romance",
+			"tipo": "novela",
+			"descripcion": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+			"imagen": "http://dummyimage.com/112x219.png/cc0000/ffffff"
+		},
+		"fecha_inicio": "2023-10-09",
+		"fecha_final": "2023-11-02"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "yo",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "4",
+			"titulo": "Losers' Club (Kaybedenler kulübü)",
+			"autor": "Kevyn Cuthill",
+			"isbn": "261902795-0",
+			"editorial": "Fivebridge",
+			"genero": "mystery",
+			"tipo": "novela",
+			"descripcion": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+			"imagen": "http://dummyimage.com/175x325.png/5fa2dd/ffffff"
+		},
+		"fecha_inicio": "2023-10-09",
+		"fecha_final": "2023-10-20"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "yo",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "33",
+			"titulo": "Ernest Saves Christmas",
+			"autor": "Guillermo Armour",
+			"isbn": "305554003-4",
+			"editorial": "Lazz",
+			"genero": "adventure",
+			"tipo": "revista",
+			"descripcion": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+			"imagen": "http://dummyimage.com/214x373.png/5fa2dd/ffffff"
+		},
+		"fecha_inicio": "2023-10-09",
+		"fecha_final": "2023-10-18"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "yo",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "33",
+			"titulo": "Ernest Saves Christmas",
+			"autor": "Guillermo Armour",
+			"isbn": "305554003-4",
+			"editorial": "Lazz",
+			"genero": "adventure",
+			"tipo": "revista",
+			"descripcion": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+			"imagen": "http://dummyimage.com/214x373.png/5fa2dd/ffffff"
+		},
+		"fecha_inicio": "2023-10-09",
+		"fecha_final": "2023-10-18"
+	},
+	{
+		"cuenta": {
+			"id": "1",
+			"tipo": "user",
+			"nombres": "yo",
+			"apellidos": "registrado",
+			"tipo_documento": "dni",
+			"nro_documento": "77777777",
+			"correo": "user@ulima.edu.pe",
+			"contrasenha": "user",
+			"foto": "/Juliana.png"
+		},
+		"libro": {
+			"id": "56",
+			"titulo": "Something for Everyone",
+			"autor": "Nelly Kettleson",
+			"isbn": "116268842-4",
+			"editorial": "Fivechat",
+			"genero": "adventure",
+			"tipo": "articulo",
+			"descripcion": "Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+			"imagen": "http://dummyimage.com/197x383.png/ff4444/ffffff"
+		},
+		"fecha_inicio": "2023-10-09",
+		"fecha_final": "2023-10-22"
+	}
 ]
