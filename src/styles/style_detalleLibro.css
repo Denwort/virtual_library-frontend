@@ -356,7 +356,7 @@
     justify-content: center;
     gap: 8px;
     display: inline-flex;
-    height: 32px;
+    height: auto;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -364,5 +364,6 @@
     background: var(--color-primario);
     position: absolute;
     left: 90%;
+    right: 1%;
     top:6%;
 }

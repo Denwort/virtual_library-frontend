@@ -302,6 +302,7 @@ const Busqueda = () => {
     }
 
     function obtenerFechaFutura_us(){
+        if (document.getElementById("inputDate")===null) {console.log("error en fecha elegida")};
         const fecha = document.getElementById("inputDate").value
         return fecha
     }

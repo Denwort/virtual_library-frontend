@@ -196,7 +196,7 @@ const detalleLibro = () => {
                     </div>
 
                 </div>
-                {cuenta.tipo == 'user' && (
+                {cuenta.tipo == 'user' && disponibilidad=='Disponible' && (
                 <form action="reservarLibroDatos" onSubmit={hacernada}>
                     <div id="total-reserva">
                         <div id="contenedor_reserva-dl">
@@ -221,7 +221,7 @@ const detalleLibro = () => {
                             </div>
                         </div>
                         <div id="contenedor_breservar">
-                            <button id="bReserv" onClick={()=>{escribir_reserva(); disponibilidad='No disponible'}} disabled={disponibilidad!='Disponible'} >Reservar</button>
+                            <button id="bReserv" onClick={()=>{escribir_reserva(); disponibilidad='No disponible'; reservardl();}} disabled={disponibilidad!='Disponible'} >Reservar</button>
 
                         </div>
 

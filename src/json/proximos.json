@@ -1,8 +1,80 @@
 [
 	{
-		"libro_id": "61",
-		"titulo": "Chronicle of My Mother (Waga haha no ki)",
-		"imagen": "http://dummyimage.com/221x318.png/cc0000/ffffff",
+		"libro_id": "45",
+		"titulo": "Tremors II: Aftershocks",
+		"imagen": "http://dummyimage.com/164x129.png/cc0000/ffffff",
+		"fecha_final": "2023-10-18"
+	},
+	{
+		"libro_id": "33",
+		"titulo": "Ernest Saves Christmas",
+		"imagen": "http://dummyimage.com/214x373.png/5fa2dd/ffffff",
+		"fecha_final": "2023-10-18"
+	},
+	{
+		"libro_id": "33",
+		"titulo": "Ernest Saves Christmas",
+		"imagen": "http://dummyimage.com/214x373.png/5fa2dd/ffffff",
+		"fecha_final": "2023-10-18"
+	},
+	{
+		"libro_id": "46",
+		"titulo": "Asterix & Obelix: Mission Cleopatra (Astérix & Obélix: Mission Cléopâtre)",
+		"imagen": "http://dummyimage.com/242x376.png/ff4444/ffffff",
+		"fecha_final": "2023-10-19"
+	},
+	{
+		"libro_id": "4",
+		"titulo": "Losers' Club (Kaybedenler kulübü)",
+		"imagen": "http://dummyimage.com/175x325.png/5fa2dd/ffffff",
+		"fecha_final": "2023-10-20"
+	},
+	{
+		"libro_id": "14",
+		"titulo": "The Shooting",
+		"imagen": "http://dummyimage.com/225x170.png/cc0000/ffffff",
+		"fecha_final": "2023-10-21"
+	},
+	{
+		"libro_id": "14",
+		"titulo": "The Shooting",
+		"imagen": "http://dummyimage.com/225x170.png/cc0000/ffffff",
+		"fecha_final": "2023-10-21"
+	},
+	{
+		"libro_id": "56",
+		"titulo": "Something for Everyone",
+		"imagen": "http://dummyimage.com/197x383.png/ff4444/ffffff",
+		"fecha_final": "2023-10-22"
+	},
+	{
+		"libro_id": "81",
+		"titulo": "Trekkies 2",
+		"imagen": "http://dummyimage.com/187x135.png/5fa2dd/ffffff",
 		"fecha_final": "2023-11-01"
+	},
+	{
+		"libro_id": "3",
+		"titulo": "Trapped in the Closet: Chapters 1-12",
+		"imagen": "http://dummyimage.com/112x219.png/cc0000/ffffff",
+		"fecha_final": "2023-11-02"
+	},
+	{
+		"libro_id": "43",
+		"titulo": "Svampe",
+		"imagen": "http://dummyimage.com/214x299.png/dddddd/000000",
+		"fecha_final": "2023-11-03"
+	},
+	{
+		"libro_id": "23",
+		"titulo": "Giant of Marathon, The (Battaglia di Maratona, La)",
+		"imagen": "http://dummyimage.com/104x327.png/ff4444/ffffff",
+		"fecha_final": "2023-11-05"
+	},
+	{
+		"libro_id": "42",
+		"titulo": "It's Impossible to Learn to Plow by Reading Books",
+		"imagen": "http://dummyimage.com/153x170.png/5fa2dd/ffffff",
+		"fecha_final": "2023-11-06"
 	}
 ]

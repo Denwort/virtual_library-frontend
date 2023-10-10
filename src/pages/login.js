@@ -107,7 +107,7 @@ const login = () => {
                         console.log("administrador")
                         setCuenta(cuenta)
                         document.querySelector(':root').style.setProperty('--color-primario', cuenta.color)
-                        document.querySelector(':root').style.setProperty('--color-secundario', newShade(cuenta.color, 235))
+                        document.querySelector(':root').style.setProperty('--color-secundario', newShade(cuenta.color, 100))
                         router.push('/')
                     }
                     else if(cuenta.tipo == "user"){

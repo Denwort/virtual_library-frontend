@@ -30,7 +30,7 @@ const Perfil = () => {
             const data = await peticion.json()
             setCuenta(cuenta_modificada)
             document.querySelector(':root').style.setProperty('--color-primario', cuenta_modificada.color)
-            document.querySelector(':root').style.setProperty('--color-secundario', newShade(cuenta_modificada.color, 235))
+            document.querySelector(':root').style.setProperty('--color-secundario', newShade(cuenta_modificada.color, 100))
             alert("Datos actualizados")
 
         } catch (err) {

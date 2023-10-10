@@ -27,6 +27,7 @@
   }
   #retro:disabled {
     background-color: #fff;
+    cursor: default;
     color: var(--color-primario);
 }
 
@@ -50,6 +51,7 @@
 
   #avanzar:disabled {
     background-color: #fff;
+    cursor: default;
     color: var(--color-primario);
 }
 
@@ -97,7 +99,7 @@
 }
 
 #boton_eliminar{
-    background-color: #6750A4;
+    background-color: var(--color-primario);
     color: #ffffff;
     font-weight: 600;
     padding: 0.5rem 1rem;
@@ -106,6 +108,6 @@
 }
 
 #boton_eliminar:hover {
-    background-color: #7D68B4;
+    background-color: var(--color-primario);
     transform: scale(1.05);
   }
