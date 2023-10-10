@@ -336,5 +336,31 @@
 		},
 		"fecha_inicio": "2023-10-09",
 		"fecha_final": "2023-10-22"
+	},
+	{
+		"cuenta": {
+			"id": "3",
+			"tipo": "user",
+			"nombres": "hol",
+			"apellidos": "dd",
+			"tipo_documento": "dni",
+			"nro_documento": "73615252",
+			"correo": "hola@gmail.com",
+			"contrasenha": "123",
+			"foto": "/boton_perfil.png"
+		},
+		"libro": {
+			"id": "61",
+			"titulo": "Chronicle of My Mother (Waga haha no ki)",
+			"autor": "Kissie Guyan",
+			"isbn": "061590532-3",
+			"editorial": "Abatz",
+			"genero": "mystery",
+			"tipo": "novela",
+			"descripcion": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+			"imagen": "http://dummyimage.com/221x318.png/cc0000/ffffff"
+		},
+		"fecha_inicio": "2023-10-09",
+		"fecha_final": "2023-11-01"
 	}
 ]

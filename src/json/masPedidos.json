@@ -152,5 +152,19 @@
 			"imagen": "http://dummyimage.com/197x383.png/ff4444/ffffff"
 		},
 		"cantidad": 1
+	},
+	{
+		"libro": {
+			"id": "61",
+			"titulo": "Chronicle of My Mother (Waga haha no ki)",
+			"autor": "Kissie Guyan",
+			"isbn": "061590532-3",
+			"editorial": "Abatz",
+			"genero": "mystery",
+			"tipo": "novela",
+			"descripcion": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.\n\nSed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+			"imagen": "http://dummyimage.com/221x318.png/cc0000/ffffff"
+		},
+		"cantidad": 1
 	}
 ]

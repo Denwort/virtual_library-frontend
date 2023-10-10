@@ -34,5 +34,16 @@
 		"correo": "pruebita@ulima.edu.pe",
 		"contrasenha": "pruebita",
 		"foto": "/boton_perfil.png"
+	},
+	{
+		"id": "3",
+		"tipo": "user",
+		"nombres": "hol",
+		"apellidos": "dd",
+		"tipo_documento": "dni",
+		"nro_documento": "73615252",
+		"correo": "hola@gmail.com",
+		"contrasenha": "123",
+		"foto": "/boton_perfil.png"
 	}
 ]
