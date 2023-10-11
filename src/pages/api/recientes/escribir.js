@@ -13,7 +13,6 @@ export default async function leer(req, res) {
     let data
     try {
         data = await fsPromises.readFile( rutaDatos )
-        console.log(data)
         data=JSON.parse(data)
 
     } catch( error) {
@@ -48,7 +47,6 @@ export default async function leer(req, res) {
     // Escritura
     try {
         let tmp = JSON.stringify(resultado,null,'\t')
-        console.log( tmp )
 
         await fsPromises.writeFile( ruta, tmp )
         console.log("terminao recientes")

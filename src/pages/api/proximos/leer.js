@@ -9,7 +9,6 @@ export default async function leer(req, res) {
     // lectura
     try {
         let data = await fsPromises.readFile( ruta )
-        console.log(data)
         return res.status(200).json( JSON.parse(data))
 
     } catch( error) {

@@ -76,7 +76,7 @@ const Busqueda = () => {
             "cuenta" : cuenta,
             "libro" : libro,
             "fecha_inicio" : obtenerFechaActual(),
-            "fecha_final" : obtenerFechaFutura_us()
+            "fecha_final" : fechaSeleccionada
         }
 
         // Agregar al arreglo JSON
@@ -114,11 +114,12 @@ const Busqueda = () => {
         setReservas(data);
     }
     let disponibilidades = []
+    let hoysito = obtenerFechaActual()
     resultados.forEach((libroActual, idx) => {
         disponibilidades.push(true)
         reservas.forEach((item, index) => {
             let fecha_final = Date.parse(item["fecha_final"])
-            let fecha_actual = Date.parse(obtenerFechaActual())
+            let fecha_actual = Date.parse(hoysito)
             if (item.libro.id == libroActual.id && fecha_final >= fecha_actual) {
                 disponibilidades[idx] = false
             }
@@ -141,14 +142,26 @@ const Busqueda = () => {
     }
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-
+    const [isModal2Open, setIsModal2Open] = useState(false);
     const openModal1 = () => {
         setIsModalOpen(true);
     };
-
     const closeModal1 = () => {
         setIsModalOpen(false);
     };
+    const openModal2 = () => {
+        setIsModal2Open(true);
+    };
+    const closeModal2 = () => {
+        setIsModal2Open(false);
+    };
+
+
+    const [fechaSeleccionada, setFechaSeleccionada] = useState(obtenerFechaFutura())
+    function handleChange(event) {
+        const fecha = event.target.value;
+        setFechaSeleccionada(fecha)
+    }
 
 
     return (
@@ -230,8 +243,12 @@ const Busqueda = () => {
                     <br></br>
                     <input type='date' id="inputDate" defaultValue={obtenerFechaFutura()} min={obtenerFechaActual()} max={obtenerFechaFutura()} onChange={handleChange} />
                     <br></br>
-                    <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={()=>escribir(libroselec)} disabled={!botonHabilitado}>Confirmar</button>
+                    <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={()=>{escribir(libroselec); closeModal1(); openModal2()}} disabled={!botonHabilitado}>Confirmar</button>
                     <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={closeModal1}>Cerrar</button>
+                </Modal>
+                <Modal isOpen={isModal2Open} onClose={closeModal2} id="modal2">
+                    <p>Reserva realizada</p>
+                    <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={closeModal2}>Cerrar</button>
                 </Modal>
             
             </div>
@@ -247,6 +264,7 @@ const Busqueda = () => {
     const modalOverlays = document.querySelectorAll(".modal-overlay");
 
     // Función para abrir el modal
+    /*
     function openModal(e) {
         const modal = document.getElementById("modal");
         modal.classList.remove("hidden");
@@ -276,6 +294,7 @@ const Busqueda = () => {
     modalOverlays.forEach((overlay) => {
         overlay.addEventListener("click", closeModalOutside);
     });
+    */
 
     
 }
@@ -301,6 +320,7 @@ const Busqueda = () => {
         return `${year}-${mes}-${dia}`;
     }
 
+    /*
     function obtenerFechaFutura_us(){
         if (document.getElementById("inputDate")===null) {console.log("error en fecha elegida")};
         const fecha = document.getElementById("inputDate").value
@@ -309,9 +329,8 @@ const Busqueda = () => {
     
     
     function handleChange(event) {
-        const fechaSeleccionada = event.target.value;
-        // Realiza acciones con la fecha seleccionada si es necesario
+        const fecha = event.target.value;
     }
-
+    */
     
 

@@ -211,7 +211,7 @@ const Index = () => {
                 <p></p>
                 <div>
                     <p id="bienvenida"><b>Bienvenido, {cuenta.nombres}!</b></p>
-                    <Image src="/divider.png" width={1088} height={1}></Image>
+                    <Image src="/divider.png" width={1088} height={1} alt="divider"></Image>
                 </div>
                 <br></br>
                 {cuenta.tipo != 'guest' && ( //Guest no ve nada en index
@@ -248,7 +248,7 @@ const Index = () => {
                                                         </div>
                                                         <div class="col-start-6 col-span-1">
                                                             <div class="imagenLibro">
-                                                                <Image src={value[1].imagen} width={80} height={101}></Image>
+                                                                <Image src={value[1].imagen} width={80} height={101} alt="libro"></Image>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -302,7 +302,7 @@ const Index = () => {
                                                             </div>
                                                             <div class="col-start-6 col-span-1">
                                                                 <div class="imagenLibro">
-                                                                    <Image src={value[1].imagen} width={80} height={101}></Image>
+                                                                    <Image src={value[1].imagen} width={80} height={101} alt="libro"></Image>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -356,7 +356,7 @@ const Index = () => {
                                                             </div>
                                                             <div class="col-start-6 col-span-1">
                                                                 <div class="imagenLibro">
-                                                                    <Image src={value[1].libro.imagen} width={80} height={101}></Image>
+                                                                    <Image src={value[1].libro.imagen} width={80} height={101} alt="libro"></Image>
                                                                 </div>
                                                             </div>
                                                         </div>

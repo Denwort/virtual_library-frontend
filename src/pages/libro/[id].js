@@ -6,6 +6,8 @@ import {useMiProvider} from '../context/contexto'
 import {useRouter} from 'next/router'
 import {useState, useEffect} from 'react'
 import Script from "next/script.js"
+import Modal from "../modal.js"
+
 
 const detalleLibro = () => {
 
@@ -17,6 +19,9 @@ const detalleLibro = () => {
 
     const [libros, setLibros] = useState([]);
     const [reservas, setReservas] = useState([]);
+    const [isModal2Open, setIsModal2Open] = useState(false);
+    const [fechaSeleccionada, setFechaSeleccionada] = useState(obtenerFechaFutura())
+
 
     async function leer() {
         const opciones = {
@@ -57,9 +62,10 @@ const detalleLibro = () => {
 
     // Revisar disponibilidad
     let disponibilidad = 'Disponible'
+    let hoysito = obtenerFechaActual()
     reservas.forEach((item, index) => {
         let fecha_final = Date.parse(item["fecha_final"])
-        let fecha_actual = Date.parse(obtenerFechaActual())
+        let fecha_actual = Date.parse(hoysito)
         if (item.libro.id == id && fecha_final >= fecha_actual) {
             disponibilidad = 'No disponible'
             if(cuenta.tipo == 'admin') disponibilidad = 'Reservado por: ' + item.cuenta.nombres
@@ -106,6 +112,19 @@ const detalleLibro = () => {
 
     }
 
+    // Modal
+    const openModal2 = () => {
+        setIsModal2Open(true);
+    };
+    const closeModal2 = () => {
+        setIsModal2Open(false);
+    };
+
+    function handleChange(event) {
+        const fecha = event.target.value;
+        setFechaSeleccionada(fecha)
+    }
+
 
 
     async function escribir_reserva() {
@@ -116,7 +135,7 @@ const detalleLibro = () => {
             "cuenta" : cuenta,
             "libro" : p,
             "fecha_inicio" : obtenerFechaActual(),
-            "fecha_final" : obtenerFechaFutura_us()
+            "fecha_final" : fechaSeleccionada
         }
 
         // Agregar al arreglo JSON
@@ -134,7 +153,6 @@ const detalleLibro = () => {
 
         const request = await fetch( '../api/reservas/escribir', opciones)
         data = await request.json()
-        alert("Libro reservado")
         console.log( data)
         setRecargarDatos(true);
     }
@@ -221,7 +239,7 @@ const detalleLibro = () => {
                             </div>
                         </div>
                         <div id="contenedor_breservar">
-                            <button id="bReserv" onClick={()=>{escribir_reserva(); disponibilidad='No disponible'; reservardl();}} disabled={disponibilidad!='Disponible'} >Reservar</button>
+                            <button id="bReserv" onClick={()=>{escribir_reserva(); disponibilidad='No disponible'; openModal2();}} disabled={disponibilidad!='Disponible'} >Reservar</button>
 
                         </div>
 
@@ -239,6 +257,11 @@ const detalleLibro = () => {
 
 
             </div>
+
+            <Modal isOpen={isModal2Open} onClose={closeModal2} id="modal2">
+                <p>Reserva realizada</p>
+                <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={closeModal2}>Cerrar</button>
+            </Modal>
 
             <div id="modalReser-dl" class="modal-container-dl">
                 <div class="modal-content-dl">
@@ -277,19 +300,10 @@ function obtenerFechaFutura() {
     return `${year}-${mes}-${dia}`;
 }
 
-function obtenerFechaFutura_us(){
-    const fecha = document.getElementById("inputDate").value
-    return fecha
-}
-
-
 function hacernada(e){
     e.preventDefault()
 }
-function handleChange(event) {
-    const fechaSeleccionada = event.target.value;
-    // Realiza acciones con la fecha seleccionada si es necesario
-}
+
 function obtenerIniciales(titulo) {
     const palabras = titulo.split(" ");
     const iniciales = palabras
@@ -298,6 +312,7 @@ function obtenerIniciales(titulo) {
     return iniciales.join("");
   }
 
+  /*
 function reservardl() {
     const inputDate = document.getElementById("inputDate");
     const fechaParrafo = document.querySelector("#modalReser-dl p");
@@ -322,5 +337,6 @@ function reservardl() {
     // Aquí puedes realizar cualquier otra acción relacionada con la reserva
     
 }
+*/
 
 

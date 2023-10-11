@@ -13,7 +13,6 @@ export default async function leer(req, res) {
     let data
     try {
         data = await fsPromises.readFile( rutaDatos )
-        console.log(data)
         data=JSON.parse(data)
 
     } catch( error) {
@@ -34,12 +33,16 @@ export default async function leer(req, res) {
         }
     });
     resultado.sort((a,b) => new Date(a.fecha_final).getTime() - new Date(b.fecha_final).getTime())
+    resultado = resultado.filter((item)=>{
+        console.log(new Date(item.fecha_final).getTime())
+        console.log(new Date().getTime())
+        return new Date(item.fecha_final).getTime() > new Date().getTime()
+    })
     console.log(resultado)
         
     // Escritura
     try {
         let tmp = JSON.stringify(resultado,null,'\t')
-        console.log( tmp )
 
         await fsPromises.writeFile( ruta, tmp )
         console.log("terminado proximos")
