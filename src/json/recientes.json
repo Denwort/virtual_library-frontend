@@ -18,24 +18,6 @@
 		"fecha_inicio": "2023-09-15"
 	},
 	{
-		"libro_id": "42",
-		"titulo": "It's Impossible to Learn to Plow by Reading Books",
-		"imagen": "http://dummyimage.com/153x170.png/5fa2dd/ffffff",
-		"fecha_inicio": "2023-09-14"
-	},
-	{
-		"libro_id": "45",
-		"titulo": "Tremors II: Aftershocks",
-		"imagen": "http://dummyimage.com/164x129.png/cc0000/ffffff",
-		"fecha_inicio": "2023-09-10"
-	},
-	{
-		"libro_id": "42",
-		"titulo": "It's Impossible to Learn to Plow by Reading Books",
-		"imagen": "http://dummyimage.com/153x170.png/5fa2dd/ffffff",
-		"fecha_inicio": "2023-09-09"
-	},
-	{
 		"libro_id": "43",
 		"titulo": "Svampe",
 		"imagen": "http://dummyimage.com/214x299.png/dddddd/000000",

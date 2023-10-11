@@ -135,6 +135,7 @@ const Index = () => {
                 }
             )
             const data = await peticion.json()
+            leerProximos()
 
         } catch (err) {
             console.log(err)
@@ -153,6 +154,7 @@ const Index = () => {
                 }
             )
             const data = await peticion.json()
+            leerMasPedidos()
 
         } catch (err) {
             console.log(err)
@@ -174,6 +176,7 @@ const Index = () => {
                 }
             )
             const data = await peticion.json()
+            leerRecientes()
 
         } catch (err) {
             console.log(err)
@@ -183,17 +186,19 @@ const Index = () => {
 
     //Syncronizar las funciones
 
+    /*
     async function todo() {
         await escribirJSON();
         await escribirJSONMasPedidos();
         await escribirJSONRecientes();
-        await leerProximos();
-        await leerMasPedidos();
-        await leerRecientes();
+        //await leerProximos();
+        //await leerMasPedidos();
+        //await leerRecientes();
     }
     useEffect(() => {
         todo();
     }, []);
+    */
 
 
 
