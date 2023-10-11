@@ -1,20 +1,8 @@
 [
 	{
-		"libro_id": "69",
-		"titulo": "Robin and the 7 Hoods",
-		"imagen": "http://dummyimage.com/151x132.png/5fa2dd/ffffff",
-		"fecha_final": "2023-10-15"
-	},
-	{
-		"libro_id": "45",
-		"titulo": "Tremors II: Aftershocks",
-		"imagen": "http://dummyimage.com/164x129.png/cc0000/ffffff",
-		"fecha_final": "2023-10-18"
-	},
-	{
 		"libro_id": "42",
 		"titulo": "It's Impossible to Learn to Plow by Reading Books",
 		"imagen": "http://dummyimage.com/153x170.png/5fa2dd/ffffff",
-		"fecha_final": "2023-11-06"
+		"fecha_final": "2023-10-12"
 	}
 ]
