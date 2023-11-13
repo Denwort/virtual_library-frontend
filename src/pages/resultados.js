@@ -32,7 +32,7 @@ const Busqueda = () => {
         },
         };
 
-        const request = await fetch("api/busqueda/leer", opciones);
+        const request = await fetch("api/prueba/libros", opciones); //  Primera prueba de conexion con backend
         const data = await request.json();
         console.log(data);
 
