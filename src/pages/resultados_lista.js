@@ -11,6 +11,7 @@ import { useSearchParams } from 'next/navigation';
 
 
 const Resultados_lista = () => {
+    
 
     console.log("RENDER")
 
@@ -18,11 +19,17 @@ const Resultados_lista = () => {
     const [cuenta, setCuenta] = useMiProvider();
     const router = useRouter()
 
+    const [page, setPage] = useState(1)
+    const [totalPages, setTotalPages] = useState(1)
+
     // Parametros de la URL
     const searchParams = useSearchParams()
     let keyword = searchParams.get('keyword')
     let type = searchParams.get('type')
     let filters = searchParams.get('filters')
+    // SI QUIERO OBTENER EL VALOR DESDE LA URL -> IR A busqueda.js
+    //let page1 = parseInt(searchParams.get('page'))
+    
 
     // Acutalizar tabla
     const [yaActualizado, setYaActualizado] = useState(false)
@@ -52,14 +59,34 @@ const Resultados_lista = () => {
             },
         };
 
-        const request = await fetch(`/api/libros/busqueda?keyword=${keyword}&type=${type}&filters=${filters}`, opciones); //  Primera prueba de conexion con backend
+        const request = await fetch(`/api/libros/busqueda?keyword=${keyword}&type=${type}&filters=${filters}&page=${page}`, opciones); //  Primera prueba de conexion con backend
         const data = await request.json();
         console.log(data);
 
         // Actualiza el estado con los resultados de la API
-        setResultados(data);
+        setResultados(data.items);
         setYaActualizado(true);
+        setTotalPages(data.totalPages)
     }
+
+    
+    function retroceder() {
+        if (page > 1) {
+            setPage(page - 1)
+            
+        }
+
+    }
+    function avanzar() {
+        if (page < totalPages) {
+            setPage(page + 1)
+        }
+
+    }
+    useEffect(() => {
+        leer()
+    }, [page])
+
 
 
     // Controlar Modal
@@ -103,38 +130,37 @@ const Resultados_lista = () => {
     }
 
     // Enviar nueva reserva
-    async function reservar(libro) {        
+    async function reservar(libro) {
         // Generar nuevo objeto JSON
-        let obj = { 
-            "persona_id" : cuenta.id,
-            "libro_id" : libro.id,
-            "fecha_inicio" : obtenerFechaActual(),
-            "fecha_final" : fechaSeleccionada
+        let obj = {
+            "persona_id": cuenta.id,
+            "libro_id": libro.id,
+            "fecha_inicio": obtenerFechaActual(),
+            "fecha_final": fechaSeleccionada
         }
         // Llamar a reservar
         const opciones = {
-            method : 'POST',
-            body : JSON.stringify(obj),
-            headers : {
-                "Content-Type" : "application/json"
+            method: 'POST',
+            body: JSON.stringify(obj),
+            headers: {
+                "Content-Type": "application/json"
             }
         }
 
-        const request = await fetch( 'api/reservas/reservar', opciones)
+        const request = await fetch('api/reservas/reservar', opciones)
         let data = await request.json()
         console.log(data)
-        
+
         // Volver a realizar consulta de libros y disponibilidad
         setYaActualizado(false)
-        
+
     }
 
     return (
         <>
             <div class="flex flex-wrap shrink-0 gap-3 bg-white p-6 rounded-md shadow-md w-12/12 h-full justify-center">
                 {Object.entries(resultados).map((value, index) => {
-
-                    const palabras = value[1].titulo.split(' ');
+                    const palabras = value[1]?.titulo?.split(' ') || [];
                     const tituloIniciales = palabras
                         .slice(0, 2)
                         .map(word => word[0].toUpperCase())
@@ -185,10 +211,13 @@ const Resultados_lista = () => {
                                     )}
                                 </div>
                             )}
+
                         </div>
                     )
                 }
                 )}
+                
+
 
                 <Modal isOpen={isModalOpen} onClose={closeModal1} id="modal">
                     <p>Ingrese la Fecha de devolucion:</p>
@@ -204,6 +233,16 @@ const Resultados_lista = () => {
                 </Modal>
 
             </div>
+            <div id="cont-result" >
+                    <div id="cont2-masrecientes">
+                        <button onClick={retroceder} disabled={page === 1} id="retro" class="text-white border border-white rounded-md px-4 py-2 text-base cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:text-black">Anterior</button>
+                        <button onClick={avanzar} disabled={page === totalPages} id="avanzar">Siguiente</button>
+                    </div>
+                    <div id="cont-resultados">
+                        <p id="total1">Página {page} de {totalPages}</p>
+                    </div>
+
+                </div>
         </>
     );
 };

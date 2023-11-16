@@ -23,6 +23,7 @@ export default function Busqueda() {
 
     // Lanzar la busqueda
     const handleSearch = async (e) => {
+        // escribe en la URL visualmente
         const params = new URLSearchParams(searchParams);
         params.set('keyword', palabraclave);
         params.set('type', tipoRecurso);
