@@ -77,10 +77,9 @@ const detalleLibro = () => {
         const params = JSON.stringify(p)
         try {
             const peticion = await fetch(
-                '/api/libros/eliminar',
+                `/api/libros/eliminar/${id}`,
                 {
-                    method: 'POST',
-                    body: params,
+                    method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json'
                     }
