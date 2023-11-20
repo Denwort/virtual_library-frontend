@@ -43,30 +43,28 @@ const ModificarLibro = () => {
     function registrarCambio(e){
         libroModificado[e.target.name] = e.target.value
     }
+
     // CAMBIAR ESTO DE ESCRIBIR JSON para que escriba en la base de datos
-    const escribirJSON = async () =>{
-        console.log(libroModificado)
-        const params = JSON.stringify(libroModificado)
+    const escribirEnBD = async () => {
         try {
-            const peticion = await fetch (
-                '../api/libros/modificar',
-                {
-                    method : 'POST',
-                    body : params,
-                    headers : {
-                        'Content-Type' : 'application/json'
-                    }
-                }
-            )
+            const peticion = await fetch(`/api/libros/modificar?id=${id}`, {
+                method: 'PUT',  // o 'POST' dependiendo de tu API
+                body: JSON.stringify(libroModificado),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
 
-            const data = await peticion.json()
-            alert("libro modificado")
-
+            if (peticion.ok) {
+                guardarLib();
+            } else {
+                alert("Error al modificar el libro");
+            }
         } catch (err) {
-            console.log(err)
+            console.error(err);
+            alert("Error al modificar el libro");
         }
-  
-    }
+    };
 
 
     return (<Layout content={
@@ -200,7 +198,7 @@ const ModificarLibro = () => {
                             </div>
 
 
-                            <button id="GuardarLibro" class="guardar" onClick={escribirJSON}>Guardar</button>
+                            <button id="GuardarLibro" class="guardar" onClick={escribirEnBD}>Guardar</button>
 
                         </div>
                         {/* Aquí termina la columna*/}
