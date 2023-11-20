@@ -5,31 +5,37 @@ import Layout from '../components/Layout'
 import {useMiProvider} from '../context/contexto.js'
 import {useState, useEffect} from 'react'
 import {useRouter} from 'next/router'
+import { useSearchParams } from 'next/navigation';
 
 const ModificarLibro = () => {
 
     const router = useRouter()
     const [cuenta, setCuenta] = useMiProvider()
-    
+    // para traer el id del URL
+    const id = router.query.id
+
     const [libros, setLibros] = useState([]);
+
     async function leer() {
         const opciones = {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
         };
-        const request = await fetch("../api/libros/leer", opciones);
-        const data = await request.json();
-        console.log(data);
-        setLibros(data);
+            const request = await fetch(`/api/libros/leer?id=${id}`, opciones);
+            const data = await request.json();
+            console.log(data);
+            setLibros(data);
+          
     }
+
     useEffect(() => {
         leer();
     }, []);
 
-    const id = router.query.id
-    const p = libros.filter((item)=>{return item["id"] == id.toString()})[0]
+    
+    const p = libros
     if (!p) return <p></p>
 
     let libroModificado = {...p}
@@ -37,7 +43,7 @@ const ModificarLibro = () => {
     function registrarCambio(e){
         libroModificado[e.target.name] = e.target.value
     }
-
+    // CAMBIAR ESTO DE ESCRIBIR JSON para que escriba en la base de datos
     const escribirJSON = async () =>{
         console.log(libroModificado)
         const params = JSON.stringify(libroModificado)
@@ -148,7 +154,7 @@ const ModificarLibro = () => {
                                                 <p>Serie, tipo</p>
                                             </div>
                                             <div id="input_text_color">
-                                                <input type='text' id="inputSerie" name="genero" onChange={registrarCambio} defaultValue={libroModificado.genero}/>
+                                                <input type='text' id="inputSerie" name="genero" onChange={registrarCambio} defaultValue={libroModificado.tipo}/>
                                             </div>
                                         </div>
                                     </div>
