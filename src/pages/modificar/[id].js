@@ -13,8 +13,7 @@ const ModificarLibro = () => {
     const [cuenta, setCuenta] = useMiProvider()
     // para traer el id del URL
     const id = router.query.id
-
-    const [libros, setLibros] = useState([]);
+    const [libro, setLibro] = useState([]);
 
     async function leer() {
         const opciones = {
@@ -26,7 +25,7 @@ const ModificarLibro = () => {
             const request = await fetch(`/api/libros/leer?id=${id}`, opciones);
             const data = await request.json();
             console.log(data);
-            setLibros(data);
+            setLibro(data);
           
     }
 
@@ -34,11 +33,8 @@ const ModificarLibro = () => {
         leer();
     }, []);
 
-    
-    const p = libros
-    if (!p) return <p></p>
 
-    let libroModificado = {...p}
+    let libroModificado = {...libro}
     
     function registrarCambio(e){
         libroModificado[e.target.name] = e.target.value
@@ -55,11 +51,8 @@ const ModificarLibro = () => {
                 },
             });
 
-            if (peticion.ok) {
-                guardarLib();
-            } else {
-                alert("Error al modificar el libro");
-            }
+            alert("todo bien")
+            
         } catch (err) {
             console.error(err);
             alert("Error al modificar el libro");
@@ -89,7 +82,7 @@ const ModificarLibro = () => {
                             <Image src="/Rectangle 5.png" width={279} height={253} alt="rectangulo"></Image>
                         </div>
                     </div>
-                    <form action="registrarLibro" onSubmit={hacernada}>
+                    <form action="registrarLibro" onSubmit={(e)=>{e.preventDefault()}}>
                         <div class="col-span-1">
                             <div id="cuadro_texto_idioma">
                                 <div class="borde_text_field">
@@ -204,15 +197,7 @@ const ModificarLibro = () => {
                         {/* Aquí termina la columna*/}
                     </form>
                 </div>
-                <div id="modalReser-rl" class="modal-container-rl">
-                    <div class="modal-content-rl">
-                        <h2>Registro Completo</h2>
-                        <p>El recurso ha sido grabado con éxito.</p>
-                        <div id="close-rl" class="cerrar-rl">
-                            <p>OK</p>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
 
         </>
@@ -221,28 +206,3 @@ const ModificarLibro = () => {
     )
 }
 export default ModificarLibro
-
-function hacernada(e){
-    e.preventDefault()
-}
-function guardarLib() {
-    
-    const openModal = document.getElementById("GuardarLibro");
-    const modalReserva = document.getElementById("modalReser-rl");
-    const closeModal = document.getElementById("close-rl");
-
-    openModal.onclick = function(){
-        modalReserva.style.visibility = "visible";
-    }
-
-    closeModal.onclick = function(){
-        modalReserva.style.visibility = "hidden";
-    }
-    // cerrar en ventana
-    modalReserva.onclick = function(){
-        modalReserva.style.visibility = "hidden";
-    }
-
-    // Aquí puedes realizar cualquier otra acción relacionada con la reserva
-
-  }

@@ -30,7 +30,7 @@ const detalleLibro = () => {
                 "Content-Type": "application/json",
             },
         };
-        const request = await fetch("../api/libros/leer", opciones);
+        const request = await fetch(`/api/libros/leer?${id}`, opciones);
         const data = await request.json();
         console.log(data);
         setLibros(data);
@@ -56,7 +56,7 @@ const detalleLibro = () => {
     }, [recargarDatos]);
 
     const id = router.query.id
-    const p = libros.filter((item) => { return item["id"] == id.toString() })[0]
+    const p = libros
 
     if (!p) return <p></p>
 
@@ -303,6 +303,7 @@ function hacernada(e){
     e.preventDefault()
 }
 
+
 function obtenerIniciales(titulo) {
     const palabras = titulo.split(" ");
     const iniciales = palabras
@@ -310,6 +311,7 @@ function obtenerIniciales(titulo) {
       .map((palabra) => palabra[0].toUpperCase());
     return iniciales.join("");
   }
+
 
   /*
 function reservardl() {
