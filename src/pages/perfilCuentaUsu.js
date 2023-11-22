@@ -100,7 +100,7 @@ const Perfil = () => {
                                 <p>Correo</p>
                             </div>
                             <div id="input_text_correo">
-                                <input type='email' placeholder='Ingrese correo' name="correo" id="inputCorreoUsu" defaultValue={cuenta.correo} onChange={registrarCambio}/>
+                                <input type='email' placeholder='Ingrese correo' name="correo" id="inputCorreoUsu" defaultValue={cuenta.correo} onBlur={registrarCambio}/>
                             </div>
                         </div>
                     </div>
@@ -118,7 +118,7 @@ const Perfil = () => {
                                 <p>Contraseña</p>
                             </div>
                             <div id="input_text_contra">
-                                <input type='password' placeholder='Ingrese contraseña' name="contrasenha" id="inputContraUsu" defaultValue={cuenta.contrasenha} onChange={registrarCambio}/>
+                                <input type='password' placeholder='Ingrese contraseña' name="contrasenha" id="inputContraUsu" defaultValue={cuenta.contrasenha} onBlur={registrarCambio}/>
                             </div>
                         </div>
                     </div>
