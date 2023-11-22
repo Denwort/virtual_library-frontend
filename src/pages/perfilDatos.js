@@ -14,28 +14,23 @@ const Perfil = () => {
         cuenta_modificada[e.target.name] = e.target.value
     }
     
-    const escribirJSON = async () =>{
-        const params = JSON.stringify(cuenta_modificada)
+    const escribirEnBD = async () => {
         try {
-            const peticion = await fetch (
-                '/api/cuentas/modificar',
-                {
-                    method : 'POST',
-                    body : params,
-                    headers : {
-                        'Content-Type' : 'application/json'
-                    }
-                }
-            )
-            const data = await peticion.json()
+            const peticion = await fetch(`/api/personas/modificar2?id=${cuenta.id}`, {
+                method: 'PUT',  // o 'POST' dependiendo de tu API
+                body: JSON.stringify(cuenta_modificada),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
             setCuenta(cuenta_modificada)
-            alert("Datos actualizados")
-
+            alert("Datos actualizados correctamente.")
+            
         } catch (err) {
-            console.log(err)
+            console.error(err);
+            alert("Error al modificar la persona.");
         }
-  
-    }
+    };
 
     return (
 
@@ -143,7 +138,7 @@ const Perfil = () => {
                             </div>
                         </div>
 
-                        <button type="button" class="guardar" onClick={escribirJSON}>Guardar</button>
+                        <button type="button" class="guardar" onClick={escribirEnBD}>Guardar</button>
 
                     </div>
                     {/* Aquí termina la columna*/}

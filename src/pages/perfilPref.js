@@ -13,7 +13,28 @@ const Perfil = () => {
     function registrarCambio(e){
         cuenta_modificada[e.target.name] = e.target.value
     }
-    
+
+    const escribirEnBD = async () => {
+        try {
+            const peticion = await fetch(`/api/personas/modificar2?id=${cuenta.id}`, {
+                method: 'PUT',  // o 'POST' dependiendo de tu API
+                body: JSON.stringify(cuenta_modificada),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+            setCuenta(cuenta_modificada)
+            document.querySelector(':root').style.setProperty('--color-primario', cuenta_modificada.color)
+            document.querySelector(':root').style.setProperty('--color-secundario', newShade(cuenta_modificada.color, 100))
+            alert("Datos actualizados correctamente.")
+            
+        } catch (err) {
+            console.error(err);
+            alert("Error al modificar la persona.");
+        }
+    };
+
+/*    
     const escribirJSON = async () =>{
         const params = JSON.stringify(cuenta_modificada)
         try {
@@ -38,6 +59,7 @@ const Perfil = () => {
         }
   
     }
+*/
 
     return (
 
@@ -125,7 +147,7 @@ const Perfil = () => {
             </div>
 
 
-            <button type="button" class="guardar" onClick={escribirJSON}>Guardar</button>
+            <button type="button" class="guardar" onClick={escribirEnBD}>Guardar</button>
 
             </div>
             {/* Aquí termina la columna*/}
