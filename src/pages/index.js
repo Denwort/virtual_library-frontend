@@ -162,6 +162,20 @@ const Index = () => {
 
     }
 
+    const llamarRecientes = async () => {
+
+        const peticion = {
+            method: 'GET', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+        const request = await fetch(`/api/reservas/ultimas?id=${cuenta.id}&page=${page}`, peticion);
+        const data = await request.json();   
+        setdatosMasRecientes(data.items)
+        setTotalPages(data.totalPages)
+    };
+
     const escribirJSONRecientes = async (e) => {
         const params = JSON.stringify(cuenta)
         try {
