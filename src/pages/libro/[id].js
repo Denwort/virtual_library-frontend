@@ -12,72 +12,49 @@ import Modal from "../modal.js"
 const detalleLibro = () => {
 
     // para deshabilitar el boton "recargar al reservar"
-    const [recargarDatos, setRecargarDatos] = useState(true);
-
     const router = useRouter()
     const [cuenta, setCuenta] = useMiProvider()
 
-    const [libros, setLibros] = useState([]);
-    const [reservas, setReservas] = useState([]);
-    const [isModal2Open, setIsModal2Open] = useState(false);
-    const [fechaSeleccionada, setFechaSeleccionada] = useState(obtenerFechaFutura())
+    const [libro, setLibro] = useState([]);
 
-
-    async function leer() {
-        const opciones = {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        };
-        const request = await fetch(`/api/libros/leer?${id}`, opciones);
-        const data = await request.json();
-        console.log(data);
-        setLibros(data);
-    }
-
-
-    async function leerReservas() {
-        const opciones = {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        };
-        const request = await fetch("../api/reservas/leer", opciones);
-        const data = await request.json();
-        console.log(data);
-        setReservas(data);
-    }
-    useEffect(() => {
-        leer();
-        leerReservas();
-        setRecargarDatos(false);
-    }, [recargarDatos]);
+    const [yaActualizado, setYaActualizado] = useState(false)
 
     const id = router.query.id
-    const p = libros
 
-    if (!p) return <p></p>
+    console.log("RENDER con id: ", id)
 
-    // Revisar disponibilidad
-    let disponibilidad = 'Disponible'
-    let hoysito = obtenerFechaActual()
-    reservas.forEach((item, index) => {
-        let fecha_final = Date.parse(item["fecha_final"])
-        let fecha_actual = Date.parse(hoysito)
-        if (item.libro.id == id && fecha_final >= fecha_actual) {
-            disponibilidad = 'No disponible'
-            if(cuenta.tipo == 'admin') disponibilidad = 'Reservado por: ' + item.cuenta.nombres
+    async function leer() {
+        console.log("LEYENDO EL ID: ", id)
+        const opciones = {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        };
+        const request = await fetch(`/api/libros/leer?id=${id}`, opciones);
+        const data = await request.json();
+        console.log(data);
+        setLibro(data);
+        setYaActualizado(true);
+    }
+
+
+    if(id){
+        if (yaActualizado == false) {
+            leer()
         }
-    })
+    }else{
+        console.log("noexiste id ;c")
+    }
+
+
+
 
     // Eliminar
     async function handleEliminar() {
-        const params = JSON.stringify(p)
         try {
             const peticion = await fetch(
-                `/api/libros/eliminar/${id}`,
+                `/api/libros/eliminar?id=${id}`,
                 {
                     method: 'DELETE',
                     headers: {
@@ -95,22 +72,10 @@ const detalleLibro = () => {
 
     }
 
-    async function leer_reserva1() {
-        const opciones = {
-            method : 'GET',
-            headers : {
-                "Content-Type" : "application/json"
-            }
-        }
 
-        var data
-        const request = await fetch( '../api/reservas/leer', opciones)
-        data = await request.json()
-        console.log( data)
-        return data
 
-    }
 
+    /*
     // Modal
     const openModal2 = () => {
         setIsModal2Open(true);
@@ -155,9 +120,11 @@ const detalleLibro = () => {
         console.log( data)
         setRecargarDatos(true);
     }
+    */
 
     return <Layout content={
         <>
+        
             <Head>
                 <title>Citas</title>
             </Head>
@@ -171,24 +138,24 @@ const detalleLibro = () => {
                     <div id="state-layer-tituloLibro">
                         <div id="circuloConInicial">
                             <div id="BuildingblockeCircular">
-                                <p id="nombre-dl">{obtenerIniciales(p.titulo)}</p>
+                                <p id="nombre-dl">{obtenerIniciales(libro.titulo)}</p>
                             </div>
                         </div>
                         <div id="content_libro_dl">
-                            <h1 id="titulo_libro_dl" >{p.titulo}</h1>
-                            <p id="autor_libro_dl">{p.autor}</p>
+                            <h1 id="titulo_libro_dl" >{libro.titulo}</h1>
+                            <p id="autor_libro_dl">{libro.autor}</p>
                         </div>
                     </div>
                     <div id="cont_libr_dl" class="">
-                        <Image src={p.imagen} width={184} height={151} alt="imagenLib"  id="imglibro" class="w-120 h-40"></Image>
+                        <Image src={libro.imagen} width={184} height={151} alt="imagenLib"  id="imglibro" class="w-120 h-40"></Image>
                     </div>
                     <div id="contenedor_texto-dl">
-                        <p id="texto-dl">{p.descripcion}</p>
+                        <p id="texto-dl">{libro.descripcion}</p>
                     </div>
                     <div id="todo-edit">
                         <div id="contenedor_editorial-dl">
                             <p id="editorial-dl-text">Editorial</p>
-                            <p id="editorial-name-dl">{p.editorial}</p>
+                            <p id="editorial-name-dl">{libro.editorial}</p>
                         </div>
                     </div>
 
@@ -196,8 +163,8 @@ const detalleLibro = () => {
                         <p id="topi">Tópicos</p>
                     </div>
 
-                    <div id="todosTopicos">
-                        {Object.entries(p.genero.split(',')).map( (value,index) => {
+                    <div id="todosTopicos">                        
+                        {Object.entries(libro.topicos?libro.topicos.split(','):[]).map( (value,index) => {
                             return (
                             <div id="contenedor_topi1" key={index}>
                                 <div class="topi-stateLayer">
@@ -205,15 +172,16 @@ const detalleLibro = () => {
                                 </div>
                             </div>
                             )
-                        })}
+                        })}                        
                     </div>
 
+                    
                     <div id="dispo-nodispo">
-                        <p id="dispoNodispo">{disponibilidad}</p>
+                        <p id="dispoNodispo">{libro.disponible?"Disponible":cuenta.tipo=='admin'?libro.ultimo_reservante:"No Disponible"}</p>
                     </div>
 
                 </div>
-                {cuenta.tipo == 'user' && disponibilidad=='Disponible' && (
+                {cuenta.tipo == 'user' && libro.disponible && (
                 <form action="reservarLibroDatos" onSubmit={hacernada}>
                     <div id="total-reserva">
                         <div id="contenedor_reserva-dl">
@@ -246,6 +214,7 @@ const detalleLibro = () => {
                 </form>
                 )}
 
+
                 {cuenta.tipo == 'admin' && (
                     <div>
                         <br/>
@@ -257,10 +226,12 @@ const detalleLibro = () => {
 
             </div>
 
+            {/*
             <Modal isOpen={isModal2Open} onClose={closeModal2} id="modal2">
                 <p>Reserva realizada</p>
                 <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={closeModal2}>Cerrar</button>
             </Modal>
+            
 
             <div id="modalReser-dl" class="modal-container-dl">
                 <div class="modal-content-dl">
@@ -271,9 +242,12 @@ const detalleLibro = () => {
                     </div>
                 </div>
             </div>
+            */}
+                    
         </>
 
     }
+    
     ></Layout>
 
 }
@@ -305,12 +279,14 @@ function hacernada(e){
 
 
 function obtenerIniciales(titulo) {
+    if(!titulo) return "";
     const palabras = titulo.split(" ");
     const iniciales = palabras
       .slice(0, 2) 
       .map((palabra) => palabra[0].toUpperCase());
     return iniciales.join("");
   }
+
 
 
   /*
