@@ -75,13 +75,10 @@ const detalleLibro = () => {
 
 
 
-    /*
+    const [isModal2Open, setIsModal2Open] = useState(false);
     // Modal
     const openModal2 = () => {
         setIsModal2Open(true);
-    };
-    const closeModal2 = () => {
-        setIsModal2Open(false);
     };
 
     function handleChange(event) {
@@ -89,8 +86,47 @@ const detalleLibro = () => {
         setFechaSeleccionada(fecha)
     }
 
+    const [fechaSeleccionada, setFechaSeleccionada] = useState(obtenerFechaFutura())
+    function handleChange(event) {
+        const fecha = event.target.value;
+        setFechaSeleccionada(fecha)
+    }
 
+    function obtenerFechaActual() {
+        const hoy = new Date();
+        const year = hoy.getFullYear();
+        const mes = String(hoy.getMonth() + 1).padStart(2, '0');
+        const dia = String(hoy.getDate()).padStart(2, '0');
+        return `${year}-${mes}-${dia}`;
+    }
 
+    async function reservar(libro) {
+        // Generar nuevo objeto JSON
+        let obj = {
+            "persona_id": cuenta.id,
+            "libro_id": libro.id,
+            "fecha_inicio": obtenerFechaActual(),
+            "fecha_final": fechaSeleccionada
+        }
+        // Llamar a reservar
+        const opciones = {
+            method: 'POST',
+            body: JSON.stringify(obj),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+
+        const request = await fetch('api/reservas/reservar', opciones)
+        let data = await request.json()
+        console.log(data)
+
+        // Volver a realizar consulta de libros y disponibilidad
+        setYaActualizado(false)
+
+    }
+
+     /*
     async function escribir_reserva() {
         let data = await leer_reserva1()
         
@@ -185,7 +221,7 @@ const detalleLibro = () => {
                     </div>
 
                 </div>
-                {cuenta.tipo == 'user' && disponibilidad=='Disponible' && (
+                {cuenta.tipo == 'user' && libro.disponible && (
                 <form action="reservarLibroDatos" onSubmit={hacernada}>
                     <div id="total-reserva">
                         <div id="contenedor_reserva-dl">
@@ -209,10 +245,11 @@ const detalleLibro = () => {
                                 <p id="ddmmyyyy"> DD/MM/YYYY</p>
                             </div>
                         </div>
+                        {libro.disponible==true && (
                         <div id="contenedor_breservar">
-                            <button id="bReserv" onClick={()=>{escribir_reserva(); disponibilidad='No disponible'; openModal2();}} disabled={disponibilidad!='Disponible'} >Reservar</button>
-
+                            <button id="bReserv" onClick={()=>{reservar(libro); openModal2();}} >Reservar</button>
                         </div>
+                        )}
 
                     </div>
                 </form>
@@ -229,24 +266,7 @@ const detalleLibro = () => {
 
 
             </div>
-
-            {/*
-            <Modal isOpen={isModal2Open} onClose={closeModal2} id="modal2">
-                <p>Reserva realizada</p>
-                <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={closeModal2}>Cerrar</button>
-            </Modal>
             
-
-            <div id="modalReser-dl" class="modal-container-dl">
-                <div class="modal-content-dl">
-                    <h2>Reserva completada</h2>
-                    <p>La reserva del recurso se ha realizado con éxito. Este debe ser devuelto hasta el día</p>
-                    <div id="close-dl" class="cerrar-dl">
-                        <p>OK</p>
-                    </div>
-                </div>
-            </div>
-            */}
                     
         </>
 
