@@ -43,7 +43,7 @@ const Resultados_lista = () => {
             leer()
         }
     }
-    else {
+    else {  
         console.log("sin filtros")
     }
 
