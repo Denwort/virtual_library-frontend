@@ -199,10 +199,8 @@ const detalleLibro = () => {
                         <p id="topi">Tópicos</p>
                     </div>
 
-                    <div id="todosTopicos">
-                        <h>{libro.topicos}</h>
-                        {/*
-                        {Object.entries(libro.topicos.split(',')).map( (value,index) => {
+                    <div id="todosTopicos">                        
+                        {Object.entries(libro.topicos?libro.topicos.split(','):[]).map( (value,index) => {
                             return (
                             <div id="contenedor_topi1" key={index}>
                                 <div class="topi-stateLayer">
@@ -210,9 +208,7 @@ const detalleLibro = () => {
                                 </div>
                             </div>
                             )
-                        })}
-
-                        */}
+                        })}                        
                     </div>
 
                     
