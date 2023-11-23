@@ -163,10 +163,8 @@ const detalleLibro = () => {
                         <p id="topi">Tópicos</p>
                     </div>
 
-                    <div id="todosTopicos">
-                        <h>{libro.topicos}</h>
-                        {/*
-                        {Object.entries(libro.topicos.split(',')).map( (value,index) => {
+                    <div id="todosTopicos">                        
+                        {Object.entries(libro.topicos?libro.topicos.split(','):[]).map( (value,index) => {
                             return (
                             <div id="contenedor_topi1" key={index}>
                                 <div class="topi-stateLayer">
@@ -174,9 +172,7 @@ const detalleLibro = () => {
                                 </div>
                             </div>
                             )
-                        })}
-
-                        */}
+                        })}                        
                     </div>
 
                     
@@ -185,7 +181,7 @@ const detalleLibro = () => {
                     </div>
 
                 </div>
-                {cuenta.tipo == 'user' && disponibilidad=='Disponible' && (
+                {cuenta.tipo == 'user' && libro.disponible && (
                 <form action="reservarLibroDatos" onSubmit={hacernada}>
                     <div id="total-reserva">
                         <div id="contenedor_reserva-dl">
