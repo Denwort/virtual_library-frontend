@@ -10,160 +10,14 @@ const Index = () => {
 
     const [cuenta, setCuenta] = useMiProvider()
 
+
+    // Mas recientes
+
     const [datosMasRecientes, setdatosMasRecientes] = useState([]) 
     const [pageMasRecientes, setPage] = useState(1)
     const [totalPages, setTotalPages] = useState(1)
-
-    async function leerRecientes() {
-        const opciones = {
-            method: 'GET',
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }
-        const request = await fetch(`/api/ordenarIndex/ordenarRecientes?page=${pageMasRecientes}`, opciones)
-        let data = await request.json()
-        console.log(data)
-
-        setdatosMasRecientes(data.items)
-        setTotalPages(data.totalPages)
-    }
-
-    function retrocederLosMasRecientes() {
-        if (pageMasRecientes > 1) {
-            setPage(pageMasRecientes - 1)
-        }
-
-    }
-    function avanzarLosMasRecientes() {
-        if (pageMasRecientes < totalPages) {
-            setPage(pageMasRecientes + 1)
-        }
-
-    }
-    useEffect(() => {
-        leerRecientes()
-    }, [pageMasRecientes]) 
-
-
-    const [datosMasPedidos, setDatos1] = useState([]) 
-    const [pageMasPedidos, setpageMasPedidos] = useState(1)
-    const [totalPages1, setTotalpageMasPedidos] = useState(1)
-
-    async function leerMasPedidos() {
-        const opciones = {
-            method: 'GET',
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }
-        const request = await fetch(`/api/ordenarIndex/ordenarMasPedidos?page=${pageMasPedidos}`, opciones)
-        let data = await request.json()
-        console.log(data)
-        setDatos1(data.items)
-        setTotalpageMasPedidos(data.totalPages1)
-    }
-
-    function retrocederLosMasPedidos() {
-        if (pageMasPedidos > 1) {
-            setpageMasPedidos(pageMasPedidos - 1)
-        }
-
-    }
-    function avanzarLosMasPedidos() {
-        if (pageMasPedidos < totalPages1) {
-            setpageMasPedidos(pageMasPedidos + 1)
-        }
-
-    }
-    useEffect(() => {
-        leerMasPedidos()
-    }, [pageMasPedidos]) 
-
-
-
-
-    const [datosProximo, setDatos2] = useState([]) 
-    const [pageProximo, setpageProximo] = useState(1)
-    const [totalPages2, setTotalpageProximo] = useState(1)
-
-    async function leerProximos() {
-        const opciones = {
-            method: 'GET',
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }
-        const request = await fetch(`/api/ordenarIndex/ordenarProximos?page=${pageProximo}`, opciones)
-        let data = await request.json()
-        console.log(data)
-
-        setDatos2(data.items)
-        setTotalpageProximo(data.totalPages2)
-    }
-
-    function retrocederProximo() {
-        if (pageProximo > 1) {
-            setpageProximo(pageProximo - 1)
-        }
-
-    }
-    function avanzarProximo() {
-        if (pageProximo < totalPages2) {
-            setpageProximo(pageProximo + 1)
-        }
-
-    }
-
-    useEffect(() => {
-        leerProximos()
-    }, [pageProximo]) 
-
-
-
-    const escribirJSON = async (e) => {
-        const params = JSON.stringify(cuenta)
-        try {
-            const peticion = await fetch(
-                '/api/proximos/escribir',
-                {
-                    method: 'POST',
-                    body: params,
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }
-            )
-            const data = await peticion.json()
-            leerProximos()
-
-        } catch (err) {
-            console.log(err)
-        }
-
-    }
-    const escribirJSONMasPedidos = async (e) => {
-        try {
-            const peticion = await fetch(
-                '/api/masPedidos/escribir',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }
-            )
-            const data = await peticion.json()
-            leerMasPedidos()
-
-        } catch (err) {
-            console.log(err)
-        }
-
-    }
-
+    
     const llamarRecientes = async () => {
-
         const peticion = {
             method: 'GET', 
             headers: {
@@ -187,27 +41,24 @@ const Index = () => {
         llamarRecientes()
     }, [pageMasRecientes])
 
+    function retrocederLosMasRecientes() {
+        if (pageMasRecientes > 1) {
+            setPage(pageMasRecientes - 1)
+        }
+    }
+    function avanzarLosMasRecientes() {
+        if (pageMasRecientes < totalPages) {
+            setPage(pageMasRecientes + 1)
+        }
+    }
 
-    const llamarProximos = async () => {
+    // Mas pedidos
 
-        const peticion = {
-            method: 'GET', 
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        };
-        const request = await fetch(`/api/reservas/proximos?id=${cuenta.id}&page=${pageProximo}`, peticion);
-        const data = await request.json();   
-        setDatos2(data.items)
-        setTotalpageProximo(data.totalPages)
-        
-    };
-    useEffect(() => {
-        llamarProximos()
-    }, [pageProximo])
+    const [datosMasPedidos, setDatos1] = useState([]) 
+    const [pageMasPedidos, setpageMasPedidos] = useState(1)
+    const [totalPages1, setTotalpageMasPedidos] = useState(1)
 
     const llamarMasPedidos = async () => {
-
         const peticion = {
             method: 'GET', 
             headers: {
@@ -224,60 +75,52 @@ const Index = () => {
         llamarMasPedidos()
     }, [pageMasPedidos])
 
-
-    const escribirJSONRecientes = async (e) => {
-        const params = JSON.stringify(cuenta)
-        try {
-            const peticion = await fetch(
-                '/api/recientes/escribir',
-                {
-                    method: 'POST',
-                    body: params,
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }
-            )
-            const data = await peticion.json()
-            leerRecientes()
-
-        } catch (err) {
-            console.log(err)
+    function retrocederLosMasPedidos() {
+        if (pageMasPedidos > 1) {
+            setpageMasPedidos(pageMasPedidos - 1)
         }
-
+    }
+    function avanzarLosMasPedidos() {
+        if (pageMasPedidos < totalPages1) {
+            setpageMasPedidos(pageMasPedidos + 1)
+        }
     }
 
-    //Syncronizar las funciones
+    // Proximos
 
-    /*
-    async function todo() {
-        await escribirJSON();
-        await escribirJSONMasPedidos();
-        await escribirJSONRecientes();
-        await leerProximos();
-        await leerMasPedidos();
-        await leerRecientes();
-    }
-    */
-    /*useEffect(() => {
-        escribirJSON()
-        escribirJSONMasPedidos()
-        escribirJSONRecientes()
-    }, []);
-    */
+    const [datosProximo, setDatos2] = useState([]) 
+    const [pageProximo, setpageProximo] = useState(1)
+    const [totalPages2, setTotalpageProximo] = useState(1)
+
+    const llamarProximos = async () => {
+        const peticion = {
+            method: 'GET', 
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        };
+        const request = await fetch(`/api/reservas/proximos?id=${cuenta.id}&page=${pageProximo}`, peticion);
+        const data = await request.json();   
+        setDatos2(data.items)
+        setTotalpageProximo(data.totalPages)
+        
+    };
     useEffect(() => {
         llamarProximos()
-        llamarMasPedidos()
-        llamarRecientes()
-    }, []);
+    }, [pageProximo])
 
+    function retrocederProximo() {
+        if (pageProximo > 1) {
+            setpageProximo(pageProximo - 1)
+        }
+    }
+    function avanzarProximo() {
+        if (pageProximo < totalPages2) {
+            setpageProximo(pageProximo + 1)
+        }
+    }
 
-
-
-    // Funcionalidad para "Ver todo"
-    const [verTodo, setVerTodo] = useState(false);
-
-
+    
     return (
         <Layout content={
             <>

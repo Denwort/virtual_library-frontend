@@ -36,7 +36,7 @@ const Resultados_lista = () => {
     const [resultados, setResultados] = useState([]);
     const [libroselec, setlibroselec] = useState([]);
 
-    // Actualizar tabla cuando hayan filtros
+    // Actualizar tabla cuando hayan filtros: en el 3er render
     if (keyword || type || filters) {
         console.log("existen los filtros")
         if (yaActualizado == false) {
@@ -49,6 +49,11 @@ const Resultados_lista = () => {
 
     // Leer datos de libros
     async function leer() {
+
+        if (keyword==null && type==null && filters==null){
+            console.log("query invalido: ", { keyword, type, filters })
+            return
+        }
 
         console.log("buscando: ", { keyword, type, filters })
 
@@ -69,25 +74,20 @@ const Resultados_lista = () => {
         setTotalPages(data.totalPages)
     }
 
-    
+    // Paginacion
     function retroceder() {
         if (page > 1) {
             setPage(page - 1)
-            
         }
-
     }
     function avanzar() {
         if (page < totalPages) {
             setPage(page + 1)
         }
-
     }
     useEffect(() => {
         leer()
     }, [page])
-
-
 
     // Controlar Modal
     const [isModalOpen, setIsModalOpen] = useState(false);

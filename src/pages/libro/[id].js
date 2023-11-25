@@ -117,7 +117,7 @@ const detalleLibro = () => {
             }
         }
 
-        const request = await fetch('api/reservas/reservar', opciones)
+        const request = await fetch('/api/reservas/reservar', opciones)
         let data = await request.json()
         console.log(data)
 
