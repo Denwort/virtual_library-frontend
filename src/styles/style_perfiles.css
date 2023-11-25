@@ -466,3 +466,15 @@
   border: 2px solid var(--color-primario);
 
 }
+
+.borde_text_field2{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 4px;
+  border: 2px solid var(--color-primario);
+  height: 300px;
+
+}

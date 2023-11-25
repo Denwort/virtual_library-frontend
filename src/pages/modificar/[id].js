@@ -17,6 +17,10 @@ const ModificarLibro = () => {
     console.log("id: ", id)
 
     async function leer() {
+        if(id == null){
+            console.log("query invalido")
+            return
+        }
         const opciones = {
             method: "GET",
             headers: {
@@ -31,7 +35,7 @@ const ModificarLibro = () => {
 
     useEffect(() => {
         leer();
-    }, []);
+    }, []); // en caso quiera ver el libro aun cuando refresco la pagina poner [id]
 
 
     let libroModificado = {...libro}
@@ -51,7 +55,7 @@ const ModificarLibro = () => {
                 },
             });
 
-            alert("todo bien")
+            alert("Se actualizó los datos correctamente.")
             
         } catch (err) {
             console.error(err);

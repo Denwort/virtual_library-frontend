@@ -64,6 +64,13 @@
     border: none;
     background: transparent;
     outline: none;
+    height: 267px;
+    position:absolute;
+    width: 260px;
+}
+#cont-textarea{
+    position:relative;
+    bottom: 10px;
 }
 
 #inputtopico{
@@ -153,4 +160,15 @@
     background-color: var(--color-primario);
     border-radius: 28px;
 
+}
+
+#contt-ima{
+    position: relative;
+
+}
+
+#mover-image{
+    position:absolute;
+    left: 350px;
+    bottom: 150px;
 }

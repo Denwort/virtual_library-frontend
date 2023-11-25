@@ -367,3 +367,16 @@
     right: 1%;
     top:6%;
 }
+
+
+.col-span-3-2{
+    position: relative;
+
+}
+
+#todooo{
+    position:absolute;
+    left: 380px;
+    bottom: 196px;
+
+}
