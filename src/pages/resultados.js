@@ -31,8 +31,10 @@ const Resultados = (parametros) => {
 
             <div class="flex justify-between">
                 <h1 class="text-1xl font-semibold mb-4">Resultados de la busqueda</h1>
-                <button type="button" class="bg-purple-bg text-purple-primary px-4 py-2 hover:bg-blue-600 border rounded-full color_letra_primario color_fondo_secundario"
-                onClick={()=>{router.push('/')}}>Ver mis reservas</button>
+                {cuenta.tipo == 'user' && (
+                    <button type="button" class="bg-purple-bg text-purple-primary px-4 py-2 hover:bg-blue-600 border rounded-full color_letra_primario color_fondo_secundario"
+                    onClick={()=>{router.push('/historial')}}>Ver mis reservas</button>
+                )}
             </div>
             
 
