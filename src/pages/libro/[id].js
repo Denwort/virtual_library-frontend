@@ -80,6 +80,9 @@ const detalleLibro = () => {
     const openModal2 = () => {
         setIsModal2Open(true);
     };
+    const closeModal2 = () => {
+        setIsModal2Open(false);
+    };
 
     function handleChange(event) {
         const fecha = event.target.value;
@@ -120,6 +123,7 @@ const detalleLibro = () => {
         const request = await fetch('/api/reservas/reservar', opciones)
         let data = await request.json()
         console.log(data)
+
 
         // Volver a realizar consulta de libros y disponibilidad
         setYaActualizado(false)
@@ -259,6 +263,11 @@ const detalleLibro = () => {
                     </div>
                 )}
 
+                <Modal isOpen={isModal2Open} onClose={closeModal2} id="modal2">
+                    <p>Reserva realizada</p>
+                    <button class="flex transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" onClick={closeModal2}>Cerrar</button>
+                </Modal>
+
 
 
             </div>
@@ -309,7 +318,7 @@ function obtenerIniciales(titulo) {
 
 
 
-  /*
+/*
 function reservardl() {
     const inputDate = document.getElementById("inputDate");
     const fechaParrafo = document.querySelector("#modalReser-dl p");

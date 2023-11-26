@@ -5,10 +5,12 @@ import Layout from './components/Layout.js'
 import { useMiProvider } from './context/contexto'
 import library from '../json/library.json'
 import { useState, useEffect } from "react"
+import { useRouter } from "next/router.js"
 
 const Index = () => {
 
     const [cuenta, setCuenta] = useMiProvider()
+    const router = useRouter()
 
 
     // Mas recientes
@@ -180,8 +182,8 @@ const Index = () => {
                             </div>
                             <div id="cont-masrecientes" class="relative">
                                 <div id="cont2-masrecientes">
-                                    <button onClick={retrocederLosMasRecientes} disabled={pageMasRecientes === 1} id="retro" class="text-white border border-white rounded-md px-4 py-2 text-base cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:text-black">Anterior</button>
-                                    <button onClick={avanzarLosMasRecientes} disabled={pageMasRecientes === totalPages} id="avanzar">Siguiente</button>
+                                    <button onClick={retrocederLosMasRecientes} disabled={pageMasRecientes <= 1} id="retro" class="text-white border border-white rounded-md px-4 py-2 text-base cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:text-black">Anterior</button>
+                                    <button onClick={avanzarLosMasRecientes} disabled={pageMasRecientes >= totalPages} id="avanzar">Siguiente</button>
                                 </div>
                                 <div id="cont2-1-masrecientes">
                                     <p id="total1">Total {pageMasRecientes} de {totalPages}</p>
@@ -234,8 +236,8 @@ const Index = () => {
                                 </div>
                                 <div id="cont-proximos">
                                         <div id="cont1-proximos">
-                                            <button onClick={retrocederProximo} disabled={pageProximo === 1} id="retro">Anterior</button>
-                                            <button onClick={avanzarProximo} disabled={pageProximo === totalPages2} id="avanzar">Siguiente</button>
+                                            <button onClick={retrocederProximo} disabled={pageProximo <= 1} id="retro">Anterior</button>
+                                            <button onClick={avanzarProximo} disabled={pageProximo >= totalPages2} id="avanzar">Siguiente</button>
                                         </div>
                                         <div id="cont2-proximos">
                                             <p id="total1">Total {pageProximo} de {totalPages2}</p>
@@ -288,8 +290,8 @@ const Index = () => {
                                 </div>
                                 <div id="cont-maspedidos">
                                         <div id="cont1-maspedidos">
-                                            <button onClick={retrocederLosMasPedidos} disabled={pageMasPedidos === 1} id="retro">Anterior</button>
-                                            <button onClick={avanzarLosMasPedidos} disabled={pageMasPedidos === totalPages1} id="avanzar">Siguiente</button>
+                                            <button onClick={retrocederLosMasPedidos} disabled={pageMasPedidos <= 1} id="retro">Anterior</button>
+                                            <button onClick={avanzarLosMasPedidos} disabled={pageMasPedidos >= totalPages1} id="avanzar">Siguiente</button>
                                         </div>
                                         <div id="cont2-maspedidos">
                                             <p id="total1">Total {pageMasPedidos} de {totalPages1}</p>

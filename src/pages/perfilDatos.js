@@ -16,7 +16,7 @@ const Perfil = () => {
     
     const escribirEnBD = async () => {
         try {
-            const peticion = await fetch(`/api/personas/modificar2?id=${cuenta.id}`, {
+            const peticion = await fetch(`/api/personas/modificar?id=${cuenta.id}`, {
                 method: 'PUT',  // o 'POST' dependiendo de tu API
                 body: JSON.stringify(cuenta_modificada),
                 headers: {

@@ -209,7 +209,7 @@ const Perfil = () => {
                                                     </div>
                                                     <div id="input_text_color">
                                                         <div id="cont-textarea">
-                                                            <textarea id="inputDescripcion" name="descripcion" rows="3" cols="35" maxlength="800" onChange={registrarCambio}></textarea>
+                                                            <textarea id="inputDescripcion" name="descripcion" rows="3" cols="35" maxlength="800" style={{resize:"none"}} onChange={registrarCambio}></textarea>
                                                         </div>
                                                     </div>
                                                 </div>

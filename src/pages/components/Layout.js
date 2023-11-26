@@ -71,6 +71,7 @@ export default props => {
                         <li><Link href={foto_href}>Perfil</Link></li>
                     )}
                     <li><Link href={tercer_link_href}>{tercer_link_titulo}</Link></li>
+                    {cuenta.tipo != 'guest' && (<li><Link href="/login">Logout</Link></li>)}
                 </ul>
             </nav>
 
